@@ -4,9 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 <title>حصن المسلم · Hisn al-Muslim</title>
+<meta name="description" content="حصن المسلم — أذكار الصباح والمساء وأذكار اليوم والليلة من الكتاب والسنة">
+<meta name="theme-color" content="#0a0e17">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     Google Analytics 4
+     استبدل G-XXXXXXXXXX بمعرّف القياس الخاص بك من لوحة تحكم GA4
+     ============================================================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', {
+    'send_page_view': true,
+    'anonymize_ip': true
+  });
+</script>
+
 <style>
 :root{
   --bg-deep:#0a0e17;--bg-card:#131a2a;--bg-card-hover:#1a2337;--bg-input:#0f1522;
@@ -213,6 +231,15 @@ body{
 <script>
 (function(){
 'use strict';
+
+/* ============================================================
+   GOOGLE ANALYTICS — EVENT TRACKING HELPER
+   ============================================================ */
+function trackEvent(eventName, params) {
+  if (typeof gtag === 'function') {
+    gtag('event', eventName, params || {});
+  }
+}
 
 /* ============================================================
    MORNING AZKAR (31)
@@ -561,18 +588,12 @@ const OTHER_CATS = [
   ]}
 ];
 
-/* ============================================================
-   ALL CATEGORIES
-   ============================================================ */
 const ALL_CATEGORIES = [
   {id:'morning',name:'أذكار الصباح',nameEn:'Morning Azkar',azkar:MORNING},
   {id:'evening',name:'أذكار المساء',nameEn:'Evening Azkar',azkar:EVENING},
   ...OTHER_CATS
 ];
 
-/* ============================================================
-   STATE
-   ============================================================ */
 const state={
   categories:ALL_CATEGORIES,
   azkarData:[],
@@ -586,9 +607,6 @@ const state={
 const $=s=>document.querySelector(s);
 const $$=s=>document.querySelectorAll(s);
 
-/* ============================================================
-   INIT
-   ============================================================ */
 function init(){
   loadTheme();
   loadVisitorCount();
@@ -598,10 +616,9 @@ function init(){
   bindEvents();
 }
 
-/* THEME */
 function loadTheme(){
   try{
-    const saved=localStorage.getItem('hisn_theme_v8');
+    const saved=localStorage.getItem('hisn_theme_v9');
     if(saved==='light'||saved==='dark') state.theme=saved;
     else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches) state.theme='light';
   }catch(e){}
@@ -610,25 +627,25 @@ function loadTheme(){
 function applyTheme(){
   document.documentElement.setAttribute('data-theme',state.theme);
   $('#themeToggle').textContent=state.theme==='dark'?'🌙':'☀️';
-  try{localStorage.setItem('hisn_theme_v8',state.theme);}catch(e){}
+  try{localStorage.setItem('hisn_theme_v9',state.theme);}catch(e){}
 }
 function toggleTheme(){
   state.theme=state.theme==='dark'?'light':'dark';
   applyTheme();
+  trackEvent('theme_changed',{theme:state.theme});
 }
 
-/* VISITOR COUNTER */
 async function loadVisitorCount(){
   const el=$('#visitorCount');
   try{
-    const res=await fetch('https://api.countapi.xyz/hit/hisn-muslim-clean/visits');
+    const res=await fetch('https://api.countapi.xyz/hit/hisn-muslim-gh/visits');
     if(!res.ok) throw new Error('fail');
     const data=await res.json();
     el.textContent=formatNum(data.value||0);
   }catch(e){
     try{
-      let c=parseInt(localStorage.getItem('hisn_v_c_v8')||'0',10)+1;
-      localStorage.setItem('hisn_v_c_v8',c.toString());
+      let c=parseInt(localStorage.getItem('hisn_v_c_v9')||'0',10)+1;
+      localStorage.setItem('hisn_v_c_v9',c.toString());
       el.textContent=formatNum(c)+' (local)';
     }catch(err){el.textContent='—';}
   }
@@ -639,7 +656,6 @@ function formatNum(n){
   return n.toString();
 }
 
-/* CATEGORIES */
 function renderCategories(){
   const MAX=4;
   const visible=state.showAllCategories?state.categories:state.categories.slice(0,MAX);
@@ -663,7 +679,6 @@ function renderCategories(){
   else more.style.display='';
 }
 
-/* INDEX */
 function renderIndex(){
   const list=$('#indexList');
   list.innerHTML='';
@@ -676,12 +691,17 @@ function renderIndex(){
   });
 }
 
-/* LOAD CATEGORY */
 function loadCategory(id){
   const cat=state.categories.find(c=>c.id===id);
   if(!cat) return;
   state.activeCategory=id;
   $$('.category-btn').forEach(b=>{b.classList.toggle('active',b.dataset.category===id);});
+
+  trackEvent('category_view',{
+    category_id:id,
+    category_name:cat.name,
+    category_name_en:cat.nameEn
+  });
 
   if(cat.azkar&&cat.azkar.length>0){
     state.azkarData=cat.azkar;
@@ -702,7 +722,6 @@ function loadCategory(id){
   updateProgress();
 }
 
-/* RENDER */
 function renderAzkar(){
   const list=$('#azkarList');
   list.innerHTML='';
@@ -744,7 +763,6 @@ function createCard(dhikr,index){
   return card;
 }
 
-/* TAP */
 function handleTap(id,card){
   const dhikr=state.azkarData.find(d=>d.id===id);
   if(!dhikr) return;
@@ -771,6 +789,11 @@ function handleTap(id,card){
     btn.disabled=true;
     text.innerHTML='Completed';
     icon.textContent='✅';
+    trackEvent('dhikr_completed',{
+      dhikr_id:id,
+      category:state.activeCategory,
+      repetitions:dhikr.count
+    });
   }else{
     text.innerHTML='Tap to count · <span class="remaining">'+remaining+'</span> left';
     icon.textContent='☝️';
@@ -782,10 +805,13 @@ function handleTap(id,card){
 
   if(isDone&&state.azkarData.every(d=>state.completed[d.id])){
     showToast('🎉 All azkar completed! May Allah accept your remembrance.');
+    trackEvent('category_completed',{
+      category:state.activeCategory,
+      total_azkar:state.azkarData.length
+    });
   }
 }
 
-/* RESET CARD */
 function resetCard(id,card){
   const dhikr=state.azkarData.find(d=>d.id===id);
   if(!dhikr) return;
@@ -797,7 +823,6 @@ function resetCard(id,card){
   updateProgress();
 }
 
-/* PROGRESS */
 function updateProgress(){
   const total=state.azkarData.length;
   const done=state.azkarData.filter(d=>state.completed[d.id]).length;
@@ -814,7 +839,6 @@ function updateProgress(){
   else $('#footerStatus').textContent=total+' azkar ready — start reciting';
 }
 
-/* RESET ALL */
 function resetAll(){
   if(!state.azkarData) return;
   state.azkarData.forEach(d=>{
@@ -824,9 +848,9 @@ function resetAll(){
   renderAzkar();
   $('#resetAllBtn').style.transform='rotate(-180deg)';
   setTimeout(()=>{$('#resetAllBtn').style.transform='';},400);
+  trackEvent('reset_all',{category:state.activeCategory});
 }
 
-/* SEARCH */
 function handleSearch(){
   const q=$('#searchInput').value.trim().toLowerCase();
   if(!q){renderCategories();renderIndex();return;}
@@ -859,7 +883,6 @@ function handleSearch(){
   });
 }
 
-/* TOAST */
 let toastTimer;
 function showToast(msg){
   const t=$('#toast');
@@ -869,7 +892,6 @@ function showToast(msg){
   toastTimer=setTimeout(()=>t.classList.remove('show'),3500);
 }
 
-/* EVENTS */
 function bindEvents(){
   $('#showMoreBtn').addEventListener('click',()=>{
     state.showAllCategories=!state.showAllCategories;
