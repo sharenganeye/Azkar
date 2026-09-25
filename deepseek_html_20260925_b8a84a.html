@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>حصن المسلم · Hisn al-Muslim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-deep:#0a0e17;--bg-card:#131a2a;--bg-card-hover:#1a2337;--bg-input:#0f1522;
+  --border:#1f2a40;--border-light:#2a3a55;
+  --text-primary:#e8edf5;--text-secondary:#8b9bb4;--text-muted:#5a6a82;
+  --accent:#00d4aa;--accent-dim:rgba(0,212,170,0.12);--accent-glow:rgba(0,212,170,0.25);
+  --gold:#f0c060;--gold-dim:rgba(240,192,96,0.12);
+  --radius:20px;--radius-sm:12px;
+  --shadow:0 8px 32px rgba(0,0,0,0.4);
+  --transition:0.3s cubic-bezier(0.4,0,0.2,1);
+  --font-arabic:'Amiri',serif;
+  --font-ui:'Inter',-apple-system,sans-serif;
+}
+[data-theme="light"]{
+  --bg-deep:#f5f7fb;--bg-card:#fff;--bg-card-hover:#f0f3f9;--bg-input:#eef1f7;
+  --border:#dde3ed;--border-light:#c8d2e0;
+  --text-primary:#1a2233;--text-secondary:#5a6a82;--text-muted:#8b9bb4;
+  --accent:#0a9e7e;--accent-dim:rgba(10,158,126,0.08);--accent-glow:rgba(10,158,126,0.15);
+  --gold:#c8961e;--gold-dim:rgba(200,150,30,0.08);
+  --shadow:0 8px 32px rgba(0,0,0,0.06);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-ui);background:var(--bg-deep);
+  background-image:radial-gradient(ellipse at 20% 0%,rgba(0,212,170,0.05) 0%,transparent 60%),
+                   radial-gradient(ellipse at 80% 100%,rgba(240,192,96,0.03) 0%,transparent 60%);
+  color:var(--text-primary);min-height:100vh;padding:0 16px 48px;
+  line-height:1.6;overflow-x:hidden;transition:background .4s,color .4s;
+}
+[data-theme="light"] body{
+  background-image:radial-gradient(ellipse at 20% 0%,rgba(10,158,126,0.04) 0%,transparent 60%),
+                   radial-gradient(ellipse at 80% 100%,rgba(200,150,30,0.03) 0%,transparent 60%);
+}
+.container{max-width:820px;margin:0 auto;padding-top:24px}
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--gold));display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#fff;flex-shrink:0}
+.brand-text{font-family:var(--font-arabic);font-size:1.15rem;font-weight:700}
+.top-actions{display:flex;align-items:center;gap:10px}
+.visitor-counter{display:flex;align-items:center;gap:6px;background:var(--bg-card);border:1px solid var(--border);border-radius:50px;padding:6px 14px;font-size:.75rem;color:var(--text-secondary);font-weight:500}
+.visitor-counter .count{color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
+.theme-toggle{width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--bg-card);color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:var(--transition)}
+.theme-toggle:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+.header{text-align:center;margin-bottom:24px;position:relative}
+.header::after{content:'';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:50px;height:3px;background:linear-gradient(90deg,transparent,var(--accent),transparent);border-radius:2px}
+.header h1{font-family:var(--font-arabic);font-size:clamp(1.6rem,4.5vw,2.3rem);font-weight:700;margin-bottom:4px}
+.header .subtitle{font-size:.8rem;color:var(--text-muted);font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.search-container{position:relative;margin-bottom:20px}
+.search-icon{position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:1rem;pointer-events:none}
+.search-input{width:100%;padding:14px 48px 14px 18px;background:var(--bg-input);border:1px solid var(--border);border-radius:var(--radius);color:var(--text-primary);font-family:var(--font-ui);font-size:.9rem;outline:none;transition:var(--transition);direction:rtl}
+.search-input::placeholder{color:var(--text-muted);font-size:.85rem}
+.search-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-dim)}
+.categories-section{margin-bottom:28px}
+.categories-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.categories-header .label{font-size:.8rem;font-weight:600;color:var(--text-secondary);letter-spacing:.04em}
+.categories-header .show-more{font-size:.78rem;color:var(--accent);cursor:pointer;font-weight:600;background:none;border:none;font-family:var(--font-ui);padding:4px 8px;border-radius:6px;transition:var(--transition)}
+.categories-header .show-more:hover{background:var(--accent-dim)}
+.categories-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.category-btn{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 12px;cursor:pointer;text-align:center;transition:var(--transition);color:var(--text-primary);font-family:var(--font-arabic);font-size:.95rem;font-weight:700;line-height:1.4}
+.category-btn:hover{border-color:var(--accent);background:var(--accent-dim);transform:translateY(-2px)}
+.category-btn.active{border-color:var(--accent);background:var(--accent-dim);color:var(--accent);box-shadow:0 0 0 2px var(--accent-dim)}
+.category-btn .badge{display:block;font-family:var(--font-ui);font-size:.65rem;color:var(--text-muted);font-weight:500;margin-top:4px}
+.category-btn.active .badge{color:var(--accent)}
+.index-section{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;margin-bottom:24px;box-shadow:var(--shadow)}
+.index-header{display:flex;justify-content:space-between;align-items:center;cursor:pointer;user-select:none}
+.index-header h3{font-family:var(--font-arabic);font-size:1.05rem;font-weight:700}
+.index-toggle{color:var(--text-muted);font-size:1rem;transition:transform .3s}
+.index-header.open .index-toggle{transform:rotate(180deg)}
+.index-list{margin-top:14px;display:none;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
+.index-list.open{display:grid}
+.index-item{padding:8px 12px;border-radius:8px;font-size:.82rem;color:var(--text-secondary);cursor:pointer;font-family:var(--font-arabic);border:1px solid transparent;transition:var(--transition)}
+.index-item:hover{background:var(--accent-dim);color:var(--accent);border-color:var(--accent-dim)}
+.global-progress{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;gap:16px;box-shadow:var(--shadow)}
+.progress-ring-container{position:relative;width:48px;height:48px;flex-shrink:0}
+.progress-ring-container svg{transform:rotate(-90deg);width:48px;height:48px}
+.progress-ring-bg{fill:none;stroke:var(--border);stroke-width:5}
+.progress-ring-fill{fill:none;stroke:var(--accent);stroke-width:5;stroke-linecap:round;transition:stroke-dashoffset .6s cubic-bezier(.4,0,.2,1);filter:drop-shadow(0 0 6px var(--accent-glow))}
+.progress-percent{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:var(--accent)}
+.global-progress-info{flex:1}
+.global-progress-info .label{font-size:.75rem;color:var(--text-secondary);font-weight:500}
+.global-progress-info .count{font-size:1rem;font-weight:700}
+.global-progress-info .count span{color:var(--accent)}
+.reset-all-btn{background:transparent;border:1px solid var(--border);color:var(--text-secondary);width:38px;height:38px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition);flex-shrink:0;font-size:1rem}
+.reset-all-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim);transform:rotate(-90deg)}
+.azkar-list{display:flex;flex-direction:column;gap:16px}
+.dhikr-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);transition:var(--transition);position:relative;overflow:hidden;animation:fadeUp .5s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.dhikr-card::before{content:'';position:absolute;top:0;right:0;width:4px;height:100%;background:linear-gradient(180deg,var(--accent),var(--gold));opacity:0;transition:var(--transition)}
+.dhikr-card:hover{border-color:var(--border-light);background:var(--bg-card-hover)}
+.dhikr-card:hover::before{opacity:1}
+.dhikr-card.completed{opacity:.55;border-color:rgba(0,212,170,.12)}
+.dhikr-card.completed::before{opacity:1;background:var(--accent)}
+.dhikr-card.completed .arabic{color:var(--text-muted)}
+.dhikr-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:8px;flex-wrap:wrap}
+.dhikr-index{display:flex;align-items:center;gap:10px}
+.dhikr-number{width:28px;height:28px;border-radius:50%;background:var(--accent-dim);border:1px solid rgba(0,212,170,.2);display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700;color:var(--accent);flex-shrink:0}
+.dhikr-card.completed .dhikr-number{background:rgba(0,212,170,.2);border-color:var(--accent)}
+.dhikr-count-badge{font-size:.7rem;font-weight:600;color:var(--gold);background:var(--gold-dim);border:1px solid rgba(240,192,96,.15);padding:3px 10px;border-radius:20px;white-space:nowrap}
+.dhikr-card.completed .dhikr-count-badge{color:var(--accent);background:var(--accent-dim);border-color:rgba(0,212,170,.15)}
+.arabic{font-family:var(--font-arabic);font-size:clamp(1.1rem,3.2vw,1.4rem);line-height:2.2;text-align:right;direction:rtl;margin-bottom:10px;transition:color .3s;word-spacing:.05em}
+.note{font-size:.78rem;color:var(--text-muted);line-height:1.7;text-align:right;direction:rtl;padding:8px 12px;background:rgba(255,255,255,.02);border-radius:var(--radius-sm);border-right:2px solid var(--border);margin-bottom:14px;font-style:italic}
+.counter-area{display:flex;align-items:center;gap:10px}
+.counter-btn{flex:1;background:transparent;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 18px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:var(--transition);color:var(--text-secondary);font-family:var(--font-ui);font-size:.82rem;font-weight:600;min-height:48px;position:relative;overflow:hidden;user-select:none}
+.counter-btn:hover:not(:disabled){border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+.counter-btn:active:not(:disabled){transform:scale(.97)}
+.counter-btn:disabled{cursor:default;opacity:.4;border-color:rgba(0,212,170,.12);color:var(--accent);background:rgba(0,212,170,.04)}
+.counter-btn .tap-icon{font-size:1rem}
+.counter-btn .counter-text{font-variant-numeric:tabular-nums}
+.counter-btn .remaining{color:var(--accent);font-weight:700;font-size:.95rem}
+.counter-btn .mini-bar{position:absolute;bottom:0;right:0;height:3px;background:var(--accent);transition:width .4s cubic-bezier(.4,0,.2,1);border-radius:0 0 var(--radius-sm) 0}
+.icon-btn{background:transparent;border:1px solid var(--border);color:var(--text-muted);width:48px;height:48px;border-radius:var(--radius-sm);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition);flex-shrink:0;font-size:1rem}
+.reset-card-btn:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-dim);transform:rotate(-90deg)}
+.check-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(10,14,23,.6);backdrop-filter:blur(2px);border-radius:var(--radius);opacity:0;pointer-events:none;transition:opacity .4s;font-size:2.2rem}
+[data-theme="light"] .check-overlay{background:rgba(245,247,251,.6)}
+.dhikr-card.completed .check-overlay{opacity:1}
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--bg-card);border:1px solid var(--accent);color:var(--accent);padding:12px 24px;border-radius:50px;font-size:.82rem;font-weight:600;box-shadow:0 8px 32px rgba(0,212,170,.12);opacity:0;transition:all .5s cubic-bezier(.4,0,.2,1);z-index:1000;pointer-events:none;white-space:nowrap}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+.footer{text-align:center;margin-top:36px;padding:18px;color:var(--text-muted);font-size:.72rem;border-top:1px solid var(--border)}
+.footer .dhikr-done{color:var(--accent);font-weight:600}
+.empty-state{text-align:center;padding:48px 20px;color:var(--text-muted)}
+.empty-state .icon{font-size:2.5rem;margin-bottom:12px}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg-deep)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+::selection{background:rgba(0,212,170,.2)}
+@media(max-width:480px){
+  body{padding:0 10px 40px}
+  .container{padding-top:16px}
+  .dhikr-card{padding:16px;border-radius:16px}
+  .arabic{font-size:1rem;line-height:2}
+  .note{font-size:.72rem;padding:6px 10px}
+  .counter-btn{padding:10px 12px;font-size:.75rem;min-height:44px}
+  .global-progress{padding:12px 14px}
+  .progress-ring-container,.progress-ring-container svg{width:40px;height:40px}
+  .dhikr-count-badge{font-size:.62rem;padding:2px 8px}
+  .dhikr-number{width:24px;height:24px;font-size:.6rem}
+  .categories-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .category-btn{padding:10px 8px;font-size:.82rem}
+  .index-list{grid-template-columns:repeat(2,1fr)}
+  .top-bar{flex-direction:column;align-items:stretch}
+  .top-actions{justify-content:space-between}
+  .icon-btn{width:44px;height:44px;font-size:.9rem}
+}
+@media(max-width:360px){
+  .arabic{font-size:.9rem}
+  .counter-btn{font-size:.7rem}
+  .categories-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="top-bar">
+    <div class="brand"><div class="brand-icon">🕌</div><div class="brand-text">حصن المسلم</div></div>
+    <div class="top-actions">
+      <div class="visitor-counter" title="Visitors"><span>👁️</span><span class="count" id="visitorCount">—</span></div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+    </div>
+  </div>
+  <header class="header">
+    <h1>حصن المسلم</h1>
+    <div class="subtitle">Fortress of the Muslim · من أذكار الكتاب والسنة</div>
+  </header>
+  <div class="search-container">
+    <input type="text" class="search-input" id="searchInput" placeholder="ابحث في الأذكار... (Search)" autocomplete="off">
+    <span class="search-icon">🔍</span>
+  </div>
+  <div class="categories-section">
+    <div class="categories-header">
+      <span class="label">📂 الأقسام (Categories)</span>
+      <button class="show-more" id="showMoreBtn">عرض المزيد ▾</button>
+    </div>
+    <div class="categories-grid" id="categoriesGrid"></div>
+  </div>
+  <div class="index-section">
+    <div class="index-header" id="indexHeader">
+      <h3>📖 الفهرس (Index)</h3><span class="index-toggle">▾</span>
+    </div>
+    <div class="index-list" id="indexList"></div>
+  </div>
+  <div class="global-progress">
+    <div class="progress-ring-container">
+      <svg viewBox="0 0 48 48">
+        <circle class="progress-ring-bg" cx="24" cy="24" r="20"></circle>
+        <circle class="progress-ring-fill" id="progressRing" cx="24" cy="24" r="20" stroke-dasharray="125.66" stroke-dashoffset="125.66"></circle>
+      </svg>
+      <div class="progress-percent" id="progressPercent">0%</div>
+    </div>
+    <div class="global-progress-info">
+      <div class="label">Overall Progress</div>
+      <div class="count"><span id="completedCount">0</span> / <span id="totalCount">0</span> completed</div>
+    </div>
+    <button class="reset-all-btn" id="resetAllBtn" title="Reset all">↻</button>
+  </div>
+  <div class="azkar-list" id="azkarList"></div>
+  <footer class="footer">
+    <p>✨ <span class="dhikr-done" id="footerStatus">جاري التحميل...</span></p>
+    <p style="margin-top:6px;">حصن المسلم · Hisn al-Muslim</p>
+  </footer>
+</div>
+<div class="toast" id="toast">🎉 All azkar completed! May Allah accept your remembrance.</div>
+
+<script>
+(function(){
+'use strict';
+
+/* ============================================================
+   MORNING AZKAR (31)
+   ============================================================ */
+const MORNING = [
+  {id:'m1',arabic:'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255].',note:'من قالها حين يصبح أجير من الجن حتى يمسى.',count:1},
+  {id:'m2',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ هُوَ ٱللَّهُ أَحَدٌ، ٱللَّهُ ٱلصَّمَدُ، لَمْ يَلِدْ وَلَمْ يُولَدْ، وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ.',note:'من قالها حين يصبح وحين يمسى كفته من كل شىء.',count:3},
+  {id:'m3',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ، مِن شَرِّ مَا خَلَقَ، وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ، وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ، وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ.',note:'',count:3},
+  {id:'m4',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ، مَلِكِ ٱلنَّاسِ، إِلَٰهِ ٱلنَّاسِ، مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ، ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ، مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ.',note:'',count:3},
+  {id:'m5',arabic:'أَصْـبَحْنا وَأَصْـبَحَ المُـلْكُ لله وَالحَمدُ لله ، لا إلهَ إلاّ اللّهُ وَحدَهُ لا شَريكَ لهُ، لهُ المُـلكُ ولهُ الحَمْـد، وهُوَ على كلّ شَيءٍ قدير ، رَبِّ أسْـأَلُـكَ خَـيرَ ما في هـذا اليوم وَخَـيرَ ما بَعْـدَه ، وَأَعـوذُ بِكَ مِنْ شَـرِّ ما في هـذا اليوم وَشَرِّ ما بَعْـدَه، رَبِّ أَعـوذُبِكَ مِنَ الْكَسَـلِ وَسـوءِ الْكِـبَر ، رَبِّ أَعـوذُ بِكَ مِنْ عَـذابٍ في النّـارِ وَعَـذابٍ في القَـبْر.',note:'',count:1},
+  {id:'m6',arabic:'اللّهـمَّ أَنْتَ رَبِّـي لا إلهَ إلاّ أَنْتَ ، خَلَقْتَنـي وَأَنا عَبْـدُك ، وَأَنا عَلـى عَهْـدِكَ وَوَعْـدِكَ ما اسْتَـطَعْـت ، أَعـوذُبِكَ مِنْ شَـرِّ ما صَنَـعْت ، أَبـوءُ لَـكَ بِنِعْـمَتِـكَ عَلَـيَّ وَأَبـوءُ بِذَنْـبي فَاغْفـِرْ لي فَإِنَّـهُ لا يَغْـفِرُ الذُّنـوبَ إِلاّ أَنْتَ .',note:'من قالها موقنا بها حين يمسى ومات من ليلته دخل الجنة.',count:1},
+  {id:'m7',arabic:'رَضيـتُ بِاللهِ رَبَّـاً وَبِالإسْلامِ ديـناً وَبِمُحَـمَّدٍ صلى الله عليه وسلم نَبِيّـاً.',note:'من قالها حين يصبح وحين يمسى كان حقا على الله أن يرضيه يوم القيامة.',count:3},
+  {id:'m8',arabic:'اللّهُـمَّ إِنِّـي أَصْبَـحْتُ أُشْـهِدُك ، وَأُشْـهِدُ حَمَلَـةَ عَـرْشِـك ، وَمَلَائِكَتَكَ ، وَجَمـيعَ خَلْـقِك ، أَنَّـكَ أَنْـتَ اللهُ لا إلهَ إلاّ أَنْـتَ وَحْـدَكَ لا شَريكَ لَـك ، وَأَنَّ ُ مُحَمّـداً عَبْـدُكَ وَرَسـولُـك.',note:'من قالها أعتقه الله من النار.',count:4},
+  {id:'m9',arabic:'اللّهُـمَّ ما أَصْبَـَحَ بي مِـنْ نِعْـمَةٍ أَو بِأَحَـدٍ مِـنْ خَلْـقِك ، فَمِـنْكَ وَحْـدَكَ لا شريكَ لَـك ، فَلَـكَ الْحَمْـدُ وَلَـكَ الشُّكْـر.',note:'من قالها حين يصبح أدى شكر يومه.',count:1},
+  {id:'m10',arabic:'حَسْبِـيَ اللّهُ لا إلهَ إلاّ هُوَ عَلَـيهِ تَوَكَّـلتُ وَهُوَ رَبُّ العَرْشِ العَظـيم.',note:'من قالها كفاه الله ما أهمه.',count:7},
+  {id:'m11',arabic:'بِسـمِ اللهِ الذي لا يَضُـرُّ مَعَ اسمِـهِ شَيءٌ في الأرْضِ وَلا في السّمـاءِ وَهـوَ السّمـيعُ العَلـيم.',note:'لم يضره من الله شيء.',count:3},
+  {id:'m12',arabic:'اللّهُـمَّ بِكَ أَصْـبَحْنا وَبِكَ أَمْسَـينا ، وَبِكَ نَحْـيا وَبِكَ نَمُـوتُ وَإِلَـيْكَ النُّـشُور.',note:'',count:1},
+  {id:'m13',arabic:'أَصْبَـحْـنا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ المُشْرِكِينَ.',note:'',count:1},
+  {id:'m14',arabic:'سُبْحـانَ اللهِ وَبِحَمْـدِهِ عَدَدَ خَلْـقِه ، وَرِضـا نَفْسِـه ، وَزِنَـةَ عَـرْشِـه ، وَمِـدادَ كَلِمـاتِـه.',note:'',count:3},
+  {id:'m15',arabic:'اللّهُـمَّ عافِـني في بَدَنـي ، اللّهُـمَّ عافِـني في سَمْـعي ، اللّهُـمَّ عافِـني في بَصَـري ، لا إلهَ إلاّ أَنْـتَ.',note:'',count:3},
+  {id:'m16',arabic:'اللّهُـمَّ إِنّـي أَعـوذُ بِكَ مِنَ الْكُـفر ، وَالفَـقْر ، وَأَعـوذُ بِكَ مِنْ عَذابِ القَـبْر ، لا إلهَ إلاّ أَنْـتَ.',note:'',count:3},
+  {id:'m17',arabic:'اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في الدُّنْـيا وَالآخِـرَة ، اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في ديني وَدُنْـيايَ وَأهْـلي وَمالـي ، اللّهُـمَّ اسْتُـرْ عـوْراتي وَآمِـنْ رَوْعاتـي ، اللّهُـمَّ احْفَظْـني مِن بَـينِ يَدَيَّ وَمِن خَلْفـي وَعَن يَمـيني وَعَن شِمـالي ، وَمِن فَوْقـي ، وَأَعـوذُ بِعَظَمَـتِكَ أَن أُغْـتالَ مِن تَحْتـي.',note:'',count:1},
+  {id:'m18',arabic:'يَا حَيُّ يَا قيُّومُ بِرَحْمَتِكَ أسْتَغِيثُ أصْلِحْ لِي شَأنِي كُلَّهُ وَلاَ تَكِلْنِي إلَى نَفْسِي طَـرْفَةَ عَيْنٍ.',note:'',count:3},
+  {id:'m19',arabic:'أَصْبَـحْـنا وَأَصْبَـحَ المُـلكُ للهِ رَبِّ العـالَمـين ، اللّهُـمَّ إِنِّـي أسْـأَلُـكَ خَـيْرَ هـذا الـيَوْم ، فَـتْحَهُ ، وَنَصْـرَهُ ، وَنـورَهُ وَبَـرَكَتَـهُ ، وَهُـداهُ ، وَأَعـوذُ بِـكَ مِـنْ شَـرِّ ما فـيهِ وَشَـرِّ ما بَعْـدَه.',note:'',count:1},
+  {id:'m20',arabic:'اللّهُـمَّ عالِـمَ الغَـيْبِ وَالشّـهادَةِ فاطِـرَ السّماواتِ وَالأرْضِ رَبَّ كـلِّ شَـيءٍ وَمَليـكَه ، أَشْهَـدُ أَنْ لا إِلـهَ إِلاّ أَنْت ، أَعـوذُ بِكَ مِن شَـرِّ نَفْسـي وَمِن شَـرِّ الشَّيْـطانِ وَشِرْكِهِ ، وَأَنْ أَقْتَـرِفَ عَلـى نَفْسـي سوءاً أَوْ أَجُـرَّهُ إِلـى مُسْـلِم.',note:'',count:1},
+  {id:'m21',arabic:'أَعـوذُ بِكَلِمـاتِ اللّهِ التّـامّـاتِ مِنْ شَـرِّ ما خَلَـق.',note:'',count:3},
+  {id:'m22',arabic:'اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ على نَبِيِّنَا مُحمَّد.',note:'من صلى على حين يصبح وحين يمسى ادركته شفاعتى.',count:10},
+  {id:'m23',arabic:'اللَّهُمَّ إِنَّا نَعُوذُ بِكَ مِنْ أَنْ نُشْرِكَ بِكَ شَيْئًا نَعْلَمُهُ ، وَنَسْتَغْفِرُكَ لِمَا لَا نَعْلَمُهُ.',note:'',count:3},
+  {id:'m24',arabic:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ الْهَمِّ وَالْحَزَنِ، وَأَعُوذُ بِكَ مِنْ الْعَجْزِ وَالْكَسَلِ، وَأَعُوذُ بِكَ مِنْ الْجُبْنِ وَالْبُخْلِ، وَأَعُوذُ بِكَ مِنْ غَلَبَةِ الدَّيْنِ، وَقَهْرِ الرِّجَالِ.',note:'',count:3},
+  {id:'m25',arabic:'أسْتَغْفِرُ اللهَ العَظِيمَ الَّذِي لاَ إلَهَ إلاَّ هُوَ، الحَيُّ القَيُّومُ، وَأتُوبُ إلَيهِ.',note:'',count:3},
+  {id:'m26',arabic:'يَا رَبِّ , لَكَ الْحَمْدُ كَمَا يَنْبَغِي لِجَلَالِ وَجْهِكَ , وَلِعَظِيمِ سُلْطَانِكَ.',note:'',count:3},
+  {id:'m27',arabic:'اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلًا مُتَقَبَّلًا.',note:'',count:1},
+  {id:'m28',arabic:'اللَّهُمَّ أَنْتَ رَبِّي لا إِلَهَ إِلا أَنْتَ ، عَلَيْكَ تَوَكَّلْتُ ، وَأَنْتَ رَبُّ الْعَرْشِ الْعَظِيمِ , مَا شَاءَ اللَّهُ كَانَ ، وَمَا لَمْ يَشَأْ لَمْ يَكُنْ ، وَلا حَوْلَ وَلا قُوَّةَ إِلا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ , أَعْلَمُ أَنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ ، وَأَنَّ اللَّهَ قَدْ أَحَاطَ بِكُلِّ شَيْءٍ عِلْمًا , اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي ، وَمِنْ شَرِّ كُلِّ دَابَّةٍ أَنْتَ آخِذٌ بِنَاصِيَتِهَا ، إِنَّ رَبِّي عَلَى صِرَاطٍ مُسْتَقِيمٍ.',note:'ذكر طيب.',count:1},
+  {id:'m29',arabic:'لَا إلَه إلّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءِ قَدِيرِ.',note:'كانت له عدل عشر رقاب، وكتبت له مئة حسنة، ومحيت عنه مئة سيئة.',count:100},
+  {id:'m30',arabic:'سُبْحـانَ اللهِ وَبِحَمْـدِهِ.',note:'حُطَّتْ خَطَايَاهُ وَإِنْ كَانَتْ مِثْلَ زَبَدِ الْبَحْرِ.',count:100},
+  {id:'m31',arabic:'أسْتَغْفِرُ اللهَ وَأتُوبُ إلَيْهِ.',note:'مائة حسنة، ومُحيت عنه مائة سيئة.',count:100}
+];
+
+/* ============================================================
+   EVENING AZKAR (30)
+   ============================================================ */
+const EVENING = [
+  {id:'e1',arabic:'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255].',note:'من قالها حين يمسى أجير من الجن حتى يصبح.',count:1},
+  {id:'e2',arabic:'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِنْ رُسُلِهِ ۚ وَقَالُوا سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ. لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ رَبَّنَا لَا تُؤَاخِذْنَا إِنْ نَّسِينَآ أَوْ أَخْطَأْنَا رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِنْ قَبْلِنَا رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا أَنْتَ مَوْلَانَا فَانْصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ. [البقرة 285 - 286].',note:'من قرأ آيتين من آخر سورة البقرة في ليلة كفتاه.',count:1},
+  {id:'e3',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ هُوَ ٱللَّهُ أَحَدٌ، ٱللَّهُ ٱلصَّمَدُ، لَمْ يَلِدْ وَلَمْ يُولَدْ، وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ.',note:'من قالها حين يصبح وحين يمسى كفته من كل شىء.',count:3},
+  {id:'e4',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ، مِن شَرِّ مَا خَلَقَ، وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ، وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ، وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ.',note:'',count:3},
+  {id:'e5',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ، مَلِكِ ٱلنَّاسِ، إِلَٰهِ ٱلنَّاسِ، مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ، ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ، مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ.',note:'',count:3},
+  {id:'e6',arabic:'أَمْسَيْـنا وَأَمْسـى المـلكُ لله وَالحَمدُ لله ، لا إلهَ إلاّ اللّهُ وَحدَهُ لا شَريكَ لهُ، لهُ المُـلكُ ولهُ الحَمْـد، وهُوَ على كلّ شَيءٍ قدير ، رَبِّ أسْـأَلُـكَ خَـيرَ ما في هـذهِ اللَّـيْلَةِ وَخَـيرَ ما بَعْـدَهـا ، وَأَعـوذُ بِكَ مِنْ شَـرِّ ما في هـذهِ اللَّـيْلةِ وَشَرِّ ما بَعْـدَهـا ، رَبِّ أَعـوذُبِكَ مِنَ الْكَسَـلِ وَسـوءِ الْكِـبَر ، رَبِّ أَعـوذُ بِكَ مِنْ عَـذابٍ في النّـارِ وَعَـذابٍ في القَـبْر.',note:'',count:1},
+  {id:'e7',arabic:'اللّهـمَّ أَنْتَ رَبِّـي لا إلهَ إلاّ أَنْتَ ، خَلَقْتَنـي وَأَنا عَبْـدُك ، وَأَنا عَلـى عَهْـدِكَ وَوَعْـدِكَ ما اسْتَـطَعْـت ، أَعـوذُبِكَ مِنْ شَـرِّ ما صَنَـعْت ، أَبـوءُ لَـكَ بِنِعْـمَتِـكَ عَلَـيَّ وَأَبـوءُ بِذَنْـبي فَاغْفـِرْ لي فَإِنَّـهُ لا يَغْـفِرُ الذُّنـوبَ إِلاّ أَنْتَ .',note:'من قالها موقنا بها حين يمسى ومات من ليلته دخل الجنة.',count:1},
+  {id:'e8',arabic:'رَضيـتُ بِاللهِ رَبَّـاً وَبِالإسْلامِ ديـناً وَبِمُحَـمَّدٍ صلى الله عليه وسلم نَبِيّـاً.',note:'من قالها حين يصبح وحين يمسى كان حقا على الله أن يرضيه يوم القيامة.',count:3},
+  {id:'e9',arabic:'اللّهُـمَّ إِنِّـي أَمسيتُ أُشْـهِدُك ، وَأُشْـهِدُ حَمَلَـةَ عَـرْشِـك ، وَمَلَائِكَتَكَ ، وَجَمـيعَ خَلْـقِك ، أَنَّـكَ أَنْـتَ اللهُ لا إلهَ إلاّ أَنْـتَ وَحْـدَكَ لا شَريكَ لَـك ، وَأَنَّ ُ مُحَمّـداً عَبْـدُكَ وَرَسـولُـك.',note:'من قالها أعتقه الله من النار.',count:4},
+  {id:'e10',arabic:'اللّهُـمَّ ما أَمسى بي مِـنْ نِعْـمَةٍ أَو بِأَحَـدٍ مِـنْ خَلْـقِك ، فَمِـنْكَ وَحْـدَكَ لا شريكَ لَـك ، فَلَـكَ الْحَمْـدُ وَلَـكَ الشُّكْـر.',note:'من قالها حين يمسى أدى شكر يومه.',count:1},
+  {id:'e11',arabic:'حَسْبِـيَ اللّهُ لا إلهَ إلاّ هُوَ عَلَـيهِ تَوَكَّـلتُ وَهُوَ رَبُّ العَرْشِ العَظـيم.',note:'من قالها كفاه الله ما أهمه.',count:7},
+  {id:'e12',arabic:'بِسـمِ اللهِ الذي لا يَضُـرُّ مَعَ اسمِـهِ شَيءٌ في الأرْضِ وَلا في السّمـاءِ وَهـوَ السّمـيعُ العَلـيم.',note:'لم يضره من الله شيء.',count:3},
+  {id:'e13',arabic:'اللّهُـمَّ بِكَ أَمْسَـينا وَبِكَ أَصْـبَحْنا، وَبِكَ نَحْـيا وَبِكَ نَمُـوتُ وَإِلَـيْكَ الْمَصِيرُ.',note:'',count:1},
+  {id:'e14',arabic:'أَمْسَيْنَا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ المُشْرِكِينَ.',note:'',count:1},
+  {id:'e15',arabic:'سُبْحـانَ اللهِ وَبِحَمْـدِهِ عَدَدَ خَلْـقِه ، وَرِضـا نَفْسِـه ، وَزِنَـةَ عَـرْشِـه ، وَمِـدادَ كَلِمـاتِـه.',note:'',count:3},
+  {id:'e16',arabic:'اللّهُـمَّ عافِـني في بَدَنـي ، اللّهُـمَّ عافِـني في سَمْـعي ، اللّهُـمَّ عافِـني في بَصَـري ، لا إلهَ إلاّ أَنْـتَ.',note:'',count:3},
+  {id:'e17',arabic:'اللّهُـمَّ إِنّـي أَعـوذُ بِكَ مِنَ الْكُـفر ، وَالفَـقْر ، وَأَعـوذُ بِكَ مِنْ عَذابِ القَـبْر ، لا إلهَ إلاّ أَنْـتَ.',note:'',count:3},
+  {id:'e18',arabic:'اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في الدُّنْـيا وَالآخِـرَة ، اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في ديني وَدُنْـيايَ وَأهْـلي وَمالـي ، اللّهُـمَّ اسْتُـرْ عـوْراتي وَآمِـنْ رَوْعاتـي ، اللّهُـمَّ احْفَظْـني مِن بَـينِ يَدَيَّ وَمِن خَلْفـي وَعَن يَمـيني وَعَن شِمـالي ، وَمِن فَوْقـي ، وَأَعـوذُ بِعَظَمَـتِكَ أَن أُغْـتالَ مِن تَحْتـي.',note:'',count:1},
+  {id:'e19',arabic:'يَا حَيُّ يَا قيُّومُ بِرَحْمَتِكَ أسْتَغِيثُ أصْلِحْ لِي شَأنِي كُلَّهُ وَلاَ تَكِلْنِي إلَى نَفْسِي طَـرْفَةَ عَيْنٍ.',note:'',count:3},
+  {id:'e20',arabic:'أَمْسَيْنا وَأَمْسَى الْمُلْكُ للهِ رَبِّ الْعَالَمَيْنِ، اللَّهُمَّ إِنَّي أسْأَلُكَ خَيْرَ هَذَه اللَّيْلَةِ فَتْحَهَا ونَصْرَهَا، ونُوْرَهَا وبَرَكَتهَا، وَهُدَاهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فيهِا وَشَرَّ مَا بَعْدَهَا.',note:'',count:1},
+  {id:'e21',arabic:'اللّهُـمَّ عالِـمَ الغَـيْبِ وَالشّـهادَةِ فاطِـرَ السّماواتِ وَالأرْضِ رَبَّ كـلِّ شَـيءٍ وَمَليـكَه ، أَشْهَـدُ أَنْ لا إِلـهَ إِلاّ أَنْت ، أَعـوذُ بِكَ مِن شَـرِّ نَفْسـي وَمِن شَـرِّ الشَّيْـطانِ وَشِرْكِهِ ، وَأَنْ أَقْتَـرِفَ عَلـى نَفْسـي سوءاً أَوْ أَجُـرَّهُ إِلـى مُسْـلِم.',note:'',count:1},
+  {id:'e22',arabic:'أَعـوذُ بِكَلِمـاتِ اللّهِ التّـامّـاتِ مِنْ شَـرِّ ما خَلَـق.',note:'',count:3},
+  {id:'e23',arabic:'اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ على نَبِيِّنَا مُحمَّد.',note:'من صلى على حين يصبح وحين يمسى ادركته شفاعتى.',count:10},
+  {id:'e24',arabic:'اللَّهُمَّ إِنَّا نَعُوذُ بِكَ مِنْ أَنْ نُشْرِكَ بِكَ شَيْئًا نَعْلَمُهُ ، وَنَسْتَغْفِرُكَ لِمَا لَا نَعْلَمُهُ.',note:'',count:3},
+  {id:'e25',arabic:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ الْهَمِّ وَالْحَزَنِ، وَأَعُوذُ بِكَ مِنْ الْعَجْزِ وَالْكَسَلِ، وَأَعُوذُ بِكَ مِنْ الْجُبْنِ وَالْبُخْلِ، وَأَعُوذُ بِكَ مِنْ غَلَبَةِ الدَّيْنِ، وَقَهْرِ الرِّجَالِ.',note:'',count:3},
+  {id:'e26',arabic:'أسْتَغْفِرُ اللهَ العَظِيمَ الَّذِي لاَ إلَهَ إلاَّ هُوَ، الحَيُّ القَيُّومُ، وَأتُوبُ إلَيهِ.',note:'',count:3},
+  {id:'e27',arabic:'يَا رَبِّ , لَكَ الْحَمْدُ كَمَا يَنْبَغِي لِجَلَالِ وَجْهِكَ , وَلِعَظِيمِ سُلْطَانِكَ.',note:'',count:3},
+  {id:'e28',arabic:'لَا إلَه إلّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءِ قَدِيرِ.',note:'كانت له عدل عشر رقاب.',count:100},
+  {id:'e29',arabic:'اللَّهُمَّ أَنْتَ رَبِّي لا إِلَهَ إِلا أَنْتَ ، عَلَيْكَ تَوَكَّلْتُ ، وَأَنْتَ رَبُّ الْعَرْشِ الْعَظِيمِ , مَا شَاءَ اللَّهُ كَانَ ، وَمَا لَمْ يَشَأْ لَمْ يَكُنْ.',note:'ذكر طيب.',count:1},
+  {id:'e30',arabic:'سُبْحـانَ اللهِ وَبِحَمْـدِهِ.',note:'حُطَّتْ خَطَايَاهُ.',count:100}
+];
+
+/* ============================================================
+   REMAINING 67 CATEGORIES
+   ============================================================ */
+const OTHER_CATS = [
+  {id:'sleep',name:'أذكار النوم',nameEn:'Sleeping',azkar:[
+    {id:'sl1',arabic:'بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبِي، وَبِكَ أَرْفَعُهُ، فَإِنْ أَمْسَكْتَ نَفْسِي فَارْحَمْهَا، وَإِنْ أَرْسَلْتَهَا فَاحْفَظْهَا.',note:'',count:1},
+    {id:'sl2',arabic:'اللَّهُمَّ قِنِي عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ.',note:'',count:3},
+    {id:'sl3',arabic:'بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا.',note:'',count:1},
+    {id:'sl4',arabic:'سُبْحَانَ اللَّهِ (33) الْحَمْدُ لِلَّهِ (33) اللَّهُ أَكْبَرُ (34)',note:'',count:33},
+    {id:'sl5',arabic:'اللَّهُمَّ أَسْلَمْتُ نَفْسِي إِلَيْكَ، وَوَجَّهْتُ وَجْهِي إِلَيْكَ، وَفَوَّضْتُ أَمْرِي إِلَيْكَ، وَأَلْجَأْتُ ظَهْرِي إِلَيْكَ.',note:'',count:1}
+  ]},
+  {id:'waking',name:'أذكار الاستيقاظ',nameEn:'Waking Up',azkar:[
+    {id:'wk1',arabic:'الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ.',note:'',count:1},
+    {id:'wk2',arabic:'لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.',note:'',count:1}
+  ]},
+  {id:'toilet_enter',name:'دعاء دخول الخلاء',nameEn:'Entering Toilet',azkar:[
+    {id:'t1',arabic:'[بِسْمِ اللهِ] اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ.',note:'',count:1}
+  ]},
+  {id:'toilet_exit',name:'دعاء الخروج من الخلاء',nameEn:'Leaving Toilet',azkar:[
+    {id:'t2',arabic:'غُفْرَانَكَ.',note:'',count:1}
+  ]},
+  {id:'wudu_before',name:'الذكر قبل الوضوء',nameEn:'Before Wudu',azkar:[
+    {id:'t3',arabic:'بِسْمِ اللهِ.',note:'',count:1}
+  ]},
+  {id:'wudu_after',name:'الذكر بعد الوضوء',nameEn:'After Wudu',azkar:[
+    {id:'t4',arabic:'أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ.',note:'',count:1},
+    {id:'t4b',arabic:'اللَّهُمَّ اجْعَلْنِي مِنَ التَّوَّابِينَ وَاجْعَلْنِي مِنَ الْمُتَطَهِّرِينَ.',note:'',count:1},
+    {id:'t4c',arabic:'سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا أَنْتَ، أَسْتَغْفِرُكَ وَأَتُوبُ إِلَيْكَ.',note:'',count:1}
+  ]},
+  {id:'home_exit',name:'الذكر عند الخروج من المنزل',nameEn:'Leaving Home',azkar:[
+    {id:'t5',arabic:'بِسْمِ اللهِ، تَوَكَّلْتُ عَلَى اللهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللهِ.',note:'',count:1},
+    {id:'t5b',arabic:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ أَنْ أَضِلَّ، أَوْ أُضَلَّ، أَوْ أَزِلَّ، أَوْ أُزَلَّ، أَوْ أَظْلِمَ، أَوْ أُظْلَمَ، أَوْ أَجْهَلَ، أَوْ يُجْهَلَ عَلَيَّ.',note:'',count:1}
+  ]},
+  {id:'home_enter',name:'الذكر عند دخول المنزل',nameEn:'Entering Home',azkar:[
+    {id:'t6',arabic:'بِسْمِ اللهِ وَلَجْنَا، وَبِسْمِ اللهِ خَرَجْنَا، وَعَلَى اللهِ رَبِّنَا تَوَكَّلْنَا.',note:'',count:1}
+  ]},
+  {id:'mosque_go',name:'دعاء الذهاب إلى المسجد',nameEn:'Going to Mosque',azkar:[
+    {id:'t7',arabic:'اللَّهُمَّ اجْعَلْ فِي قَلْبِي نُورًا، وَفِي لِسَانِي نُورًا، وَاجْعَلْ فِي سَمْعِي نُورًا، وَاجْعَلْ فِي بَصَرِي نُورًا.',note:'',count:1}
+  ]},
+  {id:'mosque_enter',name:'دعاء دخول المسجد',nameEn:'Entering Mosque',azkar:[
+    {id:'t8',arabic:'اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ.',note:'',count:1}
+  ]},
+  {id:'mosque_exit',name:'دعاء الخروج من المسجد',nameEn:'Leaving Mosque',azkar:[
+    {id:'t9',arabic:'اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ.',note:'',count:1}
+  ]},
+  {id:'adhan',name:'أذكار الآذان',nameEn:'Adhan',azkar:[
+    {id:'t10',arabic:'اللَّهُمَّ رَبَّ هَذِهِ الدَّعْوَةِ التَّامَّةِ، وَالصَّلَاةِ الْقَائِمَةِ، آتِ مُحَمَّدًا الْوَسِيلَةَ وَالْفَضِيلَةَ، وَابْعَثْهُ مَقَامًا مَحْمُودًا الَّذِي وَعَدْتَهُ.',note:'',count:1}
+  ]},
+  {id:'clothing',name:'دعاء لبس الثوب',nameEn:'Wearing Clothes',azkar:[
+    {id:'tcl1',arabic:'الْحَمْدُ لِلَّهِ الَّذِي كَسَانِي هَذَا الثَّوْبَ وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ.',note:'',count:1}
+  ]},
+  {id:'newclothing',name:'دعاء لبس الثوب الجديد',nameEn:'New Clothes',azkar:[
+    {id:'tcl2',arabic:'اللَّهُمَّ لَكَ الْحَمْدُ أَنْتَ كَسَوْتَنِيهِ، أَسْأَلُكَ مِنْ خَيْرِهِ وَخَيْرِ مَا صُنِعَ لَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّهِ وَشَرِّ مَا صُنِعَ لَهُ.',note:'',count:1}
+  ]},
+  {id:'newclothing_other',name:'الدعاء لمن لبس ثوبًا جديدًا',nameEn:'For New Clothes',azkar:[
+    {id:'tcl3',arabic:'تُبْلِي وَيُخْلِفُ اللهُ تَعَالَى.',note:'',count:1}
+  ]},
+  {id:'undress',name:'ما يقول إذا وضع ثوبه',nameEn:'Undressing',azkar:[
+    {id:'tcl4',arabic:'بِسْمِ اللهِ.',note:'',count:1}
+  ]},
+  {id:'istiftah',name:'دعاء الاستفتاح',nameEn:'Opening Prayer',azkar:[
+    {id:'t11',arabic:'سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، وَتَبَارَكَ اسْمُكَ، وَتَعَالَى جَدُّكَ، وَلَا إِلَهَ غَيْرَكَ.',note:'',count:1},
+    {id:'t11b',arabic:'وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَاوَاتِ وَالْأَرْضَ حَنِيفًا وَمَا أَنَا مِنَ الْمُشْرِكِينَ.',note:'',count:1}
+  ]},
+  {id:'rukua',name:'دعاء الركوع',nameEn:'Bowing',azkar:[
+    {id:'t12',arabic:'سُبْحَانَ رَبِّيَ الْعَظِيمِ.',note:'ثلاثاً',count:3}
+  ]},
+  {id:'rising',name:'دعاء الرفع من الركوع',nameEn:'Rising',azkar:[
+    {id:'t13',arabic:'سَمِعَ اللهُ لِمَنْ حَمِدَهُ.',note:'',count:1},
+    {id:'t13b',arabic:'رَبَّنَا وَلَكَ الْحَمْدُ، حَمْدًا كَثِيرًا طَيِّبًا مُبَارَكًا فِيهِ.',note:'',count:1}
+  ]},
+  {id:'sujud',name:'دعاء السجود',nameEn:'Prostration',azkar:[
+    {id:'t14',arabic:'سُبْحَانَ رَبِّيَ الْأَعْلَى.',note:'ثلاثاً',count:3}
+  ]},
+  {id:'between',name:'دعاء الجلسة بين السجدتين',nameEn:'Between Sujud',azkar:[
+    {id:'t15',arabic:'رَبِّ اغْفِرْ لِي، رَبِّ اغْفِرْ لِي.',note:'',count:2}
+  ]},
+  {id:'sujud_tilawa',name:'دعاء سجود التلاوة',nameEn:'Prostration of Recitation',azkar:[
+    {id:'t14b',arabic:'سَجَدَ وَجْهِي لِلَّذِي خَلَقَهُ، وَشَقَّ سَمْعَهُ وَبَصَرَهُ، بِحَوْلِهِ وَقُوَّتِهِ.',note:'',count:1}
+  ]},
+  {id:'tashahhud',name:'التشهد',nameEn:'Tashahhud',azkar:[
+    {id:'t16',arabic:'التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ اللهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ.',note:'',count:1}
+  ]},
+  {id:'salawat',name:'الصلاة على النبي بعد التشهد',nameEn:'Salawat',azkar:[
+    {id:'t17',arabic:'اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ.',note:'',count:1}
+  ]},
+  {id:'before_salam',name:'الدعاء بعد التشهد الأخير',nameEn:'Before Salam',azkar:[
+    {id:'t18',arabic:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، وَمِنْ عَذَابِ جَهَنَّمَ، وَمِنْ فِتْنَةِ الْمَحْيَا وَالْمَمَاتِ، وَمِنْ شَرِّ فِتْنَةِ الْمَسِيحِ الدَّجَّالِ.',note:'',count:1}
+  ]},
+  {id:'after_salah',name:'الأذكار بعد السلام من الصلاة',nameEn:'After Prayer',azkar:[
+    {id:'t19',arabic:'أَسْتَغْفِرُ اللَّهَ (ثلاثاً) اللَّهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ، تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ.',note:'',count:1},
+    {id:'t19b',arabic:'لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.',note:'',count:1},
+    {id:'t19c',arabic:'سُبْحَانَ اللَّهِ (33) الْحَمْدُ لِلَّهِ (33) اللَّهُ أَكْبَرُ (33)',note:'',count:33},
+    {id:'t19d',arabic:'اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ.',note:'',count:1}
+  ]},
+  {id:'istikhara',name:'دعاء صلاة الاستخارة',nameEn:'Istikhara',azkar:[
+    {id:'t20',arabic:'اللَّهُمَّ إِنِّي أَسْتَخِيرُكَ بِعِلْمِكَ، وَأَسْتَقْدِرُكَ بِقُدْرَتِكَ، وَأَسْأَلُكَ مِنْ فَضْلِكَ الْعَظِيمِ.',note:'',count:1}
+  ]},
+  {id:'turning',name:'الدعاء إذا تقلب ليلا',nameEn:'Turning at Night',azkar:[
+    {id:'t21',arabic:'لَا إِلَهَ إِلَّا اللهُ الْوَاحِدُ الْقَهَّارُ، رَبُّ السَّمَاوَاتِ وَالْأَرْضِ وَمَا بَيْنَهُمَا الْعَزِيزُ الْغَفَّارُ.',note:'',count:1}
+  ]},
+  {id:'night_fear',name:'دعاء الفزع في النوم',nameEn:'Fear at Night',azkar:[
+    {id:'t22',arabic:'أَعُوذُ بِكَلِمَاتِ اللهِ التَّامَّاتِ مِنْ غَضَبِهِ وَعِقَابِهِ، وَشَرِّ عِبَادِهِ، وَمِنْ هَمَزَاتِ الشَّيَاطِينِ وَأَنْ يَحْضُرُونِ.',note:'',count:1}
+  ]},
+  {id:'dream',name:'ما يفعل من رأى الرؤيا',nameEn:'Dreams',azkar:[
+    {id:'t23',arabic:'أَعُوذُ بِاللهِ مِنَ الشَّيْطَانِ وَمِنْ شَرِّ مَا رَأَيْتُ (ثم يتفل عن يساره ثلاثاً).',note:'',count:1}
+  ]},
+  {id:'witr_qunut',name:'دعاء قنوت الوتر',nameEn:'Witr Qunut',azkar:[
+    {id:'t24',arabic:'اللَّهُمَّ اهْدِنِي فِيمَنْ هَدَيْتَ، وَعَافِنِي فِيمَنْ عَافَيْتَ، وَتَوَلَّنِي فِيمَنْ تَوَلَّيْتَ، وَبَارِكْ لِي فِيمَا أَعْطَيْتَ، وَقِنِي شَرَّ مَا قَضَيْتَ.',note:'',count:1}
+  ]},
+  {id:'witr_after',name:'الذكر عقب السلام من الوتر',nameEn:'After Witr',azkar:[
+    {id:'t25',arabic:'سُبْحَانَ الْمَلِكِ الْقُدُّوسِ.',note:'ثلاثاً',count:3}
+  ]},
+  {id:'sorrow',name:'دعاء الهم والحزن',nameEn:'Sorrow',azkar:[
+    {id:'t26',arabic:'اللَّهُمَّ إِنِّي عَبْدُكَ، وَابْنُ عَبْدِكَ، وَابْنُ أَمَتِكَ، نَاصِيَتِي بِيَدِكَ، مَاضٍ فِيَّ حُكْمُكَ، عَدْلٌ فِيَّ قَضَاؤُكَ.',note:'',count:1}
+  ]},
+  {id:'distress',name:'دعاء الكرب',nameEn:'Distress',azkar:[
+    {id:'t27',arabic:'لَا إِلَهَ إِلَّا اللهُ الْعَظِيمُ الْحَلِيمُ، لَا إِلَهَ إِلَّا اللهُ رَبُّ الْعَرْشِ الْعَظِيمِ.',note:'',count:1}
+  ]},
+  {id:'enemy',name:'دعاء لقاء العدو وذي السلطان',nameEn:'Meeting Enemy',azkar:[
+    {id:'t28',arabic:'اللَّهُمَّ إِنَّا نَجْعَلُكَ فِي نُحُورِهِمْ، وَنَعُوذُ بِكَ مِنْ شُرُورِهِمْ.',note:'',count:1}
+  ]},
+  {id:'tyrant',name:'دعاء من خاف ظلم السلطان',nameEn:'Fear of Tyrant',azkar:[
+    {id:'t29',arabic:'اللَّهُمَّ إِنَّا نَجْعَلُكَ فِي نُحُورِهِمْ، وَنَعُوذُ بِكَ مِنْ شُرُورِهِمْ.',note:'',count:1}
+  ]},
+  {id:'enemy_curse',name:'الدعاء على العدو',nameEn:'Curse on Enemy',azkar:[
+    {id:'t30',arabic:'اللَّهُمَّ مُنْزِلَ الْكِتَابِ، سَرِيعَ الْحِسَابِ، اهْزِمِ الْأَحْزَابَ، اللَّهُمَّ اهْزِمْهُمْ وَزَلْزِلْهُمْ.',note:'',count:1}
+  ]},
+  {id:'fear_people',name:'ما يقول من خاف قوما',nameEn:'Fear of People',azkar:[
+    {id:'t31',arabic:'اللَّهُمَّ إِنَّا نَجْعَلُكَ فِي نُحُورِهِمْ، وَنَعُوذُ بِكَ مِنْ شُرُورِهِمْ.',note:'',count:1}
+  ]},
+  {id:'waswas_iman',name:'دعاء من أصابه وسوسة في الإيمان',nameEn:'Whispers in Faith',azkar:[
+    {id:'t32',arabic:'آمَنْتُ بِاللهِ وَرُسُلِهِ.',note:'',count:1}
+  ]},
+  {id:'debt',name:'دعاء قضاء الدين',nameEn:'Debt',azkar:[
+    {id:'t33',arabic:'اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ.',note:'',count:1}
+  ]},
+  {id:'waswas_prayer',name:'دعاء الوسوسة في الصلاة والقراءة',nameEn:'Whispers in Prayer',azkar:[
+    {id:'t34',arabic:'أَعُوذُ بِاللهِ مِنَ الشَّيْطَانِ الرَّجِيمِ (ثم يتفل عن يساره ثلاثاً).',note:'',count:1}
+  ]},
+  {id:'hard_matter',name:'دعاء من استصعب عليه أمر',nameEn:'Hard Matter',azkar:[
+    {id:'t35',arabic:'اللَّهُمَّ لَا سَهْلَ إِلَّا مَا جَعَلْتَهُ سَهْلًا، وَأَنْتَ تَجْعَلُ الْحَزْنَ إِذَا شِئْتَ سَهْلًا.',note:'',count:1}
+  ]},
+  {id:'sin',name:'ما يقول ويفعل من أذنب ذنبا',nameEn:'After Sin',azkar:[
+    {id:'t36',arabic:'مَا مِنْ عَبْدٍ يُذْنِبُ ذَنْبًا فَيُحْسِنُ الطُّهُورَ، ثُمَّ يَقُومُ فَيُصَلِّي رَكْعَتَيْنِ، ثُمَّ يَسْتَغْفِرُ اللهَ، إِلَّا غَفَرَ اللهُ لَهُ.',note:'',count:1}
+  ]},
+  {id:'shaytan',name:'دعاء طرد الشيطان ووساوسه',nameEn:'Driving Away Shaytan',azkar:[
+    {id:'t37',arabic:'أَعُوذُ بِاللهِ مِنَ الشَّيْطَانِ الرَّجِيمِ.',note:'',count:1}
+  ]},
+  {id:'displeasure',name:'الدعاء حينما يقع ما لا يرضاه',nameEn:'Displeasure',azkar:[
+    {id:'t38',arabic:'قَدَرُ اللهِ وَمَا شَاءَ فَعَلَ.',note:'',count:1}
+  ]},
+  {id:'newborn',name:'تهنئة المولود له وجوابه',nameEn:'Newborn',azkar:[
+    {id:'t39',arabic:'بَارَكَ اللهُ لَكَ فِي الْمَوْهُوبِ لَكَ، وَشَكَرْتَ الْوَاهِبَ، وَبَلَغَ أَشُدَّهُ، وَرُزِقْتَ بِرَّهُ.',note:'',count:1}
+  ]},
+  {id:'children_protection',name:'ما يعوذ به الأولاد',nameEn:'Protecting Children',azkar:[
+    {id:'t40',arabic:'أُعِيذُكُمَا بِكَلِمَاتِ اللهِ التَّامَّةِ، مِنْ كُلِّ شَيْطَانٍ وَهَامَّةٍ، وَمِنْ كُلِّ عَيْنٍ لَامَّةٍ.',note:'',count:1}
+  ]},
+  {id:'sick_visit',name:'الدعاء للمريض في عيادته',nameEn:'Visiting the Sick',azkar:[
+    {id:'t41',arabic:'أَسْأَلُ اللهَ الْعَظِيمَ رَبَّ الْعَرْشِ الْعَظِيمِ أَنْ يَشْفِيَكَ.',note:'سبع مرات',count:7}
+  ]},
+  {id:'sick_reward',name:'فضل عيادة المريض',nameEn:'Reward of Visiting Sick',azkar:[
+    {id:'t42',arabic:'(دعاء عام للمريض)',note:'',count:1}
+  ]},
+  {id:'dying',name:'دعاء المريض الذي يئس من حياته',nameEn:'The Dying Patient',azkar:[
+    {id:'t43',arabic:'اللَّهُمَّ اغْفِرْ لِي وَارْحَمْنِي وَأَلْحِقْنِي بِالرَّفِيقِ الْأَعْلَى.',note:'',count:1}
+  ]},
+  {id:'talqeen',name:'تلقين المحتضر',nameEn:'Talqeen',azkar:[
+    {id:'t44',arabic:'لَا إِلَهَ إِلَّا اللهُ.',note:'',count:1}
+  ]},
+  {id:'calamity',name:'دعاء من أصيب بمصيبة',nameEn:'Calamity',azkar:[
+    {id:'t45',arabic:'إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ، اللَّهُمَّ أْجُرْنِي فِي مُصِيبَتِي، وَأَخْلِفْ لِي خَيْرًا مِنْهَا.',note:'',count:1}
+  ]},
+  {id:'eyes_closed',name:'الدعاء عند إغماض الميت',nameEn:'Closing Eyes',azkar:[
+    {id:'t46',arabic:'اللَّهُمَّ اغْفِرْ لِفُلَانٍ وَارْفَعْ دَرَجَتَهُ فِي الْمَهْدِيِّينَ.',note:'',count:1}
+  ]},
+  {id:'funeral_prayer',name:'الدعاء للميت في الصلاة عليه',nameEn:'Funeral Prayer',azkar:[
+    {id:'t47',arabic:'اللَّهُمَّ اغْفِرْ لِحَيِّنَا وَمَيِّتِنَا، وَشَاهِدِنَا وَغَائِبِنَا، وَصَغِيرِنَا وَكَبِيرِنَا.',note:'',count:1}
+  ]},
+  {id:'child_funeral',name:'الدعاء للفرط في الصلاة عليه',nameEn:'Child Funeral',azkar:[
+    {id:'t48',arabic:'اللَّهُمَّ اجْعَلْهُ لَنَا سَلَفًا وَفَرَطًا وَذُخْرًا.',note:'',count:1}
+  ]},
+  {id:'condolence',name:'دعاء التعزية',nameEn:'Condolence',azkar:[
+    {id:'t49',arabic:'إِنَّ لِلَّهِ مَا أَخَذَ، وَلَهُ مَا أَعْطَى، وَكُلٌّ عِنْدَهُ بِأَجَلٍ مُسَمًّى.',note:'',count:1}
+  ]},
+  {id:'burial_enter',name:'الدعاء عند إدخال الميت القبر',nameEn:'Entering Grave',azkar:[
+    {id:'t50',arabic:'بِسْمِ اللهِ وَعَلَى سُنَّةِ رَسُولِ اللهِ.',note:'',count:1}
+  ]},
+  {id:'burial_after',name:'الدعاء بعد دفن الميت',nameEn:'After Burial',azkar:[
+    {id:'t51',arabic:'اسْتَغْفِرُوا لِأَخِيكُمْ، وَسَلُوا لَهُ التَّثْبِيتَ، فَإِنَّهُ الْآنَ يُسْأَلُ.',note:'',count:1}
+  ]},
+  {id:'graves',name:'دعاء زيارة القبور',nameEn:'Visiting Graves',azkar:[
+    {id:'t52',arabic:'السَّلَامُ عَلَيْكُمْ أَهْلَ الدِّيَارِ مِنَ الْمُؤْمِنِينَ وَالْمُسْلِمِينَ.',note:'',count:1}
+  ]},
+  {id:'wind',name:'دعاء الريح',nameEn:'Wind',azkar:[
+    {id:'t53',arabic:'اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَهَا وَخَيْرَ مَا فِيهَا وَخَيْرَ مَا أُرْسِلَتْ بِهِ.',note:'',count:1}
+  ]},
+  {id:'thunder',name:'دعاء الرعد',nameEn:'Thunder',azkar:[
+    {id:'t54',arabic:'سُبْحَانَ الَّذِي يُسَبِّحُ الرَّعْدُ بِحَمْدِهِ وَالْمَلَائِكَةُ مِنْ خِيفَتِهِ.',note:'',count:1}
+  ]},
+  {id:'rain_prayer',name:'من أدعية الاستسقاء',nameEn:'Rain Prayer',azkar:[
+    {id:'t55',arabic:'اللَّهُمَّ أَغِثْنَا، اللَّهُمَّ أَغِثْنَا، اللَّهُمَّ أَغِثْنَا.',note:'',count:1}
+  ]},
+  {id:'rain',name:'الدعاء إذا نزل المطر',nameEn:'Rain',azkar:[
+    {id:'t56',arabic:'اللَّهُمَّ صَيِّبًا نَافِعًا.',note:'',count:1}
+  ]},
+  {id:'after_rain',name:'الذكر بعد نزول المطر',nameEn:'After Rain',azkar:[
+    {id:'t57',arabic:'مُطِرْنَا بِفَضْلِ اللهِ وَرَحْمَتِهِ.',note:'',count:1}
+  ]},
+  {id:'moon',name:'دعاء رؤية الهلال',nameEn:'Seeing the Moon',azkar:[
+    {id:'t58',arabic:'اللَّهُمَّ أَهِلَّهُ عَلَيْنَا بِالْأَمْنِ وَالْإِيمَانِ، وَالسَّلَامَةِ وَالْإِسْلَامِ.',note:'',count:1}
+  ]},
+  {id:'fasting',name:'الدعاء عند إفطار الصائم',nameEn:'Breaking Fast',azkar:[
+    {id:'t59',arabic:'ذَهَبَ الظَّمَأُ، وَابْتَلَّتِ الْعُرُوقُ، وَثَبَتَ الْأَجْرُ إِنْ شَاءَ اللهُ.',note:'',count:1}
+  ]},
+  {id:'food_before',name:'الدعاء قبل الطعام',nameEn:'Before Food',azkar:[
+    {id:'t60',arabic:'بِسْمِ اللهِ.',note:'',count:1}
+  ]},
+  {id:'food_after',name:'الدعاء عند الفراغ من الطعام',nameEn:'After Food',azkar:[
+    {id:'t61',arabic:'الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي هَذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ.',note:'',count:1}
+  ]},
+  {id:'guest',name:'دعاء الضيف لصاحب الطعام',nameEn:'Guest for Host',azkar:[
+    {id:'t62',arabic:'اللَّهُمَّ بَارِكْ لَهُمْ فِيمَا رَزَقْتَهُمْ، وَاغْفِرْ لَهُمْ، وَارْحَمْهُمْ.',note:'',count:1}
+  ]},
+  {id:'sneeze',name:'دعاء العطاس',nameEn:'Sneezing',azkar:[
+    {id:'t63',arabic:'الْحَمْدُ لِلَّهِ (للعاطس)، يَرْحَمُكَ اللهُ (للسامع)، يَهْدِيكُمُ اللهُ وَيُصْلِحُ بَالَكُمْ (رد).',note:'',count:1}
+  ]},
+  {id:'marriage',name:'الدعاء للمتزوج',nameEn:'Marriage',azkar:[
+    {id:'t64',arabic:'بَارَكَ اللهُ لَكَ، وَبَارَكَ عَلَيْكَ، وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ.',note:'',count:1}
+  ]},
+  {id:'anger',name:'دعاء الغضب',nameEn:'Anger',azkar:[
+    {id:'t65',arabic:'أَعُوذُ بِاللهِ مِنَ الشَّيْطَانِ الرَّجِيمِ.',note:'',count:1}
+  ]},
+  {id:'assembly',name:'ما يقال في المجلس',nameEn:'In Assembly',azkar:[
+    {id:'t66',arabic:'سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا أَنْتَ، أَسْتَغْفِرُكَ وَأَتُوبُ إِلَيْكَ.',note:'',count:1}
+  ]},
+  {id:'dajjal',name:'ما يعصم الله به من الدجال',nameEn:'Protection from Dajjal',azkar:[
+    {id:'t67',arabic:'(قراءة عشر آيات من أول سورة الكهف).',note:'',count:1}
+  ]},
+  {id:'love',name:'الدعاء لمن قال إني أحبك',nameEn:'For One Who Loves',azkar:[
+    {id:'t68',arabic:'أَحَبَّكَ الَّذِي أَحْبَبْتَنِي لَهُ.',note:'',count:1}
+  ]},
+  {id:'evil_eye',name:'دعاء من خشي أن يصيب بعينه',nameEn:'Evil Eye',azkar:[
+    {id:'t69',arabic:'اللَّهُمَّ بَارِكْ فِيهِ وَلَا تَضُرَّهُ.',note:'',count:1}
+  ]},
+  {id:'riding',name:'دعاء الركوب',nameEn:'Riding',azkar:[
+    {id:'t70',arabic:'بِسْمِ اللهِ، وَالْحَمْدُ لِلَّهِ، سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ.',note:'',count:1}
+  ]},
+  {id:'travel',name:'دعاء السفر',nameEn:'Travel',azkar:[
+    {id:'t71',arabic:'اللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَذَا الْبِرَّ وَالتَّقْوَى.',note:'',count:1}
+  ]},
+  {id:'market',name:'دعاء دخول السوق',nameEn:'Entering Market',azkar:[
+    {id:'t72',arabic:'لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ.',note:'',count:1}
+  ]},
+  {id:'return_travel',name:'ذكر الرجوع من السفر',nameEn:'Return from Travel',azkar:[
+    {id:'t73',arabic:'آيِبُونَ، تَائِبُونَ، عَابِدُونَ، لِرَبِّنَا حَامِدُونَ.',note:'',count:1}
+  ]},
+  {id:'hajj',name:'التلبية في الحج',nameEn:'Hajj Talbiyah',azkar:[
+    {id:'t74',arabic:'لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ.',note:'',count:1}
+  ]},
+  {id:'arafah',name:'الدعاء يوم عرفة',nameEn:'Day of Arafah',azkar:[
+    {id:'t75',arabic:'لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ.',note:'',count:1}
+  ]},
+  {id:'istighfar',name:'الاستغفار والتوبة',nameEn:'Seeking Forgiveness',azkar:[
+    {id:'t76',arabic:'أَسْتَغْفِرُ اللهَ وَأَتُوبُ إِلَيْهِ.',note:'',count:100}
+  ]},
+  {id:'tasbih',name:'فضل التسبيح والتحميد',nameEn:'Praise',azkar:[
+    {id:'t77',arabic:'سُبْحَانَ اللهِ، وَالْحَمْدُ لِلَّهِ، وَلَا إِلَهَ إِلَّا اللهُ، وَاللهُ أَكْبَرُ.',note:'',count:1}
+  ]},
+  {id:'prophet_praise',name:'فضل الصلاة على النبي',nameEn:'Praising the Prophet',azkar:[
+    {id:'t78',arabic:'اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ.',note:'',count:1}
+  ]}
+];
+
+/* ============================================================
+   ALL CATEGORIES
+   ============================================================ */
+const ALL_CATEGORIES = [
+  {id:'morning',name:'أذكار الصباح',nameEn:'Morning Azkar',azkar:MORNING},
+  {id:'evening',name:'أذكار المساء',nameEn:'Evening Azkar',azkar:EVENING},
+  ...OTHER_CATS
+];
+
+/* ============================================================
+   STATE
+   ============================================================ */
+const state={
+  categories:ALL_CATEGORIES,
+  azkarData:[],
+  completed:{},
+  tapCounts:{},
+  showAllCategories:false,
+  activeCategory:'morning',
+  theme:'dark'
+};
+
+const $=s=>document.querySelector(s);
+const $$=s=>document.querySelectorAll(s);
+
+/* ============================================================
+   INIT
+   ============================================================ */
+function init(){
+  loadTheme();
+  loadVisitorCount();
+  renderCategories();
+  renderIndex();
+  loadCategory('morning');
+  bindEvents();
+}
+
+/* THEME */
+function loadTheme(){
+  try{
+    const saved=localStorage.getItem('hisn_theme_v8');
+    if(saved==='light'||saved==='dark') state.theme=saved;
+    else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches) state.theme='light';
+  }catch(e){}
+  applyTheme();
+}
+function applyTheme(){
+  document.documentElement.setAttribute('data-theme',state.theme);
+  $('#themeToggle').textContent=state.theme==='dark'?'🌙':'☀️';
+  try{localStorage.setItem('hisn_theme_v8',state.theme);}catch(e){}
+}
+function toggleTheme(){
+  state.theme=state.theme==='dark'?'light':'dark';
+  applyTheme();
+}
+
+/* VISITOR COUNTER */
+async function loadVisitorCount(){
+  const el=$('#visitorCount');
+  try{
+    const res=await fetch('https://api.countapi.xyz/hit/hisn-muslim-clean/visits');
+    if(!res.ok) throw new Error('fail');
+    const data=await res.json();
+    el.textContent=formatNum(data.value||0);
+  }catch(e){
+    try{
+      let c=parseInt(localStorage.getItem('hisn_v_c_v8')||'0',10)+1;
+      localStorage.setItem('hisn_v_c_v8',c.toString());
+      el.textContent=formatNum(c)+' (local)';
+    }catch(err){el.textContent='—';}
+  }
+}
+function formatNum(n){
+  if(n>=1000000) return (n/1000000).toFixed(1)+'M';
+  if(n>=1000) return (n/1000).toFixed(1)+'K';
+  return n.toString();
+}
+
+/* CATEGORIES */
+function renderCategories(){
+  const MAX=4;
+  const visible=state.showAllCategories?state.categories:state.categories.slice(0,MAX);
+  const grid=$('#categoriesGrid');
+  grid.innerHTML='';
+  visible.forEach(cat=>{
+    const btn=document.createElement('button');
+    btn.className='category-btn'+(state.activeCategory===cat.id?' active':'');
+    btn.dataset.category=cat.id;
+    btn.innerHTML=cat.name+'<span class="badge">'+cat.nameEn+'</span>';
+    btn.addEventListener('click',()=>{loadCategory(cat.id);$('#azkarList').scrollIntoView({behavior:'smooth',block:'start'});});
+    grid.appendChild(btn);
+  });
+  const more=$('#showMoreBtn');
+  if(state.showAllCategories) more.textContent='عرض أقل ▴';
+  else{
+    const rem=state.categories.length-MAX;
+    more.textContent=rem>0?('عرض المزيد ('+rem+') ▾'):'عرض الكل ▾';
+  }
+  if(state.categories.length<=MAX&&!state.showAllCategories) more.style.display='none';
+  else more.style.display='';
+}
+
+/* INDEX */
+function renderIndex(){
+  const list=$('#indexList');
+  list.innerHTML='';
+  state.categories.forEach(cat=>{
+    const item=document.createElement('div');
+    item.className='index-item';
+    item.textContent=cat.name;
+    item.addEventListener('click',()=>{loadCategory(cat.id);$('#azkarList').scrollIntoView({behavior:'smooth',block:'start'});});
+    list.appendChild(item);
+  });
+}
+
+/* LOAD CATEGORY */
+function loadCategory(id){
+  const cat=state.categories.find(c=>c.id===id);
+  if(!cat) return;
+  state.activeCategory=id;
+  $$('.category-btn').forEach(b=>{b.classList.toggle('active',b.dataset.category===id);});
+
+  if(cat.azkar&&cat.azkar.length>0){
+    state.azkarData=cat.azkar;
+    state.azkarData.forEach(d=>{
+      if(state.completed[d.id]===undefined){
+        state.completed[d.id]=false;
+        state.tapCounts[d.id]=d.count;
+      }
+    });
+    renderAzkar();
+    updateProgress();
+    return;
+  }
+
+  $('#azkarList').innerHTML='<div class="empty-state"><div class="icon">📭</div><p>هذا القسم قيد الإضافة.</p></div>';
+  $('#footerStatus').textContent='قيد الإضافة';
+  state.azkarData=[];
+  updateProgress();
+}
+
+/* RENDER */
+function renderAzkar(){
+  const list=$('#azkarList');
+  list.innerHTML='';
+  if(!state.azkarData||state.azkarData.length===0){
+    list.innerHTML='<div class="empty-state"><div class="icon">📭</div><p>لا توجد أذكار في هذا القسم.</p></div>';
+    return;
+  }
+  state.azkarData.forEach((dhikr,i)=>{list.appendChild(createCard(dhikr,i));});
+  updateProgress();
+}
+
+function createCard(dhikr,index){
+  const isDone=state.completed[dhikr.id]===true;
+  const remaining=isDone?0:(state.tapCounts[dhikr.id]!==undefined?state.tapCounts[dhikr.id]:dhikr.count);
+  const pct=((dhikr.count-remaining)/dhikr.count)*100;
+
+  const card=document.createElement('div');
+  card.className='dhikr-card'+(isDone?' completed':'');
+  card.dataset.azkarId=dhikr.id;
+  card.innerHTML=
+    '<div class="check-overlay">✅</div>'+
+    '<div class="dhikr-header">'+
+      '<div class="dhikr-index"><div class="dhikr-number">'+(index+1)+'</div></div>'+
+      '<div class="dhikr-count-badge" data-role="badge">'+(isDone?'✓ Completed':'Remaining: '+remaining)+'</div>'+
+    '</div>'+
+    '<div class="arabic">'+dhikr.arabic+'</div>'+
+    (dhikr.note?'<div class="note">'+dhikr.note+'</div>':'')+
+    '<div class="counter-area">'+
+      '<button class="counter-btn" data-role="counter"'+(isDone?' disabled':'')+'>'+
+        '<span class="tap-icon">'+(isDone?'✅':'☝️')+'</span>'+
+        '<span class="counter-text" data-role="counter-text">'+(isDone?'Completed':'Tap to count · <span class="remaining">'+remaining+'</span> left')+'</span>'+
+        '<div class="mini-bar" data-role="mini-bar" style="width:'+pct+'%"></div>'+
+      '</button>'+
+      '<button class="icon-btn reset-card-btn" data-role="reset-card" title="Reset">↻</button>'+
+    '</div>';
+
+  card.querySelector('[data-role="counter"]').addEventListener('click',()=>handleTap(dhikr.id,card));
+  card.querySelector('[data-role="reset-card"]').addEventListener('click',()=>resetCard(dhikr.id,card));
+  return card;
+}
+
+/* TAP */
+function handleTap(id,card){
+  const dhikr=state.azkarData.find(d=>d.id===id);
+  if(!dhikr) return;
+  if(state.completed[id]) return;
+  if(state.tapCounts[id]===undefined) state.tapCounts[id]=dhikr.count;
+  if(state.tapCounts[id]<=0) return;
+
+  state.tapCounts[id]--;
+  const remaining=state.tapCounts[id];
+  const isDone=remaining===0;
+
+  const badge=card.querySelector('[data-role="badge"]');
+  const text=card.querySelector('[data-role="counter-text"]');
+  const bar=card.querySelector('[data-role="mini-bar"]');
+  const icon=card.querySelector('.tap-icon');
+  const btn=card.querySelector('[data-role="counter"]');
+
+  badge.textContent=remaining>0?'Remaining: '+remaining:'✓ Completed';
+  bar.style.width=((dhikr.count-remaining)/dhikr.count)*100+'%';
+
+  if(isDone){
+    state.completed[id]=true;
+    card.classList.add('completed');
+    btn.disabled=true;
+    text.innerHTML='Completed';
+    icon.textContent='✅';
+  }else{
+    text.innerHTML='Tap to count · <span class="remaining">'+remaining+'</span> left';
+    icon.textContent='☝️';
+  }
+
+  btn.style.transform='scale(0.95)';
+  setTimeout(()=>{btn.style.transform='';},150);
+  updateProgress();
+
+  if(isDone&&state.azkarData.every(d=>state.completed[d.id])){
+    showToast('🎉 All azkar completed! May Allah accept your remembrance.');
+  }
+}
+
+/* RESET CARD */
+function resetCard(id,card){
+  const dhikr=state.azkarData.find(d=>d.id===id);
+  if(!dhikr) return;
+  state.tapCounts[id]=dhikr.count;
+  state.completed[id]=false;
+  const idx=Array.from($('#azkarList').children).indexOf(card);
+  const newCard=createCard(dhikr,idx);
+  card.replaceWith(newCard);
+  updateProgress();
+}
+
+/* PROGRESS */
+function updateProgress(){
+  const total=state.azkarData.length;
+  const done=state.azkarData.filter(d=>state.completed[d.id]).length;
+  const pct=total>0?Math.round((done/total)*100):0;
+
+  $('#totalCount').textContent=total;
+  $('#completedCount').textContent=done;
+  $('#progressPercent').textContent=pct+'%';
+  $('#progressRing').style.strokeDashoffset=125.66-(pct/100)*125.66;
+
+  if(total===0) $('#footerStatus').textContent='قيد الإضافة';
+  else if(done===total) $('#footerStatus').textContent='🎉 All azkar completed! May Allah accept your remembrance.';
+  else if(done>0) $('#footerStatus').textContent=done+' of '+total+' completed — keep going';
+  else $('#footerStatus').textContent=total+' azkar ready — start reciting';
+}
+
+/* RESET ALL */
+function resetAll(){
+  if(!state.azkarData) return;
+  state.azkarData.forEach(d=>{
+    state.tapCounts[d.id]=d.count;
+    state.completed[d.id]=false;
+  });
+  renderAzkar();
+  $('#resetAllBtn').style.transform='rotate(-180deg)';
+  setTimeout(()=>{$('#resetAllBtn').style.transform='';},400);
+}
+
+/* SEARCH */
+function handleSearch(){
+  const q=$('#searchInput').value.trim().toLowerCase();
+  if(!q){renderCategories();renderIndex();return;}
+
+  const filtered=state.categories.filter(c=>c.name.includes(q)||c.nameEn.toLowerCase().includes(q));
+
+  const grid=$('#categoriesGrid');
+  grid.innerHTML='';
+  if(filtered.length===0){
+    grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:16px;color:var(--text-muted);font-size:.85rem;">لا توجد نتائج مطابقة</div>';
+  }else{
+    filtered.forEach(cat=>{
+      const btn=document.createElement('button');
+      btn.className='category-btn'+(state.activeCategory===cat.id?' active':'');
+      btn.dataset.category=cat.id;
+      btn.innerHTML=cat.name+'<span class="badge">'+cat.nameEn+'</span>';
+      btn.addEventListener('click',()=>{loadCategory(cat.id);$('#azkarList').scrollIntoView({behavior:'smooth',block:'start'});});
+      grid.appendChild(btn);
+    });
+  }
+
+  const list=$('#indexList');
+  list.innerHTML='';
+  filtered.forEach(cat=>{
+    const item=document.createElement('div');
+    item.className='index-item';
+    item.textContent=cat.name;
+    item.addEventListener('click',()=>{loadCategory(cat.id);$('#azkarList').scrollIntoView({behavior:'smooth',block:'start'});});
+    list.appendChild(item);
+  });
+}
+
+/* TOAST */
+let toastTimer;
+function showToast(msg){
+  const t=$('#toast');
+  t.textContent=msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove('show'),3500);
+}
+
+/* EVENTS */
+function bindEvents(){
+  $('#showMoreBtn').addEventListener('click',()=>{
+    state.showAllCategories=!state.showAllCategories;
+    renderCategories();
+  });
+  let searchTimer;
+  $('#searchInput').addEventListener('input',()=>{
+    clearTimeout(searchTimer);
+    searchTimer=setTimeout(handleSearch,200);
+  });
+  $('#indexHeader').addEventListener('click',()=>{
+    $('#indexHeader').classList.toggle('open');
+    $('#indexList').classList.toggle('open');
+  });
+  $('#themeToggle').addEventListener('click',toggleTheme);
+  $('#resetAllBtn').addEventListener('click',resetAll);
+  document.addEventListener('keydown',(e)=>{
+    const inInput=e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA';
+    if(!inInput&&e.key==='r'&&!e.ctrlKey&&!e.metaKey) resetAll();
+    if(!inInput&&e.key==='t'&&!e.ctrlKey&&!e.metaKey) toggleTheme();
+  });
+}
+
+init();
+})();
+</script>
+</body>
+</html>
