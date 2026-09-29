@@ -1184,6 +1184,41 @@ init();
 })();
 </script>
 <!-- ============================================================
+     Sources & References
+     ============================================================ -->
+<div class="sources-section">
+  <h3>المصادر والمراجع</h3>
+  <div class="sources-grid">
+    <a href="https://www.islamweb.net/ar/library" target="_blank" rel="noopener noreferrer">
+      IslamBook — مكتبة الإسلام
+    </a>
+    <a href="https://www.hisn-muslim.com" target="_blank" rel="noopener noreferrer">
+      Hisn al-Muslim — حصن المسلم
+    </a>
+    <a href="http://www.dorar.net" target="_blank" rel="noopener noreferrer">
+      Dorar.net — دائرة المعارف الإسلامية
+    </a>
+    <a href="https://binbaz.org.sa" target="_blank" rel="noopener noreferrer">
+      الشيخ ابن باز — الموقع الرسمي
+    </a>
+    <a href="https://ibnuothaymeen.net" target="_blank" rel="noopener noreferrer">
+      الشيخ ابن عثيمين — الموقع الرسمي
+    </a>
+  </div>
+  <p class="sources-note">هذه مصادر مفيدة للزوار — لا تعني بالضرورة endorsement من هذه المواقع أو العلماء</p>
+</div>
+
+<!-- ============================================================
+     Quran Resource
+     ============================================================ -->
+<div class="quran-section">
+  <a href="https://misrquran.gov.eg/home" target="_blank" rel="noopener noreferrer" class="quran-link">
+    📖 لمحبي القرآن — القرآن الكريم
+  </a>
+  <p class="quran-note">مصدر خارجي للقرآن الكريم من جمهورية مصر العربية</p>
+</div>
+
+<!-- ============================================================
      Contact Button
      ============================================================ -->
 <div class="contact-section">
@@ -1231,6 +1266,77 @@ init();
   color: var(--text-muted, #a0a0b0);
   font-size: 0.85rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sources & References */
+.sources-section {
+  text-align: center;
+  margin: 2rem 1rem 1.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--card-bg, #1a1a2e) 0%, var(--card-bg-alt, #16213e) 100%);
+  border-radius: 12px;
+  border: 1px solid var(--border-color, #2a2a4a);
+}
+.sources-section h3 {
+  margin: 0 0 1rem;
+  color: var(--text-primary, #ffffff);
+  font-size: 1.2rem;
+}
+.sources-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+.sources-grid a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--card-bg-alt, #16213e);
+  color: var(--text-secondary, #a0a0b0);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  border: 1px solid var(--border-color, #2a2a4a);
+  transition: all 0.2s ease;
+}
+.sources-grid a:hover {
+  background: var(--border-color, #2a2a4a);
+  color: var(--text-primary, #ffffff);
+}
+.sources-note {
+  margin: 1rem 0 0;
+  color: var(--text-muted, #707080);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+/* Quran Resource */
+.quran-section {
+  text-align: center;
+  margin: 0 1rem 1.5rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #2d5016 0%, #1a3a0a 100%);
+  border-radius: 12px;
+  border: 1px solid #3a6b1e;
+}
+.quran-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.quran-link:hover {
+  background: rgba(255,255,255,0.2);
+}
+.quran-note {
+  margin: 0.5rem 0 0;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.8rem;
 }
 </style>
 
