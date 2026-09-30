@@ -2,11 +2,9 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 <title>حصن المسلم · Hisn al-Muslim</title>
-<meta name="description" content="حصن المسلم — أذكار الصباح والمساء وأذكار النوم والاستيقاظ وأذكار اليوم والليلة من الكتاب والسنة النبوية الشريفة">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://sharenganeye.github.io/Azkar/">
+<meta name="description" content="حصن المسلم — أذكار الصباح والمساء وأذكار اليوم والليلة من الكتاب والسنة">
 <meta name="theme-color" content="#0a0e17">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,14 +12,14 @@
 
 <!-- ============================================================
      Google Analytics 4
-     استبدل G-TYMHZNGRM8 بمعرّف القياس الخاص بك
+     استبدل G-XXXXXXXXXX بمعرّف القياس الخاص بك من لوحة تحكم GA4
      ============================================================ -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TYMHZNGRM8"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-TYMHZNGRM8', {
+  gtag('config', 'G-XXXXXXXXXX', {
     'send_page_view': true,
     'anonymize_ip': true
   });
@@ -34,7 +32,6 @@
   --text-primary:#e8edf5;--text-secondary:#8b9bb4;--text-muted:#5a6a82;
   --accent:#00d4aa;--accent-dim:rgba(0,212,170,0.12);--accent-glow:rgba(0,212,170,0.25);
   --gold:#f0c060;--gold-dim:rgba(240,192,96,0.12);
-  --danger:#ff6b6b;--danger-dim:rgba(255,107,107,0.12);
   --radius:20px;--radius-sm:12px;
   --shadow:0 8px 32px rgba(0,0,0,0.4);
   --transition:0.3s cubic-bezier(0.4,0,0.2,1);
@@ -47,7 +44,6 @@
   --text-primary:#1a2233;--text-secondary:#5a6a82;--text-muted:#8b9bb4;
   --accent:#0a9e7e;--accent-dim:rgba(10,158,126,0.08);--accent-glow:rgba(10,158,126,0.15);
   --gold:#c8961e;--gold-dim:rgba(200,150,30,0.08);
-  --danger:#d94848;--danger-dim:rgba(217,72,72,0.08);
   --shadow:0 8px 32px rgba(0,0,0,0.06);
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -127,17 +123,11 @@ body{
 .dhikr-index{display:flex;align-items:center;gap:10px}
 .dhikr-number{width:28px;height:28px;border-radius:50%;background:var(--accent-dim);border:1px solid rgba(0,212,170,.2);display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700;color:var(--accent);flex-shrink:0}
 .dhikr-card.completed .dhikr-number{background:rgba(0,212,170,.2);border-color:var(--accent)}
-.badges-group{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .dhikr-count-badge{font-size:.7rem;font-weight:600;color:var(--gold);background:var(--gold-dim);border:1px solid rgba(240,192,96,.15);padding:3px 10px;border-radius:20px;white-space:nowrap}
 .dhikr-card.completed .dhikr-count-badge{color:var(--accent);background:var(--accent-dim);border-color:rgba(0,212,170,.15)}
-.evidence-status-badge{font-size:.62rem;font-weight:700;padding:3px 9px;border-radius:12px;white-space:nowrap;letter-spacing:.02em}
-.evidence-status-badge.sahih{background:rgba(0,212,170,.15);color:var(--accent);border:1px solid rgba(0,212,170,.3)}
-.evidence-status-badge.hasan{background:rgba(240,192,96,.15);color:var(--gold);border:1px solid rgba(240,192,96,.3)}
-.evidence-status-badge.daif{background:rgba(255,107,107,.15);color:var(--danger);border:1px solid rgba(255,107,107,.3)}
-.evidence-status-badge.no-hadith{background:rgba(90,106,130,.15);color:var(--text-muted);border:1px solid rgba(90,106,130,.3)}
 .arabic{font-family:var(--font-arabic);font-size:clamp(1.1rem,3.2vw,1.4rem);line-height:2.2;text-align:right;direction:rtl;margin-bottom:10px;transition:color .3s;word-spacing:.05em}
 .note{font-size:.78rem;color:var(--text-muted);line-height:1.7;text-align:right;direction:rtl;padding:8px 12px;background:rgba(255,255,255,.02);border-radius:var(--radius-sm);border-right:2px solid var(--border);margin-bottom:14px;font-style:italic}
-.counter-area{display:flex;align-items:center;gap:8px}
+.counter-area{display:flex;align-items:center;gap:10px}
 .counter-btn{flex:1;background:transparent;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 18px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:var(--transition);color:var(--text-secondary);font-family:var(--font-ui);font-size:.82rem;font-weight:600;min-height:48px;position:relative;overflow:hidden;user-select:none}
 .counter-btn:hover:not(:disabled){border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
 .counter-btn:active:not(:disabled){transform:scale(.97)}
@@ -148,35 +138,9 @@ body{
 .counter-btn .mini-bar{position:absolute;bottom:0;right:0;height:3px;background:var(--accent);transition:width .4s cubic-bezier(.4,0,.2,1);border-radius:0 0 var(--radius-sm) 0}
 .icon-btn{background:transparent;border:1px solid var(--border);color:var(--text-muted);width:48px;height:48px;border-radius:var(--radius-sm);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--transition);flex-shrink:0;font-size:1rem}
 .reset-card-btn:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-dim);transform:rotate(-90deg)}
-.evidence-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
-.evidence-btn.has-evidence{border-color:rgba(0,212,170,.3);color:var(--accent)}
-.evidence-btn.daif-evidence{border-color:rgba(255,107,107,.4);color:var(--danger)}
 .check-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(10,14,23,.6);backdrop-filter:blur(2px);border-radius:var(--radius);opacity:0;pointer-events:none;transition:opacity .4s;font-size:2.2rem}
 [data-theme="light"] .check-overlay{background:rgba(245,247,251,.6)}
 .dhikr-card.completed .check-overlay{opacity:1}
-/* MODAL */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(4px);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px;animation:fadeIn .2s ease}
-.modal-overlay.show{display:flex}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.modal{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);max-width:620px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.5);animation:slideUp .3s cubic-bezier(.4,0,.2,1);position:relative}
-@keyframes slideUp{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
-.modal-header{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg-card);border-radius:var(--radius) var(--radius) 0 0;z-index:1}
-.modal-header h3{font-family:var(--font-arabic);font-size:1.05rem;font-weight:700}
-.modal-close{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:var(--transition)}
-.modal-close:hover{border-color:var(--danger);color:var(--danger);background:rgba(255,107,107,.1)}
-.modal-body{padding:22px}
-.evidence-status-large{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:20px;font-size:.8rem;font-weight:700;margin-bottom:16px}
-.evidence-status-large.sahih{background:rgba(0,212,170,.12);color:var(--accent);border:1px solid rgba(0,212,170,.25)}
-.evidence-status-large.hasan{background:rgba(240,192,96,.12);color:var(--gold);border:1px solid rgba(240,192,96,.25)}
-.evidence-status-large.daif{background:rgba(255,107,107,.12);color:var(--danger);border:1px solid rgba(255,107,107,.25)}
-.evidence-status-large.no-hadith{background:rgba(90,106,130,.12);color:var(--text-muted);border:1px solid rgba(90,106,130,.25)}
-.evidence-hadith{font-family:var(--font-arabic);font-size:1.05rem;line-height:2;text-align:right;direction:rtl;margin-bottom:16px;padding:14px 16px;background:rgba(0,212,170,.04);border-radius:var(--radius-sm);border-right:3px solid var(--accent)}
-.evidence-source{font-size:.82rem;color:var(--text-secondary);text-align:right;direction:rtl;line-height:1.8;margin-bottom:12px}
-.evidence-source strong{color:var(--accent)}
-.evidence-warning{margin-top:14px;padding:12px 14px;background:rgba(255,107,107,.06);border-radius:var(--radius-sm);border-right:3px solid var(--danger);font-size:.8rem;color:var(--text-secondary);text-align:right;direction:rtl;line-height:1.7}
-.evidence-warning strong{color:var(--danger)}
-.evidence-disclaimer{margin-top:16px;padding:12px 14px;background:rgba(240,192,96,.06);border-radius:var(--radius-sm);border-right:3px solid var(--gold);font-size:.72rem;color:var(--text-muted);text-align:right;direction:rtl;line-height:1.7;font-style:italic}
-.evidence-disclaimer strong{color:var(--gold)}
 .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--bg-card);border:1px solid var(--accent);color:var(--accent);padding:12px 24px;border-radius:50px;font-size:.82rem;font-weight:600;box-shadow:0 8px 32px rgba(0,212,170,.12);opacity:0;transition:all .5s cubic-bezier(.4,0,.2,1);z-index:1000;pointer-events:none;white-space:nowrap}
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 .footer{text-align:center;margin-top:36px;padding:18px;color:var(--text-muted);font-size:.72rem;border-top:1px solid var(--border)}
@@ -204,15 +168,33 @@ body{
   .top-bar{flex-direction:column;align-items:stretch}
   .top-actions{justify-content:space-between}
   .icon-btn{width:44px;height:44px;font-size:.9rem}
-  .evidence-hadith{font-size:.95rem;padding:12px}
-  .evidence-status-badge{font-size:.55rem;padding:2px 7px}
-  .modal-body{padding:16px}
 }
 @media(max-width:360px){
   .arabic{font-size:.9rem}
   .counter-btn{font-size:.7rem}
   .categories-grid{grid-template-columns:1fr}
 }
+
+/* ===== Evidence ===== */
+.ev-badge{font-size:.68rem;font-weight:600;padding:3px 10px;border-radius:20px;white-space:nowrap;border:1px solid transparent;cursor:pointer;font-family:var(--font-ui)}
+.ev-sahih{color:var(--accent);background:var(--accent-dim);border-color:rgba(0,212,170,.2)}
+.ev-hasan{color:var(--gold);background:var(--gold-dim);border-color:rgba(240,192,96,.2)}
+.ev-daif{color:#ff6b6b;background:rgba(255,107,107,.1);border-color:rgba(255,107,107,.25)}
+.ev-no-hadith{color:var(--text-secondary);background:rgba(139,155,180,.1);border-color:rgba(139,155,180,.2)}
+.badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.ev-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+.modal-overlay{position:fixed;inset:0;background:rgba(5,8,14,.72);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:1000;padding:16px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--bg-card);border:1px solid var(--border-light);border-radius:18px;max-width:640px;width:100%;max-height:86vh;overflow:auto;padding:22px 22px 18px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.45);direction:rtl;text-align:right}
+.modal-close{position:absolute;top:12px;left:12px;width:36px;height:36px;border-radius:10px;border:1px solid var(--border);background:transparent;color:var(--text-secondary);cursor:pointer;font-size:1rem}
+.modal-close:hover{border-color:var(--accent);color:var(--accent)}
+.modal .big-badge{display:inline-block;font-size:.9rem;font-weight:700;padding:6px 14px;border-radius:24px;margin-bottom:14px}
+.modal .ev-hadith{font-family:var(--font-arabic);font-size:1.08rem;line-height:2.1;color:var(--text-primary);border-right:3px solid var(--accent);padding:6px 14px 6px 0;margin:6px 0 14px;white-space:pre-wrap}
+.modal .ev-source{font-size:.85rem;color:var(--text-secondary);line-height:1.9;margin-bottom:12px}
+.modal .ev-source b{color:var(--text-primary)}
+.modal .ev-warning{font-size:.85rem;line-height:1.9;color:#ffb4a8;background:rgba(255,107,107,.08);border:1px solid rgba(255,107,107,.22);border-radius:12px;padding:10px 12px;margin-bottom:12px}
+[data-theme="light"] .modal .ev-warning{color:#a8322a}
+.modal .ev-disclaimer{font-size:.76rem;color:var(--text-muted);line-height:1.8;border-top:1px solid var(--border);padding-top:10px}
 </style>
 </head>
 <body>
@@ -265,18 +247,14 @@ body{
     <p style="margin-top:6px;">حصن المسلم · Hisn al-Muslim</p>
   </footer>
 </div>
-<div class="toast" id="toast">🎉 All azkar completed! May Allah accept your remembrance.</div>
-
-<!-- EVIDENCE MODAL -->
-<div class="modal-overlay" id="evidenceModalOverlay">
-  <div class="modal">
-    <div class="modal-header">
-      <h3 id="evidenceModalTitle">📖 دليل الذكر</h3>
-      <button class="modal-close" id="evidenceModalClose" aria-label="Close">✕</button>
-    </div>
-    <div class="modal-body" id="evidenceModalBody"></div>
+<div class="modal-overlay" id="evModal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="evTitle">
+    <button class="modal-close" id="evClose" aria-label="إغلاق">✕</button>
+    <div id="evBody"></div>
+    <div class="ev-disclaimer">ملاحظة: هذه المعلومات للاسترشاد العام فقط، وقد تحتوي على أخطاء. يُرجى التحقق من الأحاديث وتصنيفاتها مع أهل العلم المتخصصين قبل الاعتماد عليها.</div>
   </div>
 </div>
+<div class="toast" id="toast">🎉 All azkar completed! May Allah accept your remembrance.</div>
 
 <script>
 (function(){
@@ -292,244 +270,1117 @@ function trackEvent(eventName, params) {
 }
 
 /* ============================================================
-   EVIDENCE DATABASE
-   ============================================================
-   NOTE: The hadith texts and gradings below are based on well-known
-   published sources (Sahih al-Bukhari, Sahih Muslim, Sunan Abi Dawud,
-   Jami' al-Tirmidhi, Sunan al-Nasa'i, Musnad Ahmad) and the fatwa of
-   scholars such as Ibn Baz, al-Albani, and al-Mundhiri.
-   Users are advised to verify hadith gradings with qualified scholars.
+   EVIDENCE DATABASE (verified against published hadith collections)
    ============================================================ */
 const EVIDENCE = {
-  /* MORNING */
-  m1:{status:'sahih',label:'صحيح',hadith:'قال النبي ﷺ: «مَن قالها حين يُصبح أُجِيرَ من الجنِّ حتى يُمسي، ومن قالها حين يُمسي أُجِيرَ من الجنِّ حتى يُصبح»',source:'رواه النسائي في السنن الكبرى (9836)، وصحح إسناده الشيخ ابن باز رحمه الله.'},
-  m2:{status:'sahih',label:'صحيح',hadith:'قال النبي ﷺ: «مَن قالها حين يُصبح وحين يُمسي ثلاثَ مرات كَفَتْه من كلِّ شيء» (الإخلاص والمعوذتين)',source:'رواه أبو داود (5082)، والترمذي (3575) وقال: حسن صحيح غريب، وصححه الألباني.'},
-  m3:{status:'sahih',label:'صحيح',hadith:'قال النبي ﷺ: «مَن قالها حين يُصبح وحين يُمسي ثلاثَ مرات كَفَتْه من كلِّ شيء»',source:'رواه أبو داود (5082)، والترمذي (3575)، وصححه الألباني.'},
-  m4:{status:'sahih',label:'صحيح',hadith:'قال النبي ﷺ: «مَن قالها حين يُصبح وحين يُمسي ثلاثَ مرات كَفَتْه من كلِّ شيء»',source:'رواه أبو داود (5082)، والترمذي (3575)، وصححه الألباني.'},
-  m5:{status:'sahih',label:'صحيح',hadith:'عن ابن مسعود رضي الله عنه: «كان نبيُّ الله ﷺ إذا أمسى قال: أمسينا وأمسى المُلكُ لله...»، وإذا أصبح قال: «أصبحنا وأصبح المُلكُ لله»',source:'رواه مسلم (2723).'},
-  m6:{status:'sahih',label:'صحيح',hadith:'قال النبي ﷺ: «سيدُ الاستغفار أن تقول: اللهم أنت ربي لا إلهَ إلا أنت... مَن قالها من النهار موقناً بها فمات من يومه قبل أن يُمسي فهو من أهل الجنة»',source:'رواه البخاري (6306).'},
-  m7:{status:'hasan',label:'حسن',hadith:'قال النبي ﷺ: «ما من عبدٍ مسلمٍ يقول حين يُصبح وحين يُمسي ثلاث مرات: رضيتُ بالله رباً، وبالإسلام ديناً، وبمحمدٍ ﷺ نبياً، إلا كان حقاً على الله أن يُرضيه يوم القيامة»',source:'رواه أحمد (16712)، وحسنه الألباني.'},
-  m8:{status:'daif',label:'ضعيف',hadith:'قال النبي ﷺ: «مَن قال حين يُصبح أو يُمسي: اللهم إني أصبحتُ أُشهدُك، وأُشهدُ حملةَ عرشِك، وملائكتَك، وجميعَ خلقِك... أعتقَ اللهُ رُبعه من النار...»',source:'رواه أبو داود (5069)، وضعفه المنذري. قال الشيخ ابن باز رحمه الله: ضعيف.',warning:'هذا الحديث ضعيف عند كثير من أهل العلم. قال الشيخ ابن باز رحمه الله: "ضعيف". ويجوز الذكر به على سبيل الدعاء لا على سبيل الاعتقاد بثبوت الأجر المخصوص.'},
-  m9:{status:'hasan',label:'حسن',hadith:'قال النبي ﷺ: «مَن قال حين يُصبح: اللهم ما أصبحَ بي من نعمةٍ أو بأحدٍ من خلقِك، فمنك وحدك لا شريكَ لك، فلك الحمدُ ولك الشكر، فقد أدى شكرَ ذلك اليوم»',source:'رواه أبو داود (5073)، وحسنه الألباني.'},
-  m10:{status:'daif',label:'ضعيف',hadith:'قال النبي ﷺ: «مَن قال حين يُصبح وحين يُمسي: حسبيَ اللهُ لا إلهَ إلا هو عليه توكلتُ وهو ربُّ العرشِ العظيم، سبعَ مرات، كفاه اللهُ ما أهمَّه»',source:'رواه أبو داود (5081) موقوفاً على أبي الدرداء. قال ابن باز: "هذا الحديث ورد عن النبي ﷺ لكنه ضعيف".',warning:'هذا الحديث ضعيف مرفوعاً، وإنما هو موقوف على أبي الدرداء رضي الله عنه. والكلام طيب إذا كرره الإنسان كثيراً.'},
-  m11:{status:'hasan',label:'حسن',hadith:'قال النبي ﷺ: «مَن قال: بسم اللهِ الذي لا يضرُّ مع اسمِه شيءٌ... ثلاثَ مرات، لم تُفجئه فاجئةُ بلاءٍ حتى الليل»',source:'رواه أبو داود (5088)، والترمذي (3388)، وصححه الألباني.'},
-  m12:{status:'sahih',label:'صحيح',hadith:'عن أبي هريرة رضي الله عنه: «كان النبي ﷺ إذا أصبح قال: اللهم بك أصبحنا، وبك أمسينا، وبك نحيا، وبك نموت، وإليك النشور»',source:'رواه الترمذي (3391)، وأبو داود (5068)، وابن ماجه (3868).'},
-  m13:{status:'hasan',label:'حسن',hadith:'عن عبد الرحمن بن أبزى: «كان رسول الله ﷺ إذا أصبح قال: أصبحنا على فطرةِ الإسلام، وكلمةِ الإخلاص...»',source:'رواه أحمد (15367)، والنسائي (9836).'},
-  m14:{status:'sahih',label:'صحيح',hadith:'عن جويرية رضي الله عنها: أن النبي ﷺ قال: «سبحان اللهِ وبحمدِه، عددَ خلقِه، ورِضا نفسِه، وزِنةَ عرشِه، ومِدادَ كلماتِه»',source:'رواه مسلم (2726).'},
-  m15:{status:'hasan',label:'حسن',hadith:'قال النبي ﷺ: «اللهم عافِني في بدني، اللهم عافِني في سمعي، اللهم عافِني في بصري، لا إلهَ إلا أنت» تُقال ثلاثاً حين تُصبح وثلاثاً حين تُمسي.',source:'رواه أبو داود (5090)، وأحمد (20004)، وإسناده حسن.'},
-  m16:{status:'sahih',label:'صحيح',hadith:'قال النبي ﷺ: «قل: اللهم إني أعوذُ بك من الكفرِ والفقر، وعذابِ القبر»',source:'رواه النسائي (5462)، وأحمد (20450)، وصححه الألباني.'},
-  m17:{status:'sahih',label:'صحيح',hadith:'عن ابن عمر رضي الله عنهما: «لم يكن رسول الله ﷺ يدعُ هؤلاء الدعوات حين يُمسي وحين يُصبح: اللهم إني أسألُك العفوَ والعافيةَ في الدنيا والآخرة...»',source:'رواه أبو داود (5074)، والنسائي (5530)، وصححه الألباني.'},
-  m18:{status:'hasan',label:'حسن',hadith:'عن أنس بن مالك: «كان النبي ﷺ إذا كربه أمرٌ قال: يا حيُّ يا قيومُ برحمتِك أستغيث»',source:'رواه الترمذي (3524)، وحسنه الألباني.'},
-  m19:{status:'hasan',label:'حسن',hadith:'قال النبي ﷺ: «أصبحنا وأصبح الملك للهِ، رب العالمين، اللهم إني أسألك خير هذا اليوم فتحه ونصره ونوره وبركته وهداه، وأعوذ بك من شر ما فيه وشر ما بعده»',source:'رواه مسلم (809).'},
-  m20:{status:'sahih',label:'صحيح',hadith:'قال النبي ﷺ: «اللهم عالم الغيب والشهادة، فاطر السماوات والأرض، رب كل شيء ومليكه، أشهد أن لا إله إلا أنت، أعوذ بك من شر نفسي ومن شر الشيطان وشركه، وأن أقترف على نفسي سوءاً أو أجره إلى مسلم»',source:'رواه الترمذي (3390)، وأبو داود (5070)، وقال: حسن صحيح.'},
-  m21:{status:'sahih',label:'صحيح',hadith:'قال النبي ﷺ: «مَن صلى عليَّ صلاةً واحدةً صلى اللهُ عليه بها عشراً»',source:'رواه مسلم (408).'},
-  m22:{status:'hasan',label:'حسن',hadith:'عن أبي موسى الأشعري: قال ﷺ: «قولوا: اللهم إنا نعوذُ بك من أن نُشركَ بك شيئاً نعلمه، ونستغفرُك لما لا نعلمه»',source:'رواه أحمد (19606)، وحسنه الألباني.'},
-  m23:{status:'sahih',label:'صحيح',hadith:'قال النبي ﷺ: «اللهم إني أعوذُ بك من الهمِّ والحزن، وأعوذُ بك من العجزِ والكسل، وأعوذُ بك من الجبنِ والبخل، وأعوذُ بك من غلبةِ الدَّينِ وقهرِ الرجال»',source:'رواه البخاري (2893).'},
-  m24:{status:'hasan',label:'حسن',hadith:'قال النبي ﷺ: «مَن قال: أستغفرُ اللهَ العظيمَ الذي لا إلهَ إلا هو الحيَّ القيومَ وأتوبُ إليه، غُفِرَت ذنوبُه وإن كان فرَّ من الزحف»',source:'رواه الترمذي (3577) وحسنه، وصححه الألباني.'},
-  m25:{status:'sahih',label:'صحيح',hadith:'قال النبي ﷺ: «مَن قال: لا إله إلا الله وحده لا شريك له، له الملك وله الحمد، وهو على كل شيء قدير، في يوم مائة مرة، كانت له عدل عشر رقاب، وكتبت له مائة حسنة، ومحيت عنه مائة سيئة، وكانت له حرزا من الشيطان يومه ذلك حتى يمسي، ولم يأت أحد بأفضل مما جاء به إلا أحد عمل أكثر من ذلك»',source:'رواه البخاري (3293)، ومسلم (2691).'},
-  m26:{status:'sahih',label:'صحيح',hadith:'قال النبي ﷺ: «كلمتان حبيبتان إلى الرحمن، خفيفتان على اللسان، ثقيلتان في الميزان، سبحان الله وبحمده، سبحان الله العظيم»',source:'رواه البخاري (6406)، ومسلم (2694).'},
-  m27:{status:'sahih',label:'صحيح',hadith:'قال النبي ﷺ: «يا أيها الناس، توبوا إلى الله، فإني أتوبُ في اليومِ إليه مائةَ مرة»',source:'رواه مسلم (2702).'},
-
-  /* EVENING */
-  e2:{status:'sahih',label:'صحيح',hadith:'قال النبي ﷺ: «مَن قرأَ الآيتينِ من آخرِ سورةِ البقرةِ في ليلةٍ كَفَتاه»',source:'رواه البخاري (5009)، ومسلم (807).'},
-
-  /* Sleep / Waking */
-  sl1:{status:'sahih',label:'صحيح',hadith:'كان النبي ﷺ إذا أوى إلى فراشه قال: «باسمك ربي وضعت جنبي...»',source:'رواه البخاري (6320)، ومسلم (2714).'},
-  sl2:{status:'sahih',label:'صحيح',hadith:'كان النبي ﷺ إذا أوى إلى فراشه قال: «اللهم قني عذابك يوم تبعث عبادك»',source:'رواه أبو داود (5045)، والترمذي (3398)، وصححه الألباني.'},
-  sl3:{status:'sahih',label:'صحيح',hadith:'كان النبي ﷺ إذا أراد أن ينام قال: «باسمك اللهم أموت وأحيا»',source:'رواه البخاري (6324).'},
-  sl4:{status:'sahih',label:'صحيح',hadith:'أمر النبي ﷺ علياً وفاطمة أن يسبحا ثلاثاً وثلاثين، ويحمدا ثلاثاً وثلاثين، ويكبرا أربعاً وثلاثين عند النوم.',source:'رواه البخاري (6318)، ومسلم (2727).'},
-  sl5:{status:'sahih',label:'صحيح',hadith:'قال ﷺ: «إذا أويت إلى فراشك فقل: اللهم أسلمت نفسي إليك... فإن مت من ليلتك فأنت على الفطرة»',source:'رواه البخاري (6313)، ومسلم (2710).'},
-  wk1:{status:'sahih',label:'صحيح',hadith:'كان النبي ﷺ إذا استيقظ من منامه قال: «الحمد لله الذي أحيانا بعد ما أماتنا وإليه النشور»',source:'رواه البخاري (6312).'},
-  wk2:{status:'sahih',label:'صحيح',hadith:'كان النبي ﷺ إذا استيقظ قال: «لا إله إلا الله وحده لا شريك له، له الملك وله الحمد...»',source:'رواه البخاري (6317).'},
-
-  /* Toilet / Wudu */
-  t1:{status:'sahih',label:'صحيح',hadith:'«كان النبي ﷺ إذا دخل الخلاء قال: اللهم إني أعوذ بك من الخبث والخبائث»',source:'رواه البخاري (142)، ومسلم (375).'},
-  t2:{status:'hasan',label:'حسن',hadith:'«كان النبي ﷺ إذا خرج من الخلاء قال: غفرانك»',source:'رواه أبو داود (30)، والترمذي (7)، وحسنه الألباني.'},
-  t3:{status:'hasan',label:'حسن',hadith:'«لا وضوء لمن لم يذكر اسم الله عليه»',source:'رواه أبو داود (101)، والترمذي (25)، وحسنه الألباني.'},
-  t4:{status:'sahih',label:'صحيح',hadith:'«ما من أحد يتوضأ فيبلغ أو يسبغ الوضوء ثم يقول: أشهد أن لا إله إلا الله... إلا فتحت له أبواب الجنة الثمانية»',source:'رواه مسلم (234).'},
-
-  /* Home / Mosque / Adhan */
-  t5:{status:'hasan',label:'حسن صحيح',hadith:'«من قال إذا خرج من بيته: بسم الله، توكلت على الله، ولا حول ولا قوة إلا بالله، يقال له: هديت وكفيت ووقيت»',source:'رواه أبو داود (5095)، والترمذي (3426)، وقال: حسن صحيح.'},
-  t6:{status:'sahih',label:'صحيح',hadith:'«إذا دخل الرجل بيته فذكر الله عند دخوله وعند طعامه، قال الشيطان: لا مبيت لكم ولا عشاء»',source:'رواه مسلم (2018).'},
-  t8:{status:'sahih',label:'صحيح',hadith:'«إذا دخل أحدكم المسجد فليقل: اللهم افتح لي أبواب رحمتك»',source:'رواه مسلم (713).'},
-  t9:{status:'sahih',label:'صحيح',hadith:'«وإذا خرج فليقل: اللهم إني أسألك من فضلك»',source:'رواه مسلم (713).'},
-  t10:{status:'sahih',label:'صحيح',hadith:'«من قال حين يسمع النداء: اللهم رب هذه الدعوة التامة... حلت له شفاعتي يوم القيامة»',source:'رواه البخاري (614).'},
-
-  /* Inside prayer */
-  t11:{status:'sahih',label:'صحيح',hadith:'«كان النبي ﷺ إذا قام إلى الصلاة قال: سبحانك اللهم وبحمدك، وتبارك اسمك، وتعالى جدك، ولا إله غيرك»',source:'رواه أبو داود (775)، والترمذي (243)، وصححه الألباني.'},
-  t12:{status:'sahih',label:'صحيح',hadith:'«أما إني لا أقرأ القرآن راكعاً ولا ساجداً، فأما الركوع فعظموا فيه الرب»',source:'رواه مسلم (479).'},
-  t14:{status:'sahih',label:'صحيح',hadith:'«وأما السجود فاجتهدوا في الدعاء، فقمن أن يستجاب لكم»',source:'رواه مسلم (479).'},
-  t15:{status:'sahih',label:'صحيح',hadith:'«كان النبي ﷺ يقول بين السجدتين: ربِّ اغفر لي، ربِّ اغفر لي»',source:'رواه أبو داود (874)، والنسائي (1145)، وصححه الألباني.'},
-  t16:{status:'sahih',label:'صحيح',hadith:'«علمني رسول الله ﷺ التشهد كفي بين كفيه كما يعلمني السورة من القرآن...»',source:'رواه البخاري (6265)، ومسلم (402).'},
-  t18:{status:'sahih',label:'صحيح',hadith:'«إذا فرغ أحدكم من التشهد الأخير فليتعوذ بالله من أربع: من عذاب جهنم، ومن عذاب القبر...»',source:'رواه مسلم (588).'},
-  t19:{status:'sahih',label:'صحيح',hadith:'«كان رسول الله ﷺ إذا انصرف من صلاته استغفر الله ثلاثاً وقال: اللهم أنت السلام ومنك السلام...»',source:'رواه مسلم (591).'},
-  t19c:{status:'sahih',label:'صحيح',hadith:'قال النبي ﷺ: «من سبح الله في دبر كل صلاة ثلاثاً وثلاثين، وحمد الله ثلاثاً وثلاثين، وكبر الله ثلاثاً وثلاثين... غفرت خطاياه وإن كانت مثل زبد البحر»',source:'رواه مسلم (597).'},
-  t19d:{status:'sahih',label:'صحيح',hadith:'قال النبي ﷺ لمعاذ: «يا معاذ، إني لأحبك، فلا تدعن في دبر كل صلاة أن تقول: اللهم أعني على ذكرك وشكرك وحسن عبادتك»',source:'رواه أبو داود (1522)، والنسائي (1303)، وصححه الألباني.'},
-  t20:{status:'sahih',label:'صحيح',hadith:'«إذا هم أحدكم بالأمر فليركع ركعتين من غير الفريضة، ثم ليقل: اللهم إني أستخيرك بعلمك...»',source:'رواه البخاري (1166).'},
-  t21:{status:'hasan',label:'حسن',hadith:'«كان النبي ﷺ إذا تقلب من جنب إلى جنب في الليل قال: لا إله إلا الله الواحد القهار...»',source:'رواه النسائي في السنن الكبرى (10689)، وحسنه الألباني.'},
-  t22:{status:'hasan',label:'حسن',hadith:'«إذا فزع أحدكم في النوم فليقل: أعوذ بكلمات الله التامات من غضبه وعقابه، وشر عباده، ومن همزات الشياطين وأن يحضرون»',source:'رواه أبو داود (3893)، والترمذي (3528)، وحسنه الألباني.'},
-  t23:{status:'sahih',label:'صحيح',hadith:'«إذا رأى أحدكم رؤيا يكرهها فلينفث عن يساره ثلاثاً، وليتعوذ بالله من الشيطان ومن شر ما رأى، وليتحول عن جنبه الذي كان عليه»',source:'رواه مسلم (2262).'},
-  t24:{status:'sahih',label:'صحيح',hadith:'«علمني جدي رسول الله ﷺ كلمات أقولها في قنوت الوتر: اللهم اهدني فيمن هديت...»',source:'رواه الترمذي (464)، وأبو داود (1425)، وصححه الألباني.'},
-  t25:{status:'sahih',label:'صحيح',hadith:'«كان رسول الله ﷺ إذا سلم من الوتر قال: سبحان الملك القدوس» (ثلاثاً)',source:'رواه النسائي (1699)، وأبو داود (1430)، وصححه الألباني.'},
-  t26:{status:'sahih',label:'صحيح',hadith:'«ما أصاب أحداً همٌّ ولا حزنٌ فقال: اللهم إني عبدك، وابن عبدك... إلا أذهب الله همه وحزنه وأبدله مكانه فرجاً»',source:'رواه أحمد (3712)، وصححه الألباني.'},
-  t27:{status:'sahih',label:'صحيح',hadith:'«كان النبي ﷺ يقول عند الكرب: لا إله إلا الله العظيم الحليم...»',source:'رواه البخاري (6345)، ومسلم (2730).'},
-  t28:{status:'sahih',label:'صحيح',hadith:'«كان النبي ﷺ إذا خاف قوماً قال: اللهم إنا نجعلك في نحورهم، ونعوذ بك من شرورهم»',source:'رواه أبو داود (1537)، وصححه الألباني.'},
-  t33:{status:'hasan',label:'حسن',hadith:'«قل: اللهم اكفني بحلالك عن حرامك، وأغنني بفضلك عمن سواك»',source:'رواه الترمذي (3563)، وحسنه الألباني.'},
-  t34:{status:'sahih',label:'صحيح',hadith:'قال النبي ﷺ: «إذا حسستَ شيئاً في صلاتك فتعوذ بالله من الشيطان، ثم اتفل عن يسارك ثلاثاً»',source:'رواه مسلم (2203).'},
-  t36:{status:'sahih',label:'صحيح',hadith:'«ما من عبد يذنب ذنباً، فيحسن الطهور، ثم يقوم فيصلي ركعتين، ثم يستغفر الله، إلا غفر الله له»',source:'رواه أبو داود (1521)، والترمذي (406)، وصححه الألباني.'},
-  t37:{status:'sahih',label:'صحيح',hadith:'«من نزل منزلاً فقال: أعوذ بكلمات الله التامات من شر ما خلق، لم يضره شيء حتى يرتحل»',source:'رواه مسلم (2708).'},
-
-  /* Social / Family */
-  t39:{status:'hasan',label:'حسن',hadith:'«بارك الله لك في الموهوب لك، وشكرت الواهب، وبلغ أشده، ورزقت بره»',source:'رواه عبد الرزاق في المصنف (7963)، عن ابن عمر موقوفاً.'},
-  t41:{status:'sahih',label:'صحيح',hadith:'«من عاد مريضاً لم يحضر أجله، فقال عنده سبع مرار: أسأل الله العظيم رب العرش العظيم أن يشفيك، إلا عافاه الله»',source:'رواه أبو داود (3106)، والترمذي (2083)، وصححه الألباني.'},
-  t44:{status:'sahih',label:'صحيح',hadith:'«لقنوا موتاكم لا إله إلا الله»',source:'رواه مسلم (916).'},
-  t45:{status:'sahih',label:'صحيح',hadith:'«ما من مسلم تصيبه مصيبة فيقول ما أمره الله: إنا لله وإنا إليه راجعون، اللهم أجرني في مصيبتي، وأخلف لي خيراً منها، إلا أخلف الله له خيراً منها»',source:'رواه مسلم (918).'},
-  t47:{status:'sahih',label:'صحيح',hadith:'«كان النبي ﷺ إذا صلى على جنازة قال: اللهم اغفر لحينا وميتنا...»',source:'رواه أبو داود (3201)، والترمذي (1024)، وصححه الألباني.'},
-  t49:{status:'sahih',label:'صحيح',hadith:'«إن لله ما أخذ، وله ما أعطى، وكلٌّ عنده بأجل مسمى، فلتصبر ولتحتسب»',source:'رواه البخاري (1284)، ومسلم (923).'},
-  t51:{status:'hasan',label:'حسن',hadith:'«كان النبي ﷺ إذا فرغ من دفن الميت وقف عليه فقال: استغفروا لأخيكم، وسلوا له التثبيت، فإنه الآن يُسأل»',source:'رواه أبو داود (3221)، وحسنه الألباني.'},
-  t52:{status:'sahih',label:'صحيح',hadith:'«السلام عليكم أهل الديار من المؤمنين والمسلمين، وإنا إن شاء الله بكم لاحقون»',source:'رواه مسلم (975).'},
-
-  /* Weather / Nature */
-  t53:{status:'sahih',label:'صحيح',hadith:'«كان النبي ﷺ إذا عصفت الريح قال: اللهم إني أسألك خيرها وخير ما فيها وخير ما أرسلت به...»',source:'رواه مسلم (899).'},
-  t54:{status:'hasan',label:'حسن',hadith:'«كان إذا سمع الرعد والصواعق قال: اللهم لا تقتلنا بغضبك ولا تهلكنا بعذابك وعافنا قبل ذلك»',source:'رواه الترمذي (3450)، وأحمد، وحسنه الألباني.'},
-  t56:{status:'sahih',label:'صحيح',hadith:'«كان رسول الله ﷺ إذا رأى المطر قال: اللهم صيباً نافعاً»',source:'رواه البخاري (1032).'},
-  t57:{status:'sahih',label:'صحيح',hadith:'«مطرنا بفضل الله ورحمته»',source:'رواه البخاري (846)، ومسلم (71).'},
-  t58:{status:'hasan',label:'حسن',hadith:'«اللهم أهله علينا بالأمن والإيمان، والسلامة والإسلام، والتوفيق لما تحب وترضى، ربي وربك الله»',source:'رواه الترمذي (3451)، وقال: حسن غريب.'},
-
-  /* Food / Drink */
-  t59:{status:'hasan',label:'حسن مرسل',hadith:'«كان النبي ﷺ إذا أفطر قال: اللهم لك صمت، وعلى رزقك أفطرت»',source:'رواه أبو داود (2357)، وهو مرسل.'},
-  t60:{status:'sahih',label:'صحيح',hadith:'«إذا أكل أحدكم فليذكر اسم الله تعالى، وليقل: بسم الله»',source:'رواه أبو داود (3767)، والترمذي (1858)، وصححه الألباني.'},
-  t61:{status:'hasan',label:'حسن',hadith:'«من أكل طعاماً فقال: الحمد لله الذي أطعمني هذا ورزقنيه من غير حول مني ولا قوة، غفر له ما تقدم من ذنبه»',source:'رواه أبو داود (4023)، والترمذي (3458)، وحسنه الألباني.'},
-  t62:{status:'sahih',label:'صحيح',hadith:'«اللهم بارك لهم فيما رزقتهم، واغفر لهم، وارحمهم»',source:'رواه مسلم (2042).'},
-
-  /* Manners */
-  t63:{status:'sahih',label:'صحيح',hadith:'«إذا عطس أحدكم فليقل: الحمد لله، وليقل له أخوه: يرحمك الله، فإذا قال له: يرحمك الله، فليقل: يهديكم الله ويصلح بالكم»',source:'رواه البخاري (6224).'},
-  t64:{status:'sahih',label:'صحيح',hadith:'«بارك الله لك، وبارك عليك، وجمع بينكما في خير»',source:'رواه أبو داود (2130)، والترمذي (1091)، وصححه الألباني.'},
-  t65:{status:'sahih',label:'صحيح',hadith:'«إني لأعلم كلمة لو قالها لذهب غضبه: أعوذ بالله من الشيطان الرجيم»',source:'رواه البخاري (6115)، ومسلم (2610).'},
-  t66:{status:'sahih',label:'صحيح',hadith:'«من جلس في مجلس فكثر فيه لغطه، فقال قبل أن يقوم من مجلسه ذلك: سبحانك اللهم وبحمدك... إلا غفر له ما كان في مجلسه ذلك»',source:'رواه الترمذي (3433)، وصححه الألباني.'},
-  t67:{status:'sahih',label:'صحيح',hadith:'«من حفظ عشر آيات من أول سورة الكهف عصم من الدجال»',source:'رواه مسلم (809).'},
-  t68:{status:'sahih',label:'صحيح',hadith:'«إني أحبك في الله» فيقال له: «أحبك الذي أحببتني له»',source:'رواه أبو داود (5125)، وصححه الألباني.'},
-  t69:{status:'daif',label:'ضعيف',hadith:'«اللهم بارك فيه ولا تضره»',source:'رواه ابن أبي شيبة في المصنف (23524)، وضعفه الألباني.',warning:'هذا حديث ضعيف، ولكن يجوز الدعاء للمريض بما ورد في السنة.'},
-
-  /* Travel */
-  t70:{status:'sahih',label:'صحيح',hadith:'«بسم الله، والحمد لله، سبحان الذي سخر لنا هذا وما كنا له مقرنين، وإنا إلى ربنا لمنقلبون»',source:'رواه أبو داود (2602)، والترمذي (3446)، وصححه الألباني.'},
-  t71:{status:'sahih',label:'صحيح',hadith:'«اللهم إنا نسألك في سفرنا هذا البر والتقوى...»',source:'رواه مسلم (1342).'},
-  t72:{status:'hasan',label:'حسن',hadith:'«من دخل السوق فقال: لا إله إلا الله وحده لا شريك له... كتب الله له ألف ألف حسنة»',source:'رواه الترمذي (3429)، وحسنه الألباني.'},
-  t73:{status:'sahih',label:'صحيح',hadith:'«آيبون، تائبون، عابدون، لربنا حامدون»',source:'رواه مسلم (1344).'},
-  t74:{status:'sahih',label:'صحيح',hadith:'«لبيك اللهم لبيك، لبيك لا شريك لك لبيك...»',source:'رواه البخاري (1549)، ومسلم (1184).'},
-  t75:{status:'hasan',label:'حسن',hadith:'«خير الدعاء دعاء يوم عرفة، وخير ما قلت أنا والنبيون من قبلي: لا إله إلا الله وحده لا شريك له...»',source:'رواه الترمذي (3585)، وحسنه الألباني.'},
-  t76:{status:'sahih',label:'صحيح',hadith:'«من قال: أستغفر الله وأتوب إليه، في اليوم مائة مرة، غفرت ذنوبه»',source:'رواه مسلم (2702).'},
-  t77:{status:'sahih',label:'صحيح',hadith:'«أحب الكلام إلى الله أربع: سبحان الله، والحمد لله، ولا إله إلا الله، والله أكبر»',source:'رواه مسلم (2137).'},
-  t78:{status:'sahih',label:'صحيح',hadith:'«من صلى عليَّ صلاة صلى الله عليه عشراً، وكتب له عشر حسنات»',source:'رواه مسلم (408).'}
+"m1": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "عن أبي بن كعب في قصة الجني الذي كان يأخذ من تمره: «هذه الآية التي في سورة البقرة: ﴿الله لا إله إلا هو الحي القيوم﴾ من قالها حين يمسي أُجير منا حتى يصبح، ومن قالها حين يصبح أُجير منا حتى يمسي»، فلما أصبح أتى رسول الله ﷺ فذكر ذلك له فقال: «صدق الخبيث».",
+"source": "رواه النسائي في الكبرى والطبراني والحاكم (1/562)، وصححه الألباني في صحيح الترغيب (662)."
+},
+"m2": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… عَنْ أَبِيهِ، أَنَّهُ قَالَ خَرَجْنَا فِي لَيْلَةِ مَطَرٍ وَظُلْمَةٍ شَدِيدَةٍ نَطْلُبُ رَسُولَ اللَّهِ صلى الله عليه وسلم لِيُصَلِّيَ لَنَا فَأَدْرَكْنَاهُ فَقَالَ \" أَصَلَّيْتُمْ \" . فَلَمْ أَقُلْ شَيْئًا فَقَالَ \" قُلْ \" . فَلَمْ أَقُلْ شَيْئًا ثُمَّ قَالَ \" قُلْ \" . فَلَمْ أَقُلْ شَيْئًا ثُمَّ قَالَ \" قُلْ \" . فَقُلْتُ يَا رَسُولَ اللَّهِ مَا أَقُولُ قَالَ \" { قُلْ هُوَ اللَّهُ أَحَدٌ } وَالْمُعَوِّذَتَيْنِ حِينَ تُمْسِي وَحِينَ تُصْبِحُ ثَلاَثَ مَرَّاتٍ تَكْفِيكَ مِنْ كُلِّ شَىْءٍ \" .",
+"source": "سنن أبي داود (5082)، حكم الألباني: حسن"
+},
+"m3": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… عَنْ أَبِيهِ، أَنَّهُ قَالَ خَرَجْنَا فِي لَيْلَةِ مَطَرٍ وَظُلْمَةٍ شَدِيدَةٍ نَطْلُبُ رَسُولَ اللَّهِ صلى الله عليه وسلم لِيُصَلِّيَ لَنَا فَأَدْرَكْنَاهُ فَقَالَ \" أَصَلَّيْتُمْ \" . فَلَمْ أَقُلْ شَيْئًا فَقَالَ \" قُلْ \" . فَلَمْ أَقُلْ شَيْئًا ثُمَّ قَالَ \" قُلْ \" . فَلَمْ أَقُلْ شَيْئًا ثُمَّ قَالَ \" قُلْ \" . فَقُلْتُ يَا رَسُولَ اللَّهِ مَا أَقُولُ قَالَ \" { قُلْ هُوَ اللَّهُ أَحَدٌ } وَالْمُعَوِّذَتَيْنِ حِينَ تُمْسِي وَحِينَ تُصْبِحُ ثَلاَثَ مَرَّاتٍ تَكْفِيكَ مِنْ كُلِّ شَىْءٍ \" .",
+"source": "سنن أبي داود (5082)، حكم الألباني: حسن"
+},
+"m4": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… عَنْ أَبِيهِ، أَنَّهُ قَالَ خَرَجْنَا فِي لَيْلَةِ مَطَرٍ وَظُلْمَةٍ شَدِيدَةٍ نَطْلُبُ رَسُولَ اللَّهِ صلى الله عليه وسلم لِيُصَلِّيَ لَنَا فَأَدْرَكْنَاهُ فَقَالَ \" أَصَلَّيْتُمْ \" . فَلَمْ أَقُلْ شَيْئًا فَقَالَ \" قُلْ \" . فَلَمْ أَقُلْ شَيْئًا ثُمَّ قَالَ \" قُلْ \" . فَلَمْ أَقُلْ شَيْئًا ثُمَّ قَالَ \" قُلْ \" . فَقُلْتُ يَا رَسُولَ اللَّهِ مَا أَقُولُ قَالَ \" { قُلْ هُوَ اللَّهُ أَحَدٌ } وَالْمُعَوِّذَتَيْنِ حِينَ تُمْسِي وَحِينَ تُصْبِحُ ثَلاَثَ مَرَّاتٍ تَكْفِيكَ مِنْ كُلِّ شَىْءٍ \" .",
+"source": "سنن أبي داود (5082)، حكم الألباني: حسن"
+},
+"m5": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "حَدَّثَنَا عُثْمَانُ بْنُ أَبِي شَيْبَةَ، حَدَّثَنَا جَرِيرٌ، عَنِ الْحَسَنِ بْنِ عُبَيْدِ اللَّهِ، عَنْ إِبْرَاهِيمَ، بْنِ سُوَيْدٍ عَنْ عَبْدِ الرَّحْمَنِ بْنِ يَزِيدَ، عَنْ عَبْدِ اللَّهِ، قَالَ كَانَ نَبِيُّ اللَّهِ صلى الله عليه وسلم إِذَا أَمْسَى قَالَ \" أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ \" . قَالَ أُرَاهُ قَالَ فِيهِنَّ \" لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا رَبِّ أَعُوذُ بِكَ مِنَ الْ …",
+"source": "صحيح مسلم (2723)"
+},
+"m6": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنِ النَّبِيِّ صلى الله عليه وسلم \" سَيِّدُ الاِسْتِغْفَارِ أَنْ تَقُولَ اللَّهُمَّ أَنْتَ رَبِّي، لاَ إِلَهَ إِلاَّ أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَىَّ وَأَبُوءُ لَكَ بِذَنْبِي، فَاغْفِرْ لِي، فَإِنَّهُ لاَ يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ \". قَالَ \" وَمَنْ قَالَهَا مِنَ النَّهَارِ مُوقِنًا بِهَا، فَمَاتَ مِنْ يَوْمِهِ قَبْلَ أَنْ يُمْسِيَ، فَهُوَ مِنْ أَهْلِ الْجَنَّةِ، وَمَنْ قَالَهَا مِنَ اللَّيْلِ وَهْوَ مُوقِنٌ بِهَا، فَمَاتَ قَبْلَ أَنْ يُصْبِحَ، فَهْوَ مِنْ أَهْلِ الْجَنَّةِ \".",
+"source": "صحيح البخاري (6306)",
+"warning": "الفضل المكتوب تحت ذكر الصباح هو فضل المساء؛ وفضل الصباح: «من قالها من النهار موقنا بها فمات من يومه قبل أن يمسي فهو من أهل الجنة». لفظ النص المعروض يختلف يسيرا عن لفظ الرواية المخرّجة."
+},
+"m7": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… عَنْ أَبِي سَلاَّمٍ، خَادِمِ النَّبِيِّ ـ صلى الله عليه وسلم ـ عَنِ النَّبِيِّ ـ صلى الله عليه وسلم ـ قَالَ \" مَا مِنْ مُسْلِمٍ أَوْ إِنْسَانٍ أَوْ عَبْدٍ يَقُولُ حِينَ يُمْسِي وَحِينَ يُصْبِحُ رَضِيتُ بِاللَّهِ رَبًّا وَبِالإِسْلاَمِ دِينًا وَبِمُحَمَّدٍ نَبِيًّا - إِلاَّ كَانَ حَقًّا عَلَى اللَّهِ أَنْ يُرْضِيَهُ يَوْمَ الْقِيَامَةِ \" .",
+"source": "سنن ابن ماجه (3870)، حكم الألباني: ضعيف",
+"warning": "اختُلف في ثبوته؛ ضعفه الألباني أولا ثم صححه (السلسلة الصحيحة 2686)، والعدد ثلاثا في رواية أحمد. العدد المذكور وارد في رواية مختلف في ثبوتها."
+},
+"m8": {
+"status": "daif",
+"label": "ضعيف",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ \" مَنْ قَالَ حِينَ يُصْبِحُ أَوْ يُمْسِي اللَّهُمَّ إِنِّي أَصْبَحْتُ أُشْهِدُكَ وَأُشْهِدُ حَمَلَةَ عَرْشِكَ وَمَلاَئِكَتَكَ وَجَمِيعَ خَلْقِكَ أَنَّكَ أَنْتَ اللَّهُ لاَ إِلَهَ إِلاَّ أَنْتَ وَأَنَّ مُحَمَّدًا عَبْدُكَ وَرَسُولُكَ أَعْتَقَ اللَّهُ رُبْعَهُ مِنَ النَّارِ فَمَنْ قَالَهَا مَرَّتَيْنِ أَعْتَقَ اللَّهُ نِصْفَهُ وَمَنْ قَالَهَا ثَلاَثًا أَعْتَقَ اللَّهُ ثَلاَثَةَ أَرْبَاعِهِ فَإِنْ قَالَهَا أَرْبَعًا أَعْتَقَهُ اللَّهُ مِنَ النَّارِ \" .",
+"source": "سنن أبي داود (5069)، حكم الألباني: ضعيف",
+"warning": "ضعفه المنذري والألباني وابن باز. ويجوز الذكر به دعاءً لا على سبيل اعتقاد ثبوت الأجر المخصوص. العدد المذكور وارد في رواية مختلف في ثبوتها."
+},
+"m9": {
+"status": "daif",
+"label": "ضعيف",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ \" مَنْ قَالَ حِينَ يُصْبِحُ اللَّهُمَّ مَا أَصْبَحَ بِي مِنْ نِعْمَةٍ فَمِنْكَ وَحْدَكَ لاَ شَرِيكَ لَكَ فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ . فَقَدْ أَدَّى شُكْرَ يَوْمِهِ وَمَنْ قَالَ مِثْلَ ذَلِكَ حِينَ يُمْسِي فَقَدْ أَدَّى شُكْرَ لَيْلَتِهِ \" .",
+"source": "سنن أبي داود (5073)، حكم الألباني: ضعيف",
+"warning": "لفظ النص المعروض يختلف يسيرا عن لفظ الرواية المخرّجة."
+},
+"m10": {
+"status": "daif",
+"label": "ضعيف",
+"hadith": "حَدَّثَنَا يَزِيدُ بْنُ مُحَمَّدٍ الدِّمَشْقِيُّ، حَدَّثَنَا عَبْدُ الرَّزَّاقِ بْنُ مُسْلِمٍ الدِّمَشْقِيُّ، - وَكَانَ مِنْ ثِقَاتِ الْمُسْلِمِينَ مِنَ الْمُتَعَبِّدِينَ - قَالَ حَدَّثَنَا مُدْرِكُ بْنُ سَعْدٍ - قَالَ يَزِيدُ شَيْخٌ ثِقَةٌ - عَنْ يُونُسَ بْنِ مَيْسَرَةَ بْنِ حَلْبَسٍ عَنْ أُمِّ الدَّرْدَاءِ عَنْ أَبِي الدَّرْدَاءِ رضى الله عنه قَالَ مَنْ قَالَ إِذَا أَصْبَحَ وَإِذَا أَمْسَى حَسْبِيَ اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ سَبْعَ مَرَّاتٍ كَفَاهُ اللَّهُ مَا أَهَمَّهُ صَادِقًا كَانَ بِهَا أَوْ كَاذِبًا .",
+"source": "سنن أبي داود (5081)، حكم الألباني: موضوع",
+"warning": "هو موقوف على أبي الدرداء، ضعيف مرفوعا وموقوفا (السلسلة الضعيفة 5286). والكلام حق، ويجوز ذكره دون اعتقاد الأجر المخصوص. العدد المذكور وارد في رواية مختلف في ثبوتها."
+},
+"m11": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "حَدَّثَنَا عَبْدُ اللَّهِ بْنُ مَسْلَمَةَ، حَدَّثَنَا أَبُو مَوْدُودٍ، عَمَّنْ سَمِعَ أَبَانَ بْنَ عُثْمَانَ، يَقُولُ سَمِعْتُ عُثْمَانَ، - يَعْنِي ابْنَ عَفَّانَ - يَقُولُ سَمِعْتُ رَسُولَ اللَّهِ صلى الله عليه وسلم يَقُولُ \" مَنْ قَالَ بِسْمِ اللَّهِ الَّذِي لاَ يَضُرُّ مَعَ اسْمِهِ شَىْءٌ فِي الأَرْضِ وَلاَ فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ ثَلاَثَ مَرَّاتٍ لَمْ تُصِبْهُ فَجْأَةُ بَلاَءٍ حَتَّى يُصْبِحَ وَمَنْ قَالَهَا حِينَ يُصْبِحُ ثَلاَثَ مَرَّاتٍ لَمْ تُصِبْهُ فَجْأَةُ بَلاَءٍ حَتَّى يُمْسِيَ \" . قَالَ فَأَصَابَ أَبَانَ بْنَ عُثْمَانَ الْفَالِجُ فَجَعَلَ الرَّجُلُ الَّذِي سَمِعَ مِنْهُ الْحَدِيثَ يَنْظُرُ إِلَيْهِ فَقَالَ لَه …",
+"source": "سنن أبي داود (5088)، حكم الألباني: صحيح",
+"warning": "الفضل المكتوب تحت الذكر لا يثبت له بهذا اللفظ."
+},
+"m12": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنِ النَّبِيِّ صلى الله عليه وسلم أَنَّهُ كَانَ يَقُولُ إِذَا أَصْبَحَ \" اللَّهُمَّ بِكَ أَصْبَحْنَا وَبِكَ أَمْسَيْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُورُ \" . وَإِذَا أَمْسَى قَالَ \" اللَّهُمَّ بِكَ أَمْسَيْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُورُ \" .",
+"source": "سنن أبي داود (5068)، حكم الألباني: صحيح"
+},
+"m13": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "عن عبد الرحمن بن أبزى: كان رسول الله ﷺ إذا أصبح قال: «أصبحنا على فطرة الإسلام، وعلى كلمة الإخلاص، وعلى دين نبينا محمد ﷺ، وعلى ملة أبينا إبراهيم حنيفا مسلما وما كان من المشركين»، وإذا أمسى قال مثل ذلك.",
+"source": "رواه أحمد (15360) والنسائي في الكبرى، وصححه النووي والعراقي وابن باز والألباني (صحيح الجامع 4674)."
+},
+"m14": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ النَّبِيَّ صلى الله عليه وسلم خَرَجَ مِنْ عِنْدِهَا بُكْرَةً حِينَ صَلَّى الصُّبْحَ وَهِيَ فِي مَسْجِدِهَا ثُمَّ رَجَعَ بَعْدَ أَنْ أَضْحَى وَهِيَ جَالِسَةٌ فَقَالَ \" مَا زِلْتِ عَلَى الْحَالِ الَّتِي فَارَقْتُكِ عَلَيْهَا \" . قَالَتْ نَعَمْ . قَالَ النَّبِيُّ صلى الله عليه وسلم \" لَقَدْ قُلْتُ بَعْدَكِ أَرْبَعَ كَلِمَاتٍ ثَلاَثَ مَرَّاتٍ لَوْ وُزِنَتْ بِمَا قُلْتِ مُنْذُ الْيَوْمِ لَوَزَنَتْهُنَّ سُبْحَانَ اللَّهِ وَبِحَمْدِهِ عَدَدَ خَلْقِهِ وَرِضَا نَفْسِهِ وَزِنَةَ عَرْشِهِ وَمِدَادَ كَلِمَاتِهِ \" .",
+"source": "صحيح مسلم (2726)"
+},
+"m15": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… عَنْ جَعْفَرِ بْنِ مَيْمُونٍ، قَالَ حَدَّثَنِي عَبْدُ الرَّحْمَنِ بْنُ أَبِي بَكْرَةَ، أَنَّهُ قَالَ لأَبِيهِ يَا أَبَةِ إِنِّي أَسْمَعُكَ تَدْعُو كُلَّ غَدَاةٍ اللَّهُمَّ عَافِنِي فِي بَدَنِي اللَّهُمَّ عَافِنِي فِي سَمْعِي اللَّهُمَّ عَافِنِي فِي بَصَرِي لاَ إِلَهَ إِلاَّ أَنْتَ تُعِيدُهَا ثَلاَثًا حِينَ تُصْبِحُ وَثَلاَثًا حِينَ تُمْسِي . فَقَالَ إِنِّي سَمِعْتُ رَسُولَ اللَّهِ صلى الله عليه وسلم يَدْعُو بِهِنَّ فَأَنَا أُحِبُّ أَنْ أَسْتَنَّ بِسُنَّتِهِ . قَالَ عَبَّاسٌ فِيهِ وَتَقُولُ اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ وَالْفَقْرِ اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ لاَ إِلَهَ إِلاَّ أَنْتَ تُعِيدُهَا ثَلاَثً …",
+"source": "سنن أبي داود (5090)، حكم الألباني: إسناده حسن"
+},
+"m16": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… عَنْ جَعْفَرِ بْنِ مَيْمُونٍ، قَالَ حَدَّثَنِي عَبْدُ الرَّحْمَنِ بْنُ أَبِي بَكْرَةَ، أَنَّهُ قَالَ لأَبِيهِ يَا أَبَةِ إِنِّي أَسْمَعُكَ تَدْعُو كُلَّ غَدَاةٍ اللَّهُمَّ عَافِنِي فِي بَدَنِي اللَّهُمَّ عَافِنِي فِي سَمْعِي اللَّهُمَّ عَافِنِي فِي بَصَرِي لاَ إِلَهَ إِلاَّ أَنْتَ تُعِيدُهَا ثَلاَثًا حِينَ تُصْبِحُ وَثَلاَثًا حِينَ تُمْسِي . فَقَالَ إِنِّي سَمِعْتُ رَسُولَ اللَّهِ صلى الله عليه وسلم يَدْعُو بِهِنَّ فَأَنَا أُحِبُّ أَنْ أَسْتَنَّ بِسُنَّتِهِ . قَالَ عَبَّاسٌ فِيهِ وَتَقُولُ اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ وَالْفَقْرِ اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ لاَ إِلَهَ إِلاَّ أَنْتَ تُعِيدُهَا ثَلاَثً …",
+"source": "سنن أبي داود (5090)، حكم الألباني: إسناده حسن",
+"warning": "لفظ النص المعروض يختلف يسيرا عن لفظ الرواية المخرّجة."
+},
+"m17": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "حَدَّثَنَا عَلِيُّ بْنُ مُحَمَّدٍ الطَّنَافِسِيُّ، حَدَّثَنَا وَكِيعٌ، حَدَّثَنَا عُبَادَةُ بْنُ مُسْلِمٍ، حَدَّثَنَا جُبَيْرُ بْنُ أَبِي سُلَيْمَانَ بْنِ جُبَيْرِ بْنِ مُطْعِمٍ، قَالَ سَمِعْتُ ابْنَ عُمَرَ، يَقُولُ لَمْ يَكُنْ رَسُولُ اللَّهِ ـ صلى الله عليه وسلم ـ يَدَعُ هَؤُلاَءِ الدَّعَوَاتِ حِينَ يُمْسِي وَحِينَ يُصْبِحُ \" اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَاىَ وَأَهْلِي وَمَالِي اللَّهُمَّ اسْتُرْ عَوْرَاتِي وَآمِنْ رَوْعَاتِي وَاحْفَظْنِي مِنْ بَيْنِ يَدَىَّ وَمِنْ خَلْفِي وَعَنْ يَمِينِي وَعَنْ شِمَالِي وَمِنْ فَوْقِي …",
+"source": "سنن ابن ماجه (3871)، حكم الألباني: صحيح"
+},
+"m18": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "عن أنس أن النبي ﷺ قال لفاطمة: «ما يمنعك أن تسمعي ما أوصيك به، أن تقولي إذا أصبحت وإذا أمسيت: يا حي يا قيوم برحمتك أستغيث، أصلح لي شأني كله، ولا تكلني إلى نفسي طرفة عين».",
+"source": "رواه النسائي في عمل اليوم والليلة والحاكم (1/545)، وحسنه الألباني (صحيح الترغيب 661).",
+"warning": "العدد المذكور غير منصوص عليه في الحديث."
+},
+"m19": {
+"status": "daif",
+"label": "ضعيف",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ \" إِذَا أَصْبَحَ أَحَدُكُمْ فَلْيَقُلْ أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ رَبِّ الْعَالَمِينَ اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ هَذَا الْيَوْمِ فَتْحَهُ وَنَصْرَهُ وَنُورَهُ وَبَرَكَتَهُ وَهُدَاهُ وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِيهِ وَشَرِّ مَا بَعْدَهُ ثُمَّ إِذَا أَمْسَى فَلْيَقُلْ مِثْلَ ذَلِكَ \" .",
+"source": "سنن أبي داود (5084)، حكم الألباني: ضعيف",
+"warning": "في النص المعروض خطأ في اللفظ أو الضبط مقارنة بلفظ المصدر."
+},
+"m20": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِي هُرَيْرَةَ، رضى الله عنه قَالَ قَالَ أَبُو بَكْرٍ يَا رَسُولَ اللَّهِ مُرْنِي بِشَيْءٍ أَقُولُهُ إِذَا أَصْبَحْتُ وَإِذَا أَمْسَيْتُ قَالَ \" قُلِ اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَوَاتِ وَالأَرْضِ رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ أَنْتَ أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ قَالَ قُلْهُ إِذَا أَصْبَحْتَ وَإِذَا أَمْسَيْتَ وَإِذَا أَخَذْتَ مَضْجَعَكَ \" . قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ حَسَنٌ صَحِيحٌ .",
+"source": "جامع الترمذي (3392)، حكم الألباني: صحيح",
+"warning": "لفظ النص المعروض يختلف يسيرا عن لفظ الرواية المخرّجة."
+},
+"m21": {
+"status": "no-hadith",
+"label": "لا يوجد حديث محدد",
+"hadith": "… عَنِ النَّبِيِّ صلى الله عليه وسلم قَالَ \" مَنْ قَالَ حِينَ يُمْسِي ثَلاَثَ مَرَّاتٍ أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ لَمْ يَضُرَّهُ حُمَةٌ تِلْكَ اللَّيْلَةَ \" . قَالَ سُهَيْلٌ فَكَانَ أَهْلُنَا تَعَلَّمُوهَا فَكَانُوا يَقُولُونَهَا كُلَّ لَيْلَةٍ فَلُدِغَتْ جَارِيَةٌ مِنْهُمْ فَلَمْ تَجِدْ لَهَا وَجَعًا . هَذَا حَدِيثٌ حَسَنٌ . وَرَوَى مَالِكُ بْنُ أَنَسٍ هَذَا الْحَدِيثَ عَنْ سُهَيْلِ بْنِ أَبِي صَالِحٍ عَنْ أَبِيهِ عَنْ أَبِي هُرَيْرَةَ عَنِ النَّبِيِّ صلى الله عليه وسلم وَرَوَى عُبَيْدُ اللَّهِ بْنُ عُمَرَ وَغَيْرُ وَاحِدٍ هَذَا الْحَدِيثَ عَنْ سُهَيْلٍ وَلَمْ يَذْكُرُوا فِيهِ عَنْ أَبِي هُرَيْرَةَ .",
+"source": "جامع الترمذي (3604)",
+"warning": "العدد المذكور وارد في رواية مختلف في ثبوتها. تقييده بالصباح أو المساء غير منصوص في الحديث، وإنما هو ذكر عام أو ورد في وقت آخر."
+},
+"m22": {
+"status": "daif",
+"label": "ضعيف",
+"hadith": "عن أبي الدرداء مرفوعا: «من صلى علي حين يصبح عشرا، وحين يمسي عشرا، أدركته شفاعتي يوم القيامة».",
+"source": "رواه الطبراني، وفيه انقطاع (خالد بن معدان لم يسمع من أبي الدرداء). ضعفه العراقي والسخاوي، وضعفه الألباني بعد أن كان حسنه (السلسلة الضعيفة 5788، ضعيف الترغيب 396).",
+"warning": "لفظ النص المعروض يختلف يسيرا عن لفظ الرواية المخرّجة. العدد المذكور وارد في رواية مختلف في ثبوتها."
+},
+"m23": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "عن أبي موسى الأشعري أن رسول الله ﷺ قال: «يا أيها الناس اتقوا هذا الشرك فإنه أخفى من دبيب النمل... قولوا: اللهم إنا نعوذ بك من أن نشرك بك شيئا نعلمه، ونستغفرك لما لا نعلمه».",
+"source": "رواه أحمد، وصححه الألباني لغيره (صحيح الترغيب 36).",
+"warning": "العدد المذكور غير منصوص عليه في الحديث. تقييده بالصباح أو المساء غير منصوص في الحديث، وإنما هو ذكر عام أو ورد في وقت آخر."
+},
+"m24": {
+"status": "daif",
+"label": "ضعيف",
+"hadith": "… عَنْ أَبِي سَعِيدٍ الْخُدْرِيِّ، قَالَ دَخَلَ رَسُولُ اللَّهِ صلى الله عليه وسلم ذَاتَ يَوْمٍ الْمَسْجِدَ فَإِذَا هُوَ بِرَجُلٍ مِنَ الأَنْصَارِ يُقَالُ لَهُ أَبُو أُمَامَةَ فَقَالَ \" يَا أَبَا أُمَامَةَ مَا لِي أَرَاكَ جَالِسًا فِي الْمَسْجِدِ فِي غَيْرِ وَقْتِ الصَّلاَةِ \" . قَالَ هُمُومٌ لَزِمَتْنِي وَدُيُونٌ يَا رَسُولَ اللَّهِ . قَالَ \" أَفَلاَ أُعَلِّمُكَ كَلاَمًا إِذَا أَنْتَ قُلْتَهُ أَذْهَبَ اللَّهُ عَزَّ وَجَلَّ هَمَّكَ وَقَضَى عَنْكَ دَيْنَكَ \" . قَالَ قُلْتُ بَلَى يَا رَسُولَ اللَّهِ . قَالَ \" قُلْ إِذَا أَصْبَحْتَ وَإِذَا أَمْسَيْتَ اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ وَأَعُوذُ بِكَ مِنَ الْعَجْزِ وَالْكَسَلِ …",
+"source": "سنن أبي داود (1555)، حكم الألباني: ضعيف",
+"warning": "العدد المذكور غير منصوص عليه في الحديث. تقييده بالصباح أو المساء غير منصوص في الحديث، وإنما هو ذكر عام أو ورد في وقت آخر."
+},
+"m25": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "حَدَّثَنَا مُحَمَّدُ بْنُ إِسْمَاعِيلَ، حَدَّثَنَا مُوسَى بْنُ إِسْمَاعِيلَ، حَدَّثَنَا حَفْصُ بْنُ عُمَرَ الشَّنِّيُّ، حَدَّثَنِي أَبِي عُمَرُ بْنُ مُرَّةَ، قَالَ سَمِعْتُ بِلاَلَ بْنَ يَسَارِ بْنِ زَيْدٍ، مَوْلَى النَّبِيِّ صلى الله عليه وسلم حَدَّثَنِي أَبِي عَنْ جَدِّي سَمِعَ النَّبِيَّ صلى الله عليه وسلم يَقُولُ \" مَنْ قَالَ أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ الَّذِي لاَ إِلَهَ إِلاَّ هُوَ الْحَىَّ الْقَيُّومَ وَأَتُوبُ إِلَيْهِ . غُفِرَ لَهُ وَإِنْ كَانَ فَرَّ مِنَ الزَّحْفِ \" . قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ غَرِيبٌ لاَ نَعْرِفُهُ إِلاَّ مِنْ هَذَا الْوَجْهِ .",
+"source": "جامع الترمذي (3577)، حكم الألباني: صحيح",
+"warning": "العدد المذكور غير منصوص عليه في الحديث. تقييده بالصباح أو المساء غير منصوص في الحديث، وإنما هو ذكر عام أو ورد في وقت آخر."
+},
+"m26": {
+"status": "daif",
+"label": "ضعيف",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ ـ صلى الله عليه وسلم ـ حَدَّثَهُمْ \" أَنَّ عَبْدًا مِنْ عِبَادِ اللَّهِ قَالَ يَا رَبِّ لَكَ الْحَمْدُ كَمَا يَنْبَغِي لِجَلاَلِ وَجْهِكَ وَلِعَظِيمِ سُلْطَانِكَ فَعَضَّلَتْ بِالْمَلَكَيْنِ فَلَمْ يَدْرِيَا كَيْفَ يَكْتُبَانِهَا فَصَعِدَا إِلَى السَّمَاءِ وَقَالاَ يَا رَبَّنَا إِنَّ عَبْدَكَ قَدْ قَالَ مَقَالَةً لاَ نَدْرِي كَيْفَ نَكْتُبُهَا . قَالَ اللَّهُ عَزَّ وَجَلَّ وَهُوَ أَعْلَمُ بِمَا قَالَ عَبْدُهُ مَاذَا قَالَ عَبْدِي قَالاَ يَا رَبِّ إِنَّهُ قَالَ يَا رَبِّ لَكَ الْحَمْدُ كَمَا يَنْبَغِي لِجَلاَلِ وَجْهِكَ وَعَظِيمِ سُلْطَانِكَ . فَقَالَ اللَّهُ عَزَّ وَجَلَّ لَهُمَا اكْتُبَاهَا كَمَا قَالَ عَبْدِي حَتَّى يَل …",
+"source": "سنن ابن ماجه (3801)، حكم الألباني: ضعيف",
+"warning": "العدد المذكور غير منصوص عليه في الحديث. تقييده بالصباح أو المساء غير منصوص في الحديث، وإنما هو ذكر عام أو ورد في وقت آخر."
+},
+"m27": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ النَّبِيَّ ـ صلى الله عليه وسلم ـ كَانَ يَقُولُ إِذَا صَلَّى الصُّبْحَ حِينَ يُسَلِّمُ \" اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلاً مُتَقَبَّلاً \" .",
+"source": "سنن ابن ماجه (925)، حكم الألباني: صحيح"
+},
+"m28": {
+"status": "no-hadith",
+"label": "لا يوجد حديث محدد",
+"hadith": "لم يُعثر على هذا اللفظ كاملا في الكتب الستة. جزء منه («ما شاء الله كان وما لم يشأ لم يكن، أعلم أن الله على كل شيء قدير، وأن الله قد أحاط بكل شيء علما») في سنن أبي داود (5075) بإسناد ضعيف.",
+"source": "يُعزى إلى ابن السني في عمل اليوم والليلة، ولم يُتحقق منه مباشرة.",
+"warning": "لا يثبت هذا الذكر بهذا اللفظ مرفوعا؛ ويجوز الدعاء به دون اعتقاد فضل مخصوص."
+},
+"m29": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ \" مَنْ قَالَ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ، وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ. فِي يَوْمٍ مِائَةَ مَرَّةٍ، كَانَتْ لَهُ عَدْلَ عَشْرِ رِقَابٍ، وَكُتِبَتْ لَهُ مِائَةُ حَسَنَةٍ، وَمُحِيَتْ عَنْهُ مِائَةُ سَيِّئَةٍ، وَكَانَتْ لَهُ حِرْزًا مِنَ الشَّيْطَانِ يَوْمَهُ ذَلِكَ حَتَّى يُمْسِيَ، وَلَمْ يَأْتِ أَحَدٌ بِأَفْضَلَ مِمَّا جَاءَ بِهِ، إِلاَّ أَحَدٌ عَمِلَ أَكْثَرَ مِنْ ذَلِكَ \".",
+"source": "صحيح البخاري (3293)",
+"warning": "في النص المعروض خطأ في اللفظ أو الضبط مقارنة بلفظ المصدر."
+},
+"m30": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِي هُرَيْرَةَ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم \" مَنْ قَالَ حِينَ يُصْبِحُ وَحِينَ يُمْسِي سُبْحَانَ اللَّهِ وَبِحَمْدِهِ مِائَةَ مَرَّةٍ . لَمْ يَأْتِ أَحَدٌ يَوْمَ الْقِيَامَةِ بِأَفْضَلَ مِمَّا جَاءَ بِهِ إِلاَّ أَحَدٌ قَالَ مِثْلَ مَا قَالَ أَوْ زَادَ عَلَيْهِ \" .",
+"source": "صحيح مسلم (2692)"
+},
+"m31": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… عَنْ أَبِي هُرَيْرَةَ، قَالَ قَالَ رَسُولُ اللَّهِ ـ صلى الله عليه وسلم ـ \" إِنِّي لأَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ فِي الْيَوْمِ مِائَةَ مَرَّةٍ \" .",
+"source": "سنن ابن ماجه (3815)، حكم الألباني: حسن صحيح",
+"warning": "الفضل المكتوب («مائة حسنة ومحيت عنه مائة سيئة») هو فضل التهليل مائة مرة، لا الاستغفار. الفضل المكتوب تحت الذكر لا يثبت له بهذا اللفظ. تقييده بالصباح أو المساء غير منصوص في الحديث، وإنما هو ذكر عام أو ورد في وقت آخر."
+},
+"e1": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "عن أبي بن كعب في قصة الجني الذي كان يأخذ من تمره: «هذه الآية التي في سورة البقرة: ﴿الله لا إله إلا هو الحي القيوم﴾ من قالها حين يمسي أُجير منا حتى يصبح، ومن قالها حين يصبح أُجير منا حتى يمسي»، فلما أصبح أتى رسول الله ﷺ فذكر ذلك له فقال: «صدق الخبيث».",
+"source": "رواه النسائي في الكبرى والطبراني والحاكم (1/562)، وصححه الألباني في صحيح الترغيب (662)."
+},
+"e2": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِي مَسْعُودٍ ـ رضى الله عنه ـ قَالَ قَالَ النَّبِيُّ صلى الله عليه وسلم \" مَنْ قَرَأَ بِالآيَتَيْنِ مِنْ آخِرِ سُورَةِ الْبَقَرَةِ فِي لَيْلَةٍ كَفَتَاهُ\".",
+"source": "صحيح البخاري (5009)"
+},
+"e3": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… عَنْ أَبِيهِ، أَنَّهُ قَالَ خَرَجْنَا فِي لَيْلَةِ مَطَرٍ وَظُلْمَةٍ شَدِيدَةٍ نَطْلُبُ رَسُولَ اللَّهِ صلى الله عليه وسلم لِيُصَلِّيَ لَنَا فَأَدْرَكْنَاهُ فَقَالَ \" أَصَلَّيْتُمْ \" . فَلَمْ أَقُلْ شَيْئًا فَقَالَ \" قُلْ \" . فَلَمْ أَقُلْ شَيْئًا ثُمَّ قَالَ \" قُلْ \" . فَلَمْ أَقُلْ شَيْئًا ثُمَّ قَالَ \" قُلْ \" . فَقُلْتُ يَا رَسُولَ اللَّهِ مَا أَقُولُ قَالَ \" { قُلْ هُوَ اللَّهُ أَحَدٌ } وَالْمُعَوِّذَتَيْنِ حِينَ تُمْسِي وَحِينَ تُصْبِحُ ثَلاَثَ مَرَّاتٍ تَكْفِيكَ مِنْ كُلِّ شَىْءٍ \" .",
+"source": "سنن أبي داود (5082)، حكم الألباني: حسن"
+},
+"e4": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… عَنْ أَبِيهِ، أَنَّهُ قَالَ خَرَجْنَا فِي لَيْلَةِ مَطَرٍ وَظُلْمَةٍ شَدِيدَةٍ نَطْلُبُ رَسُولَ اللَّهِ صلى الله عليه وسلم لِيُصَلِّيَ لَنَا فَأَدْرَكْنَاهُ فَقَالَ \" أَصَلَّيْتُمْ \" . فَلَمْ أَقُلْ شَيْئًا فَقَالَ \" قُلْ \" . فَلَمْ أَقُلْ شَيْئًا ثُمَّ قَالَ \" قُلْ \" . فَلَمْ أَقُلْ شَيْئًا ثُمَّ قَالَ \" قُلْ \" . فَقُلْتُ يَا رَسُولَ اللَّهِ مَا أَقُولُ قَالَ \" { قُلْ هُوَ اللَّهُ أَحَدٌ } وَالْمُعَوِّذَتَيْنِ حِينَ تُمْسِي وَحِينَ تُصْبِحُ ثَلاَثَ مَرَّاتٍ تَكْفِيكَ مِنْ كُلِّ شَىْءٍ \" .",
+"source": "سنن أبي داود (5082)، حكم الألباني: حسن"
+},
+"e5": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… عَنْ أَبِيهِ، أَنَّهُ قَالَ خَرَجْنَا فِي لَيْلَةِ مَطَرٍ وَظُلْمَةٍ شَدِيدَةٍ نَطْلُبُ رَسُولَ اللَّهِ صلى الله عليه وسلم لِيُصَلِّيَ لَنَا فَأَدْرَكْنَاهُ فَقَالَ \" أَصَلَّيْتُمْ \" . فَلَمْ أَقُلْ شَيْئًا فَقَالَ \" قُلْ \" . فَلَمْ أَقُلْ شَيْئًا ثُمَّ قَالَ \" قُلْ \" . فَلَمْ أَقُلْ شَيْئًا ثُمَّ قَالَ \" قُلْ \" . فَقُلْتُ يَا رَسُولَ اللَّهِ مَا أَقُولُ قَالَ \" { قُلْ هُوَ اللَّهُ أَحَدٌ } وَالْمُعَوِّذَتَيْنِ حِينَ تُمْسِي وَحِينَ تُصْبِحُ ثَلاَثَ مَرَّاتٍ تَكْفِيكَ مِنْ كُلِّ شَىْءٍ \" .",
+"source": "سنن أبي داود (5082)، حكم الألباني: حسن"
+},
+"e6": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "حَدَّثَنَا عُثْمَانُ بْنُ أَبِي شَيْبَةَ، حَدَّثَنَا جَرِيرٌ، عَنِ الْحَسَنِ بْنِ عُبَيْدِ اللَّهِ، عَنْ إِبْرَاهِيمَ، بْنِ سُوَيْدٍ عَنْ عَبْدِ الرَّحْمَنِ بْنِ يَزِيدَ، عَنْ عَبْدِ اللَّهِ، قَالَ كَانَ نَبِيُّ اللَّهِ صلى الله عليه وسلم إِذَا أَمْسَى قَالَ \" أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ \" . قَالَ أُرَاهُ قَالَ فِيهِنَّ \" لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا رَبِّ أَعُوذُ بِكَ مِنَ الْ …",
+"source": "صحيح مسلم (2723)"
+},
+"e7": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنِ النَّبِيِّ صلى الله عليه وسلم \" سَيِّدُ الاِسْتِغْفَارِ أَنْ تَقُولَ اللَّهُمَّ أَنْتَ رَبِّي، لاَ إِلَهَ إِلاَّ أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَىَّ وَأَبُوءُ لَكَ بِذَنْبِي، فَاغْفِرْ لِي، فَإِنَّهُ لاَ يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ \". قَالَ \" وَمَنْ قَالَهَا مِنَ النَّهَارِ مُوقِنًا بِهَا، فَمَاتَ مِنْ يَوْمِهِ قَبْلَ أَنْ يُمْسِيَ، فَهُوَ مِنْ أَهْلِ الْجَنَّةِ، وَمَنْ قَالَهَا مِنَ اللَّيْلِ وَهْوَ مُوقِنٌ بِهَا، فَمَاتَ قَبْلَ أَنْ يُصْبِحَ، فَهْوَ مِنْ أَهْلِ الْجَنَّةِ \".",
+"source": "صحيح البخاري (6306)",
+"warning": "لفظ النص المعروض يختلف يسيرا عن لفظ الرواية المخرّجة."
+},
+"e8": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… عَنْ أَبِي سَلاَّمٍ، خَادِمِ النَّبِيِّ ـ صلى الله عليه وسلم ـ عَنِ النَّبِيِّ ـ صلى الله عليه وسلم ـ قَالَ \" مَا مِنْ مُسْلِمٍ أَوْ إِنْسَانٍ أَوْ عَبْدٍ يَقُولُ حِينَ يُمْسِي وَحِينَ يُصْبِحُ رَضِيتُ بِاللَّهِ رَبًّا وَبِالإِسْلاَمِ دِينًا وَبِمُحَمَّدٍ نَبِيًّا - إِلاَّ كَانَ حَقًّا عَلَى اللَّهِ أَنْ يُرْضِيَهُ يَوْمَ الْقِيَامَةِ \" .",
+"source": "سنن ابن ماجه (3870)، حكم الألباني: ضعيف",
+"warning": "اختُلف في ثبوته؛ ضعفه الألباني أولا ثم صححه (السلسلة الصحيحة 2686)، والعدد ثلاثا في رواية أحمد. العدد المذكور وارد في رواية مختلف في ثبوتها."
+},
+"e9": {
+"status": "daif",
+"label": "ضعيف",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ \" مَنْ قَالَ حِينَ يُصْبِحُ أَوْ يُمْسِي اللَّهُمَّ إِنِّي أَصْبَحْتُ أُشْهِدُكَ وَأُشْهِدُ حَمَلَةَ عَرْشِكَ وَمَلاَئِكَتَكَ وَجَمِيعَ خَلْقِكَ أَنَّكَ أَنْتَ اللَّهُ لاَ إِلَهَ إِلاَّ أَنْتَ وَأَنَّ مُحَمَّدًا عَبْدُكَ وَرَسُولُكَ أَعْتَقَ اللَّهُ رُبْعَهُ مِنَ النَّارِ فَمَنْ قَالَهَا مَرَّتَيْنِ أَعْتَقَ اللَّهُ نِصْفَهُ وَمَنْ قَالَهَا ثَلاَثًا أَعْتَقَ اللَّهُ ثَلاَثَةَ أَرْبَاعِهِ فَإِنْ قَالَهَا أَرْبَعًا أَعْتَقَهُ اللَّهُ مِنَ النَّارِ \" .",
+"source": "سنن أبي داود (5069)، حكم الألباني: ضعيف",
+"warning": "ضعفه المنذري والألباني وابن باز. ويجوز الذكر به دعاءً لا على سبيل اعتقاد ثبوت الأجر المخصوص. العدد المذكور وارد في رواية مختلف في ثبوتها."
+},
+"e10": {
+"status": "daif",
+"label": "ضعيف",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ \" مَنْ قَالَ حِينَ يُصْبِحُ اللَّهُمَّ مَا أَصْبَحَ بِي مِنْ نِعْمَةٍ فَمِنْكَ وَحْدَكَ لاَ شَرِيكَ لَكَ فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ . فَقَدْ أَدَّى شُكْرَ يَوْمِهِ وَمَنْ قَالَ مِثْلَ ذَلِكَ حِينَ يُمْسِي فَقَدْ أَدَّى شُكْرَ لَيْلَتِهِ \" .",
+"source": "سنن أبي داود (5073)، حكم الألباني: ضعيف",
+"warning": "لفظ النص المعروض يختلف يسيرا عن لفظ الرواية المخرّجة. الفضل المكتوب تحت الذكر لا يثبت له بهذا اللفظ."
+},
+"e11": {
+"status": "daif",
+"label": "ضعيف",
+"hadith": "حَدَّثَنَا يَزِيدُ بْنُ مُحَمَّدٍ الدِّمَشْقِيُّ، حَدَّثَنَا عَبْدُ الرَّزَّاقِ بْنُ مُسْلِمٍ الدِّمَشْقِيُّ، - وَكَانَ مِنْ ثِقَاتِ الْمُسْلِمِينَ مِنَ الْمُتَعَبِّدِينَ - قَالَ حَدَّثَنَا مُدْرِكُ بْنُ سَعْدٍ - قَالَ يَزِيدُ شَيْخٌ ثِقَةٌ - عَنْ يُونُسَ بْنِ مَيْسَرَةَ بْنِ حَلْبَسٍ عَنْ أُمِّ الدَّرْدَاءِ عَنْ أَبِي الدَّرْدَاءِ رضى الله عنه قَالَ مَنْ قَالَ إِذَا أَصْبَحَ وَإِذَا أَمْسَى حَسْبِيَ اللَّهُ لاَ إِلَهَ إِلاَّ هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ سَبْعَ مَرَّاتٍ كَفَاهُ اللَّهُ مَا أَهَمَّهُ صَادِقًا كَانَ بِهَا أَوْ كَاذِبًا .",
+"source": "سنن أبي داود (5081)، حكم الألباني: موضوع",
+"warning": "هو موقوف على أبي الدرداء، ضعيف مرفوعا وموقوفا (السلسلة الضعيفة 5286). والكلام حق، ويجوز ذكره دون اعتقاد الأجر المخصوص. العدد المذكور وارد في رواية مختلف في ثبوتها."
+},
+"e12": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "حَدَّثَنَا عَبْدُ اللَّهِ بْنُ مَسْلَمَةَ، حَدَّثَنَا أَبُو مَوْدُودٍ، عَمَّنْ سَمِعَ أَبَانَ بْنَ عُثْمَانَ، يَقُولُ سَمِعْتُ عُثْمَانَ، - يَعْنِي ابْنَ عَفَّانَ - يَقُولُ سَمِعْتُ رَسُولَ اللَّهِ صلى الله عليه وسلم يَقُولُ \" مَنْ قَالَ بِسْمِ اللَّهِ الَّذِي لاَ يَضُرُّ مَعَ اسْمِهِ شَىْءٌ فِي الأَرْضِ وَلاَ فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ ثَلاَثَ مَرَّاتٍ لَمْ تُصِبْهُ فَجْأَةُ بَلاَءٍ حَتَّى يُصْبِحَ وَمَنْ قَالَهَا حِينَ يُصْبِحُ ثَلاَثَ مَرَّاتٍ لَمْ تُصِبْهُ فَجْأَةُ بَلاَءٍ حَتَّى يُمْسِيَ \" . قَالَ فَأَصَابَ أَبَانَ بْنَ عُثْمَانَ الْفَالِجُ فَجَعَلَ الرَّجُلُ الَّذِي سَمِعَ مِنْهُ الْحَدِيثَ يَنْظُرُ إِلَيْهِ فَقَالَ لَه …",
+"source": "سنن أبي داود (5088)، حكم الألباني: صحيح",
+"warning": "الفضل المكتوب تحت الذكر لا يثبت له بهذا اللفظ."
+},
+"e13": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِي هُرَيْرَةَ، قَالَ قَالَ رَسُولُ اللَّهِ ـ صلى الله عليه وسلم ـ \" إِذَا أَصْبَحْتُمْ فَقُولُوا اللَّهُمَّ بِكَ أَصْبَحْنَا وَبِكَ أَمْسَيْنَا وَبِكَ نَحْيَى وَبِكَ نَمُوتُ وَإِذَا أَمْسَيْتُمْ فَقُولُوا اللَّهُمَّ بِكَ أَمْسَيْنَا وَبِكَ أَصْبَحْنَا وَبِكَ نَحْيَى وَبِكَ نَمُوتُ وَإِلَيْكَ الْمَصِيرُ \" .",
+"source": "سنن ابن ماجه (3868)، حكم الألباني: صحيح"
+},
+"e14": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "عن عبد الرحمن بن أبزى: كان رسول الله ﷺ إذا أصبح قال: «أصبحنا على فطرة الإسلام، وعلى كلمة الإخلاص، وعلى دين نبينا محمد ﷺ، وعلى ملة أبينا إبراهيم حنيفا مسلما وما كان من المشركين»، وإذا أمسى قال مثل ذلك.",
+"source": "رواه أحمد (15360) والنسائي في الكبرى، وصححه النووي والعراقي وابن باز والألباني (صحيح الجامع 4674)."
+},
+"e15": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ النَّبِيَّ صلى الله عليه وسلم خَرَجَ مِنْ عِنْدِهَا بُكْرَةً حِينَ صَلَّى الصُّبْحَ وَهِيَ فِي مَسْجِدِهَا ثُمَّ رَجَعَ بَعْدَ أَنْ أَضْحَى وَهِيَ جَالِسَةٌ فَقَالَ \" مَا زِلْتِ عَلَى الْحَالِ الَّتِي فَارَقْتُكِ عَلَيْهَا \" . قَالَتْ نَعَمْ . قَالَ النَّبِيُّ صلى الله عليه وسلم \" لَقَدْ قُلْتُ بَعْدَكِ أَرْبَعَ كَلِمَاتٍ ثَلاَثَ مَرَّاتٍ لَوْ وُزِنَتْ بِمَا قُلْتِ مُنْذُ الْيَوْمِ لَوَزَنَتْهُنَّ سُبْحَانَ اللَّهِ وَبِحَمْدِهِ عَدَدَ خَلْقِهِ وَرِضَا نَفْسِهِ وَزِنَةَ عَرْشِهِ وَمِدَادَ كَلِمَاتِهِ \" .",
+"source": "صحيح مسلم (2726)",
+"warning": "تقييده بالصباح أو المساء غير منصوص في الحديث، وإنما هو ذكر عام أو ورد في وقت آخر."
+},
+"e16": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… عَنْ جَعْفَرِ بْنِ مَيْمُونٍ، قَالَ حَدَّثَنِي عَبْدُ الرَّحْمَنِ بْنُ أَبِي بَكْرَةَ، أَنَّهُ قَالَ لأَبِيهِ يَا أَبَةِ إِنِّي أَسْمَعُكَ تَدْعُو كُلَّ غَدَاةٍ اللَّهُمَّ عَافِنِي فِي بَدَنِي اللَّهُمَّ عَافِنِي فِي سَمْعِي اللَّهُمَّ عَافِنِي فِي بَصَرِي لاَ إِلَهَ إِلاَّ أَنْتَ تُعِيدُهَا ثَلاَثًا حِينَ تُصْبِحُ وَثَلاَثًا حِينَ تُمْسِي . فَقَالَ إِنِّي سَمِعْتُ رَسُولَ اللَّهِ صلى الله عليه وسلم يَدْعُو بِهِنَّ فَأَنَا أُحِبُّ أَنْ أَسْتَنَّ بِسُنَّتِهِ . قَالَ عَبَّاسٌ فِيهِ وَتَقُولُ اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ وَالْفَقْرِ اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ لاَ إِلَهَ إِلاَّ أَنْتَ تُعِيدُهَا ثَلاَثً …",
+"source": "سنن أبي داود (5090)، حكم الألباني: إسناده حسن"
+},
+"e17": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… عَنْ جَعْفَرِ بْنِ مَيْمُونٍ، قَالَ حَدَّثَنِي عَبْدُ الرَّحْمَنِ بْنُ أَبِي بَكْرَةَ، أَنَّهُ قَالَ لأَبِيهِ يَا أَبَةِ إِنِّي أَسْمَعُكَ تَدْعُو كُلَّ غَدَاةٍ اللَّهُمَّ عَافِنِي فِي بَدَنِي اللَّهُمَّ عَافِنِي فِي سَمْعِي اللَّهُمَّ عَافِنِي فِي بَصَرِي لاَ إِلَهَ إِلاَّ أَنْتَ تُعِيدُهَا ثَلاَثًا حِينَ تُصْبِحُ وَثَلاَثًا حِينَ تُمْسِي . فَقَالَ إِنِّي سَمِعْتُ رَسُولَ اللَّهِ صلى الله عليه وسلم يَدْعُو بِهِنَّ فَأَنَا أُحِبُّ أَنْ أَسْتَنَّ بِسُنَّتِهِ . قَالَ عَبَّاسٌ فِيهِ وَتَقُولُ اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ وَالْفَقْرِ اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ لاَ إِلَهَ إِلاَّ أَنْتَ تُعِيدُهَا ثَلاَثً …",
+"source": "سنن أبي داود (5090)، حكم الألباني: إسناده حسن",
+"warning": "لفظ النص المعروض يختلف يسيرا عن لفظ الرواية المخرّجة."
+},
+"e18": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "حَدَّثَنَا عَلِيُّ بْنُ مُحَمَّدٍ الطَّنَافِسِيُّ، حَدَّثَنَا وَكِيعٌ، حَدَّثَنَا عُبَادَةُ بْنُ مُسْلِمٍ، حَدَّثَنَا جُبَيْرُ بْنُ أَبِي سُلَيْمَانَ بْنِ جُبَيْرِ بْنِ مُطْعِمٍ، قَالَ سَمِعْتُ ابْنَ عُمَرَ، يَقُولُ لَمْ يَكُنْ رَسُولُ اللَّهِ ـ صلى الله عليه وسلم ـ يَدَعُ هَؤُلاَءِ الدَّعَوَاتِ حِينَ يُمْسِي وَحِينَ يُصْبِحُ \" اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَاىَ وَأَهْلِي وَمَالِي اللَّهُمَّ اسْتُرْ عَوْرَاتِي وَآمِنْ رَوْعَاتِي وَاحْفَظْنِي مِنْ بَيْنِ يَدَىَّ وَمِنْ خَلْفِي وَعَنْ يَمِينِي وَعَنْ شِمَالِي وَمِنْ فَوْقِي …",
+"source": "سنن ابن ماجه (3871)، حكم الألباني: صحيح"
+},
+"e19": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "عن أنس أن النبي ﷺ قال لفاطمة: «ما يمنعك أن تسمعي ما أوصيك به، أن تقولي إذا أصبحت وإذا أمسيت: يا حي يا قيوم برحمتك أستغيث، أصلح لي شأني كله، ولا تكلني إلى نفسي طرفة عين».",
+"source": "رواه النسائي في عمل اليوم والليلة والحاكم (1/545)، وحسنه الألباني (صحيح الترغيب 661).",
+"warning": "العدد المذكور غير منصوص عليه في الحديث."
+},
+"e20": {
+"status": "daif",
+"label": "ضعيف",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ \" إِذَا أَصْبَحَ أَحَدُكُمْ فَلْيَقُلْ أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ رَبِّ الْعَالَمِينَ اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ هَذَا الْيَوْمِ فَتْحَهُ وَنَصْرَهُ وَنُورَهُ وَبَرَكَتَهُ وَهُدَاهُ وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِيهِ وَشَرِّ مَا بَعْدَهُ ثُمَّ إِذَا أَمْسَى فَلْيَقُلْ مِثْلَ ذَلِكَ \" .",
+"source": "سنن أبي داود (5084)، حكم الألباني: ضعيف",
+"warning": "في النص المعروض خطأ في اللفظ أو الضبط مقارنة بلفظ المصدر."
+},
+"e21": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِي هُرَيْرَةَ، رضى الله عنه قَالَ قَالَ أَبُو بَكْرٍ يَا رَسُولَ اللَّهِ مُرْنِي بِشَيْءٍ أَقُولُهُ إِذَا أَصْبَحْتُ وَإِذَا أَمْسَيْتُ قَالَ \" قُلِ اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَوَاتِ وَالأَرْضِ رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ أَنْتَ أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ قَالَ قُلْهُ إِذَا أَصْبَحْتَ وَإِذَا أَمْسَيْتَ وَإِذَا أَخَذْتَ مَضْجَعَكَ \" . قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ حَسَنٌ صَحِيحٌ .",
+"source": "جامع الترمذي (3392)، حكم الألباني: صحيح",
+"warning": "لفظ النص المعروض يختلف يسيرا عن لفظ الرواية المخرّجة."
+},
+"e22": {
+"status": "no-hadith",
+"label": "لا يوجد حديث محدد",
+"hadith": "… عَنِ النَّبِيِّ صلى الله عليه وسلم قَالَ \" مَنْ قَالَ حِينَ يُمْسِي ثَلاَثَ مَرَّاتٍ أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ لَمْ يَضُرَّهُ حُمَةٌ تِلْكَ اللَّيْلَةَ \" . قَالَ سُهَيْلٌ فَكَانَ أَهْلُنَا تَعَلَّمُوهَا فَكَانُوا يَقُولُونَهَا كُلَّ لَيْلَةٍ فَلُدِغَتْ جَارِيَةٌ مِنْهُمْ فَلَمْ تَجِدْ لَهَا وَجَعًا . هَذَا حَدِيثٌ حَسَنٌ . وَرَوَى مَالِكُ بْنُ أَنَسٍ هَذَا الْحَدِيثَ عَنْ سُهَيْلِ بْنِ أَبِي صَالِحٍ عَنْ أَبِيهِ عَنْ أَبِي هُرَيْرَةَ عَنِ النَّبِيِّ صلى الله عليه وسلم وَرَوَى عُبَيْدُ اللَّهِ بْنُ عُمَرَ وَغَيْرُ وَاحِدٍ هَذَا الْحَدِيثَ عَنْ سُهَيْلٍ وَلَمْ يَذْكُرُوا فِيهِ عَنْ أَبِي هُرَيْرَةَ .",
+"source": "جامع الترمذي (3604)"
+},
+"e23": {
+"status": "daif",
+"label": "ضعيف",
+"hadith": "عن أبي الدرداء مرفوعا: «من صلى علي حين يصبح عشرا، وحين يمسي عشرا، أدركته شفاعتي يوم القيامة».",
+"source": "رواه الطبراني، وفيه انقطاع (خالد بن معدان لم يسمع من أبي الدرداء). ضعفه العراقي والسخاوي، وضعفه الألباني بعد أن كان حسنه (السلسلة الضعيفة 5788، ضعيف الترغيب 396).",
+"warning": "لفظ النص المعروض يختلف يسيرا عن لفظ الرواية المخرّجة. العدد المذكور وارد في رواية مختلف في ثبوتها."
+},
+"e24": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "عن أبي موسى الأشعري أن رسول الله ﷺ قال: «يا أيها الناس اتقوا هذا الشرك فإنه أخفى من دبيب النمل... قولوا: اللهم إنا نعوذ بك من أن نشرك بك شيئا نعلمه، ونستغفرك لما لا نعلمه».",
+"source": "رواه أحمد، وصححه الألباني لغيره (صحيح الترغيب 36).",
+"warning": "العدد المذكور غير منصوص عليه في الحديث. تقييده بالصباح أو المساء غير منصوص في الحديث، وإنما هو ذكر عام أو ورد في وقت آخر."
+},
+"e25": {
+"status": "daif",
+"label": "ضعيف",
+"hadith": "… عَنْ أَبِي سَعِيدٍ الْخُدْرِيِّ، قَالَ دَخَلَ رَسُولُ اللَّهِ صلى الله عليه وسلم ذَاتَ يَوْمٍ الْمَسْجِدَ فَإِذَا هُوَ بِرَجُلٍ مِنَ الأَنْصَارِ يُقَالُ لَهُ أَبُو أُمَامَةَ فَقَالَ \" يَا أَبَا أُمَامَةَ مَا لِي أَرَاكَ جَالِسًا فِي الْمَسْجِدِ فِي غَيْرِ وَقْتِ الصَّلاَةِ \" . قَالَ هُمُومٌ لَزِمَتْنِي وَدُيُونٌ يَا رَسُولَ اللَّهِ . قَالَ \" أَفَلاَ أُعَلِّمُكَ كَلاَمًا إِذَا أَنْتَ قُلْتَهُ أَذْهَبَ اللَّهُ عَزَّ وَجَلَّ هَمَّكَ وَقَضَى عَنْكَ دَيْنَكَ \" . قَالَ قُلْتُ بَلَى يَا رَسُولَ اللَّهِ . قَالَ \" قُلْ إِذَا أَصْبَحْتَ وَإِذَا أَمْسَيْتَ اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ وَأَعُوذُ بِكَ مِنَ الْعَجْزِ وَالْكَسَلِ …",
+"source": "سنن أبي داود (1555)، حكم الألباني: ضعيف",
+"warning": "العدد المذكور غير منصوص عليه في الحديث. تقييده بالصباح أو المساء غير منصوص في الحديث، وإنما هو ذكر عام أو ورد في وقت آخر."
+},
+"e26": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "حَدَّثَنَا مُحَمَّدُ بْنُ إِسْمَاعِيلَ، حَدَّثَنَا مُوسَى بْنُ إِسْمَاعِيلَ، حَدَّثَنَا حَفْصُ بْنُ عُمَرَ الشَّنِّيُّ، حَدَّثَنِي أَبِي عُمَرُ بْنُ مُرَّةَ، قَالَ سَمِعْتُ بِلاَلَ بْنَ يَسَارِ بْنِ زَيْدٍ، مَوْلَى النَّبِيِّ صلى الله عليه وسلم حَدَّثَنِي أَبِي عَنْ جَدِّي سَمِعَ النَّبِيَّ صلى الله عليه وسلم يَقُولُ \" مَنْ قَالَ أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ الَّذِي لاَ إِلَهَ إِلاَّ هُوَ الْحَىَّ الْقَيُّومَ وَأَتُوبُ إِلَيْهِ . غُفِرَ لَهُ وَإِنْ كَانَ فَرَّ مِنَ الزَّحْفِ \" . قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ غَرِيبٌ لاَ نَعْرِفُهُ إِلاَّ مِنْ هَذَا الْوَجْهِ .",
+"source": "جامع الترمذي (3577)، حكم الألباني: صحيح",
+"warning": "العدد المذكور غير منصوص عليه في الحديث. تقييده بالصباح أو المساء غير منصوص في الحديث، وإنما هو ذكر عام أو ورد في وقت آخر."
+},
+"e27": {
+"status": "daif",
+"label": "ضعيف",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ ـ صلى الله عليه وسلم ـ حَدَّثَهُمْ \" أَنَّ عَبْدًا مِنْ عِبَادِ اللَّهِ قَالَ يَا رَبِّ لَكَ الْحَمْدُ كَمَا يَنْبَغِي لِجَلاَلِ وَجْهِكَ وَلِعَظِيمِ سُلْطَانِكَ فَعَضَّلَتْ بِالْمَلَكَيْنِ فَلَمْ يَدْرِيَا كَيْفَ يَكْتُبَانِهَا فَصَعِدَا إِلَى السَّمَاءِ وَقَالاَ يَا رَبَّنَا إِنَّ عَبْدَكَ قَدْ قَالَ مَقَالَةً لاَ نَدْرِي كَيْفَ نَكْتُبُهَا . قَالَ اللَّهُ عَزَّ وَجَلَّ وَهُوَ أَعْلَمُ بِمَا قَالَ عَبْدُهُ مَاذَا قَالَ عَبْدِي قَالاَ يَا رَبِّ إِنَّهُ قَالَ يَا رَبِّ لَكَ الْحَمْدُ كَمَا يَنْبَغِي لِجَلاَلِ وَجْهِكَ وَعَظِيمِ سُلْطَانِكَ . فَقَالَ اللَّهُ عَزَّ وَجَلَّ لَهُمَا اكْتُبَاهَا كَمَا قَالَ عَبْدِي حَتَّى يَل …",
+"source": "سنن ابن ماجه (3801)، حكم الألباني: ضعيف",
+"warning": "العدد المذكور غير منصوص عليه في الحديث. تقييده بالصباح أو المساء غير منصوص في الحديث، وإنما هو ذكر عام أو ورد في وقت آخر."
+},
+"e28": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ \" مَنْ قَالَ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ، وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ. فِي يَوْمٍ مِائَةَ مَرَّةٍ، كَانَتْ لَهُ عَدْلَ عَشْرِ رِقَابٍ، وَكُتِبَتْ لَهُ مِائَةُ حَسَنَةٍ، وَمُحِيَتْ عَنْهُ مِائَةُ سَيِّئَةٍ، وَكَانَتْ لَهُ حِرْزًا مِنَ الشَّيْطَانِ يَوْمَهُ ذَلِكَ حَتَّى يُمْسِيَ، وَلَمْ يَأْتِ أَحَدٌ بِأَفْضَلَ مِمَّا جَاءَ بِهِ، إِلاَّ أَحَدٌ عَمِلَ أَكْثَرَ مِنْ ذَلِكَ \".",
+"source": "صحيح البخاري (3293)",
+"warning": "في النص المعروض خطأ في اللفظ أو الضبط مقارنة بلفظ المصدر."
+},
+"e29": {
+"status": "no-hadith",
+"label": "لا يوجد حديث محدد",
+"hadith": "لم يُعثر على هذا اللفظ كاملا في الكتب الستة. جزء منه («ما شاء الله كان وما لم يشأ لم يكن، أعلم أن الله على كل شيء قدير، وأن الله قد أحاط بكل شيء علما») في سنن أبي داود (5075) بإسناد ضعيف.",
+"source": "يُعزى إلى ابن السني في عمل اليوم والليلة، ولم يُتحقق منه مباشرة.",
+"warning": "لا يثبت هذا الذكر بهذا اللفظ مرفوعا؛ ويجوز الدعاء به دون اعتقاد فضل مخصوص."
+},
+"e30": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِي هُرَيْرَةَ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم \" مَنْ قَالَ حِينَ يُصْبِحُ وَحِينَ يُمْسِي سُبْحَانَ اللَّهِ وَبِحَمْدِهِ مِائَةَ مَرَّةٍ . لَمْ يَأْتِ أَحَدٌ يَوْمَ الْقِيَامَةِ بِأَفْضَلَ مِمَّا جَاءَ بِهِ إِلاَّ أَحَدٌ قَالَ مِثْلَ مَا قَالَ أَوْ زَادَ عَلَيْهِ \" .",
+"source": "صحيح مسلم (2692)"
+},
+"sl1": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ \" إِذَا قَامَ أَحَدُكُمْ عَنْ فِرَاشِهِ ثُمَّ رَجَعَ إِلَيْهِ فَلْيَنْفُضْهُ بِصَنِفَةِ إِزَارِهِ ثَلاَثَ مَرَّاتٍ فَإِنَّهُ لاَ يَدْرِي مَا خَلَفَهُ عَلَيْهِ بَعْدَهُ فَإِذَا اضْطَجَعَ فَلْيَقُلْ بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبِي وَبِكَ أَرْفَعُهُ فَإِنْ أَمْسَكْتَ نَفْسِي فَارْحَمْهَا وَإِنْ أَرْسَلْتَهَا فَاحْفَظْهَا بِمَا تَحْفَظُ بِهِ عِبَادَكَ الصَّالِحِينَ . فَإِذَا اسْتَيْقَظَ فَلْيَقُلِ الْحَمْدُ لِلَّهِ الَّذِي عَافَانِي فِي جَسَدِي وَرَدَّ عَلَىَّ رُوحِي وَأَذِنَ لِي بِذِكْرِهِ \" . قَالَ وَفِي الْبَابِ عَنْ جَابِرٍ وَعَائِشَةَ . قَالَ حَدِيثُ أَبِي هُرَيْرَةَ حَدِيثٌ حَسَنٌ . وَرَوَى ب …",
+"source": "جامع الترمذي (3401)، حكم الألباني: حسن"
+},
+"sl2": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ حَفْصَةَ، زَوْجِ النَّبِيِّ صلى الله عليه وسلم أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم كَانَ إِذَا أَرَادَ أَنْ يَرْقُدَ وَضَعَ يَدَهُ الْيُمْنَى تَحْتَ خَدِّهِ ثُمَّ يَقُولُ \" اللَّهُمَّ قِنِي عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ \" . ثَلاَثَ مِرَارٍ .",
+"source": "سنن أبي داود (5045)، حكم الألباني: صحيح"
+},
+"sl3": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ حُذَيْفَةَ، قَالَ كَانَ النَّبِيُّ صلى الله عليه وسلم إِذَا أَرَادَ أَنْ يَنَامَ قَالَ \" بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا \". وَإِذَا اسْتَيْقَظَ مِنْ مَنَامِهِ قَالَ \" الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا، وَإِلَيْهِ النُّشُورُ \".",
+"source": "صحيح البخاري (6324)"
+},
+"sl4": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ فَاطِمَةَ، عَلَيْهَا السَّلاَمُ شَكَتْ مَا تَلْقَى مِنْ أَثَرِ الرَّحَا، فَأَتَى النَّبِيَّ صلى الله عليه وسلم سَبْىٌ، فَانْطَلَقَتْ فَلَمْ تَجِدْهُ، فَوَجَدَتْ عَائِشَةَ، فَأَخْبَرَتْهَا، فَلَمَّا جَاءَ النَّبِيُّ صلى الله عليه وسلم أَخْبَرَتْهُ عَائِشَةُ بِمَجِيءِ فَاطِمَةَ، فَجَاءَ النَّبِيُّ صلى الله عليه وسلم إِلَيْنَا، وَقَدْ أَخَذْنَا مَضَاجِعَنَا، فَذَهَبْتُ لأَقُومَ فَقَالَ \" عَلَى مَكَانِكُمَا \". فَقَعَدَ بَيْنَنَا حَتَّى وَجَدْتُ بَرْدَ قَدَمَيْهِ عَلَى صَدْرِي وَقَالَ \" أَلاَ أُعَلِّمُكُمَا خَيْرًا مِمَّا سَأَلْتُمَانِي إِذَا أَخَذْتُمَا مَضَاجِعَكُمَا تُكَبِّرَا أَرْبَعًا وَثَلاَثِينَ، وَتُسَبِّحَا ثَلاَثًا وَثَلاَثِينَ، وَ …",
+"source": "صحيح البخاري (3705)"
+},
+"sl5": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ النَّبِيَّ صلى الله عليه وسلم أَمَرَ رَجُلاً. وَحَدَّثَنَا آدَمُ حَدَّثَنَا شُعْبَةُ حَدَّثَنَا أَبُو إِسْحَاقَ الْهَمْدَانِيُّ عَنِ الْبَرَاءِ بْنِ عَازِبٍ أَنَّ النَّبِيَّ صلى الله عليه وسلم أَوْصَى رَجُلاً فَقَالَ \" إِذَا أَرَدْتَ مَضْجَعَكَ فَقُلِ اللَّهُمَّ أَسْلَمْتُ نَفْسِي إِلَيْكَ، وَفَوَّضْتُ أَمْرِي إِلَيْكَ، وَوَجَّهْتُ وَجْهِي إِلَيْكَ، وَأَلْجَأْتُ ظَهْرِي إِلَيْكَ، رَغْبَةً وَرَهْبَةً إِلَيْكَ، لاَ مَلْجَأَ وَلاَ مَنْجَا مِنْكَ إِلاَّ إِلَيْكَ، آمَنْتُ بِكِتَابِكَ الَّذِي أَنْزَلْتَ، وَبِنَبِيِّكَ الَّذِي أَرْسَلْتَ. فَإِنْ مُتَّ مُتَّ عَلَى الْفِطْرَةِ \".",
+"source": "صحيح البخاري (6313)"
+},
+"wk1": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ حُذَيْفَةَ، قَالَ كَانَ النَّبِيُّ صلى الله عليه وسلم إِذَا أَوَى إِلَى فِرَاشِهِ قَالَ \" بِاسْمِكَ أَمُوتُ وَأَحْيَا \". وَإِذَا قَامَ قَالَ \" الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ \". تُنْشِرُهَا: تُخْرِجُهَا",
+"source": "صحيح البخاري (6312)"
+},
+"wk2": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنِ النَّبِيِّ صلى الله عليه وسلم قَالَ \" مَنْ تَعَارَّ مِنَ اللَّيْلِ فَقَالَ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ، وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ. الْحَمْدُ لِلَّهِ، وَسُبْحَانَ اللَّهِ، وَلاَ إِلَهَ إِلاَّ اللَّهُ، وَاللَّهُ أَكْبَرُ، وَلاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّهِ. ثُمَّ قَالَ اللَّهُمَّ اغْفِرْ لِي. أَوْ دَعَا اسْتُجِيبَ، فَإِنْ تَوَضَّأَ وَصَلَّى قُبِلَتْ صَلاَتُهُ \".",
+"source": "صحيح البخاري (1154)",
+"warning": "سياق الحديث: من استيقظ من الليل (تعارّ من الليل)."
+},
+"t1": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ عَبْدِ الْعَزِيزِ بْنِ صُهَيْبٍ، قَالَ سَمِعْتُ أَنَسًا، يَقُولُ كَانَ النَّبِيُّ صلى الله عليه وسلم إِذَا دَخَلَ الْخَلاَءَ قَالَ \" اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ \". تَابَعَهُ ابْنُ عَرْعَرَةَ عَنْ شُعْبَةَ. وَقَالَ غُنْدَرٌ عَنْ شُعْبَةَ إِذَا أَتَى الْخَلاَءَ. وَقَالَ مُوسَى عَنْ حَمَّادٍ إِذَا دَخَلَ. وَقَالَ سَعِيدُ بْنُ زَيْدٍ حَدَّثَنَا عَبْدُ الْعَزِيزِ إِذَا أَرَادَ أَنْ يَدْخُلَ.",
+"source": "صحيح البخاري (142)"
+},
+"t2": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ النَّبِيَّ صلى الله عليه وسلم كَانَ إِذَا خَرَجَ مِنَ الْغَائِطِ قَالَ \" غُفْرَانَكَ \" .",
+"source": "سنن أبي داود (30)، حكم الألباني: صحيح"
+},
+"t3": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِي هُرَيْرَةَ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم \" لاَ صَلاَةَ لِمَنْ لاَ وُضُوءَ لَهُ وَلاَ وُضُوءَ لِمَنْ لَمْ يَذْكُرِ اسْمَ اللَّهِ تَعَالَى عَلَيْهِ \" .",
+"source": "سنن أبي داود (101)، حكم الألباني: صحيح",
+"warning": "اختُلف في تصحيح أحاديث التسمية على الوضوء؛ قال الإمام أحمد: لا أعلم في هذا الباب حديثا له إسناد جيد."
+},
+"t4": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم . قَالَ فَذَكَرَ مِثْلَهُ غَيْرَ أَنَّهُ قَالَ \" مَنْ تَوَضَّأَ فَقَالَ أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ \" .",
+"source": "صحيح مسلم (234)"
+},
+"t4b": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ عُمَرَ بْنِ الْخَطَّابِ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم \" مَنْ تَوَضَّأَ فَأَحْسَنَ الْوُضُوءَ ثُمَّ قَالَ أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ اللَّهُمَّ اجْعَلْنِي مِنَ التَّوَّابِينَ وَاجْعَلْنِي مِنَ الْمُتَطَهِّرِينَ فُتِحَتْ لَهُ ثَمَانِيَةُ أَبْوَابِ الْجَنَّةِ يَدْخُلُ مِنْ أَيِّهَا شَاءَ \" . قَالَ أَبُو عِيسَى وَفِي الْبَابِ عَنْ أَنَسٍ وَعُقْبَةَ بْنِ عَامِرٍ . قَالَ أَبُو عِيسَى حَدِيثُ عُمَرَ قَدْ خُولِفَ زَيْدُ بْنُ حُبَابٍ فِي هَذَا الْحَدِيثِ . قَالَ وَرَوَى عَبْدُ اللَّهِ بْنُ صَالِحٍ وَغَيْرُهُ عَنْ مُعَاوِيَةَ بْنِ صَالِحٍ عَنْ …",
+"source": "جامع الترمذي (55)، حكم الألباني: صحيح"
+},
+"t5": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ النَّبِيَّ صلى الله عليه وسلم قَالَ \" إِذَا خَرَجَ الرَّجُلُ مِنْ بَيْتِهِ فَقَالَ بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ لاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّهِ \" . قَالَ \" يُقَالُ حِينَئِذٍ هُدِيتَ وَكُفِيتَ وَوُقِيتَ فَتَتَنَحَّى لَهُ الشَّيَاطِينُ فَيَقُولُ لَهُ شَيْطَانٌ آخَرُ كَيْفَ لَكَ بِرَجُلٍ قَدْ هُدِيَ وَكُفِيَ وَوُقِيَ \" .",
+"source": "سنن أبي داود (5095)، حكم الألباني: صحيح"
+},
+"t5b": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أُمِّ سَلَمَةَ، قَالَتْ مَا خَرَجَ النَّبِيُّ صلى الله عليه وسلم مِنْ بَيْتِي قَطُّ إِلاَّ رَفَعَ طَرْفَهُ إِلَى السَّمَاءِ فَقَالَ \" اللَّهُمَّ إِنِّي أَعُوذُ بِكَ أَنْ أَضِلَّ أَوْ أُضَلَّ أَوْ أَزِلَّ أَوْ أُزَلَّ أَوْ أَظْلِمَ أَوْ أُظْلَمَ أَوْ أَجْهَلَ أَوْ يُجْهَلَ عَلَىَّ \" .",
+"source": "سنن أبي داود (5094)، حكم الألباني: صحيح"
+},
+"t6": {
+"status": "daif",
+"label": "ضعيف",
+"hadith": "… عَنْ أَبِي مَالِكٍ الأَشْعَرِيِّ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم \" إِذَا وَلَجَ الرَّجُلُ فِي بَيْتِهِ فَلْيَقُلِ اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ الْمَوْلِجِ وَخَيْرَ الْمَخْرَجِ بِسْمِ اللَّهِ وَلَجْنَا وَبِسْمِ اللَّهِ خَرَجْنَا وَعَلَى اللَّهِ رَبِّنَا تَوَكَّلْنَا ثُمَّ لْيُسَلِّمْ عَلَى أَهْلِهِ \" .",
+"source": "سنن أبي داود (5096)، حكم الألباني: ضعيف",
+"warning": "الحديث ضعيف (ضعفه الألباني)."
+},
+"t7": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ عَبْدِ اللَّهِ بْنِ عَبَّاسٍ، أَنَّهُ رَقَدَ عِنْدَ رَسُولِ اللَّهِ صلى الله عليه وسلم فَاسْتَيْقَظَ فَتَسَوَّكَ وَتَوَضَّأَ وَهُوَ يَقُولُ { إِنَّ فِي خَلْقِ السَّمَوَاتِ وَالأَرْضِ وَاخْتِلاَفِ اللَّيْلِ وَالنَّهَارِ لآيَاتٍ لأُولِي الأَلْبَابِ} فَقَرَأَ هَؤُلاَءِ الآيَاتِ حَتَّى خَتَمَ السُّورَةَ ثُمَّ قَامَ فَصَلَّى رَكْعَتَيْنِ فَأَطَالَ فِيهِمَا الْقِيَامَ وَالرُّكُوعَ وَالسُّجُودَ ثُمَّ انْصَرَفَ فَنَامَ حَتَّى نَفَخَ ثُمَّ فَعَلَ ذَلِكَ ثَلاَثَ مَرَّاتٍ سِتَّ رَكَعَاتٍ كُلَّ ذَلِكَ يَسْتَاكُ وَيَتَوَضَّأُ وَيَقْرَأُ هَؤُلاَءِ الآيَاتِ ثُمَّ أَوْتَرَ بِثَلاَثٍ فَأَذَّنَ الْمُؤَذِّنُ فَخَرَجَ إِلَى الصَّلاَةِ وَهُوَ يَقُولُ \" اللَّ …",
+"source": "صحيح مسلم (763)",
+"warning": "النص المعروض مختصر؛ الحديث أطول."
+},
+"t8": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِي أُسَيْدٍ، - قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم \" إِذَا دَخَلَ أَحَدُكُمُ الْمَسْجِدَ فَلْيَقُلِ اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ . وَإِذَا خَرَجَ فَلْيَقُلِ اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ \" . قَالَ مُسْلِمٌ سَمِعْتُ يَحْيَى بْنَ يَحْيَى يَقُولُ كَتَبْتُ هَذَا الْحَدِيثَ مِنْ كِتَابِ سُلَيْمَانَ بْنِ بِلاَلٍ . قَالَ بَلَغَنِي أَنَّ يَحْيَى الْحِمَّانِيَّ يَقُولُ وَأَبِي أُسَيْدٍ .",
+"source": "صحيح مسلم (713)"
+},
+"t9": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِي أُسَيْدٍ، - قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم \" إِذَا دَخَلَ أَحَدُكُمُ الْمَسْجِدَ فَلْيَقُلِ اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ . وَإِذَا خَرَجَ فَلْيَقُلِ اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ \" . قَالَ مُسْلِمٌ سَمِعْتُ يَحْيَى بْنَ يَحْيَى يَقُولُ كَتَبْتُ هَذَا الْحَدِيثَ مِنْ كِتَابِ سُلَيْمَانَ بْنِ بِلاَلٍ . قَالَ بَلَغَنِي أَنَّ يَحْيَى الْحِمَّانِيَّ يَقُولُ وَأَبِي أُسَيْدٍ .",
+"source": "صحيح مسلم (713)"
+},
+"t10": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ \" مَنْ قَالَ حِينَ يَسْمَعُ النِّدَاءَ اللَّهُمَّ رَبَّ هَذِهِ الدَّعْوَةِ التَّامَّةِ وَالصَّلاَةِ الْقَائِمَةِ آتِ مُحَمَّدًا الْوَسِيلَةَ وَالْفَضِيلَةَ وَابْعَثْهُ مَقَامًا مَحْمُودًا الَّذِي وَعَدْتَهُ، حَلَّتْ لَهُ شَفَاعَتِي يَوْمَ الْقِيَامَةِ \".",
+"source": "صحيح البخاري (614)"
+},
+"tcl1": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ \" مَنْ أَكَلَ طَعَامًا ثُمَّ قَالَ الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي هَذَا الطَّعَامَ وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلاَ قُوَّةٍ غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ وَمَا تَأَخَّرَ وَمَنْ لَبِسَ ثَوْبًا فَقَالَ الْحَمْدُ لِلَّهِ الَّذِي كَسَانِي هَذَا الثَّوْبَ وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلاَ قُوَّةٍ غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ وَمَا تَأَخَّرَ \" .",
+"source": "سنن أبي داود (4023)، حكم الألباني: حسن"
+},
+"tcl2": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِي سَعِيدٍ الْخُدْرِيِّ، قَالَ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم إِذَا اسْتَجَدَّ ثَوْبًا سَمَّاهُ بِاسْمِهِ إِمَّا قَمِيصًا أَوْ عِمَامَةً ثُمَّ يَقُولُ \" اللَّهُمَّ لَكَ الْحَمْدُ أَنْتَ كَسَوْتَنِيهِ أَسْأَلُكَ مِنْ خَيْرِهِ وَخَيْرِ مَا صُنِعَ لَهُ وَأَعُوذُ بِكَ مِنْ شَرِّهِ وَشَرِّ مَا صُنِعَ لَهُ \" . قَالَ أَبُو نَضْرَةَ فَكَانَ أَصْحَابُ النَّبِيِّ صلى الله عليه وسلم إِذَا لَبِسَ أَحَدُهُمْ ثَوْبًا جَدِيدًا قِيلَ لَهُ تُبْلِي وَيُخْلِفُ اللَّهُ تَعَالَى .",
+"source": "سنن أبي داود (4020)، حكم الألباني: صحيح"
+},
+"tcl3": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِي سَعِيدٍ الْخُدْرِيِّ، قَالَ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم إِذَا اسْتَجَدَّ ثَوْبًا سَمَّاهُ بِاسْمِهِ إِمَّا قَمِيصًا أَوْ عِمَامَةً ثُمَّ يَقُولُ \" اللَّهُمَّ لَكَ الْحَمْدُ أَنْتَ كَسَوْتَنِيهِ أَسْأَلُكَ مِنْ خَيْرِهِ وَخَيْرِ مَا صُنِعَ لَهُ وَأَعُوذُ بِكَ مِنْ شَرِّهِ وَشَرِّ مَا صُنِعَ لَهُ \" . قَالَ أَبُو نَضْرَةَ فَكَانَ أَصْحَابُ النَّبِيِّ صلى الله عليه وسلم إِذَا لَبِسَ أَحَدُهُمْ ثَوْبًا جَدِيدًا قِيلَ لَهُ تُبْلِي وَيُخْلِفُ اللَّهُ تَعَالَى .",
+"source": "سنن أبي داود (4020)، حكم الألباني: صحيح"
+},
+"t11": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ عَائِشَةَ، قَالَتْ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم إِذَا اسْتَفْتَحَ الصَّلاَةَ قَالَ \" سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ وَتَبَارَكَ اسْمُكَ وَتَعَالَى جَدُّكَ وَلاَ إِلَهَ غَيْرُكَ \" . قَالَ أَبُو دَاوُدَ وَهَذَا الْحَدِيثُ لَيْسَ بِالْمَشْهُورِ عَنْ عَبْدِ السَّلاَمِ بْنِ حَرْبٍ لَمْ يَرْوِهِ إِلاَّ طَلْقُ بْنُ غَنَّامٍ وَقَدْ رَوَى قِصَّةَ الصَّلاَةِ عَنْ بُدَيْلٍ جَمَاعَةٌ لَمْ يَذْكُرُوا فِيهِ شَيْئًا مِنْ هَذَا .",
+"source": "سنن أبي داود (776)، حكم الألباني: صحيح"
+},
+"t11b": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ رَسُولِ اللَّهِ صلى الله عليه وسلم أَنَّهُ كَانَ إِذَا قَامَ إِلَى الصَّلاَةِ قَالَ \" وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَوَاتِ وَالأَرْضَ حَنِيفًا وَمَا أَنَا مِنَ الْمُشْرِكِينَ إِنَّ صَلاَتِي وَنُسُكِي وَمَحْيَاىَ وَمَمَاتِي لِلَّهِ رَبِّ الْعَالَمِينَ لاَ شَرِيكَ لَهُ وَبِذَلِكَ أُمِرْتُ وَأَنَا مِنَ الْمُسْلِمِينَ اللَّهُمَّ أَنْتَ الْمَلِكُ لاَ إِلَهَ إِلاَّ أَنْتَ . أَنْتَ رَبِّي وَأَنَا عَبْدُكَ ظَلَمْتُ نَفْسِي وَاعْتَرَفْتُ بِذَنْبِي فَاغْفِرْ لِي ذُنُوبِي جَمِيعًا إِنَّهُ لاَ يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ وَاهْدِنِي لأَحْسَنِ الأَخْلاَقِ لاَ يَهْدِي لأَحْسَنِهَا إِلاَّ أَنْتَ وَاصْرِفْ عَنِّي سَيِّئَهَا لاَ يَصْرِفُ  …",
+"source": "صحيح مسلم (771)"
+},
+"t12": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ حُذَيْفَةَ، قَالَ صَلَّيْتُ مَعَ النَّبِيِّ صلى الله عليه وسلم ذَاتَ لَيْلَةٍ فَافْتَتَحَ الْبَقَرَةَ فَقُلْتُ يَرْكَعُ عِنْدَ الْمِائَةِ . ثُمَّ مَضَى فَقُلْتُ يُصَلِّي بِهَا فِي رَكْعَةٍ فَمَضَى فَقُلْتُ يَرْكَعُ بِهَا . ثُمَّ افْتَتَحَ النِّسَاءَ فَقَرَأَهَا ثُمَّ افْتَتَحَ آلَ عِمْرَانَ فَقَرَأَهَا يَقْرَأُ مُتَرَسِّلاً إِذَا مَرَّ بِآيَةٍ فِيهَا تَسْبِيحٌ سَبَّحَ وَإِذَا مَرَّ بِسُؤَالٍ سَأَلَ وَإِذَا مَرَّ بِتَعَوُّذٍ تَعَوَّذَ ثُمَّ رَكَعَ فَجَعَلَ يَقُولُ \" سُبْحَانَ رَبِّيَ الْعَظِيمِ \" . فَكَانَ رُكُوعُهُ نَحْوًا مِنْ قِيَامِهِ ثُمَّ قَالَ \" سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ \" . ثُمَّ قَامَ طَوِيلاً قَرِيبًا مِمَّا رَكَعَ ثُمَّ سَ …",
+"source": "صحيح مسلم (772)",
+"warning": "تحديد العدد بثلاث ورد في رواية ضعيفة؛ وأصل التسبيح في الركوع ثابت."
+},
+"t13": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم رَكِبَ فَرَسًا، فَجُحِشَ شِقُّهُ الأَيْمَنُ، قَالَ أَنَسٌ ـ رضى الله عنه ـ فَصَلَّى لَنَا يَوْمَئِذٍ صَلاَةً مِنَ الصَّلَوَاتِ وَهْوَ قَاعِدٌ، فَصَلَّيْنَا وَرَاءَهُ قُعُودًا، ثُمَّ قَالَ لَمَّا سَلَّمَ \" إِنَّمَا جُعِلَ الإِمَامُ لِيُؤْتَمَّ بِهِ، فَإِذَا صَلَّى قَائِمًا فَصَلُّوا قِيَامًا، وَإِذَا رَكَعَ فَارْكَعُوا، وَإِذَا رَفَعَ فَارْفَعُوا، وَإِذَا سَجَدَ فَاسْجُدُوا وَإِذَا قَالَ سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ. فَقُولُوا رَبَّنَا وَلَكَ الْحَمْدُ \".",
+"source": "صحيح البخاري (732)"
+},
+"t13b": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ رِفَاعَةَ بْنِ رَافِعٍ الزُّرَقِيِّ، قَالَ كُنَّا يَوْمًا نُصَلِّي وَرَاءَ النَّبِيِّ صلى الله عليه وسلم فَلَمَّا رَفَعَ رَأْسَهُ مِنَ الرَّكْعَةِ قَالَ \" سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ \". قَالَ رَجُلٌ وَرَاءَهُ رَبَّنَا وَلَكَ الْحَمْدُ، حَمْدًا كَثِيرًا طَيِّبًا مُبَارَكًا فِيهِ، فَلَمَّا انْصَرَفَ قَالَ \" مَنِ الْمُتَكَلِّمُ \". قَالَ أَنَا. قَالَ \" رَأَيْتُ بِضْعَةً وَثَلاَثِينَ مَلَكًا يَبْتَدِرُونَهَا، أَيُّهُمْ يَكْتُبُهَا أَوَّلُ \".",
+"source": "صحيح البخاري (799)"
+},
+"t14": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ حُذَيْفَةَ، قَالَ صَلَّيْتُ مَعَ النَّبِيِّ صلى الله عليه وسلم ذَاتَ لَيْلَةٍ فَافْتَتَحَ الْبَقَرَةَ فَقُلْتُ يَرْكَعُ عِنْدَ الْمِائَةِ . ثُمَّ مَضَى فَقُلْتُ يُصَلِّي بِهَا فِي رَكْعَةٍ فَمَضَى فَقُلْتُ يَرْكَعُ بِهَا . ثُمَّ افْتَتَحَ النِّسَاءَ فَقَرَأَهَا ثُمَّ افْتَتَحَ آلَ عِمْرَانَ فَقَرَأَهَا يَقْرَأُ مُتَرَسِّلاً إِذَا مَرَّ بِآيَةٍ فِيهَا تَسْبِيحٌ سَبَّحَ وَإِذَا مَرَّ بِسُؤَالٍ سَأَلَ وَإِذَا مَرَّ بِتَعَوُّذٍ تَعَوَّذَ ثُمَّ رَكَعَ فَجَعَلَ يَقُولُ \" سُبْحَانَ رَبِّيَ الْعَظِيمِ \" . فَكَانَ رُكُوعُهُ نَحْوًا مِنْ قِيَامِهِ ثُمَّ قَالَ \" سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ \" . ثُمَّ قَامَ طَوِيلاً قَرِيبًا مِمَّا رَكَعَ ثُمَّ سَ …",
+"source": "صحيح مسلم (772)",
+"warning": "تحديد العدد بثلاث ورد في رواية ضعيفة؛ وأصل التسبيح في السجود ثابت."
+},
+"t15": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ حُذَيْفَةَ، أَنَّهُ رَأَى رَسُولَ اللَّهِ صلى الله عليه وسلم يُصَلِّي مِنَ اللَّيْلِ فَكَانَ يَقُولُ \" اللَّهُ أَكْبَرُ - ثَلاَثًا - ذُو الْمَلَكُوتِ وَالْجَبَرُوتِ وَالْكِبْرِيَاءِ وَالْعَظَمَةِ \" . ثُمَّ اسْتَفْتَحَ فَقَرَأَ الْبَقَرَةَ ثُمَّ رَكَعَ فَكَانَ رُكُوعُهُ نَحْوًا مِنْ قِيَامِهِ وَكَانَ يَقُولُ فِي رُكُوعِهِ \" سُبْحَانَ رَبِّيَ الْعَظِيمِ سُبْحَانَ رَبِّيَ الْعَظِيمِ \" . ثُمَّ رَفَعَ رَأْسَهُ مِنَ الرُّكُوعِ فَكَانَ قِيَامُهُ نَحْوًا مِنْ رُكُوعِهِ يَقُولُ \" لِرَبِّيَ الْحَمْدُ \" . ثُمَّ سَجَدَ فَكَانَ سُجُودُهُ نَحْوًا مِنْ قِيَامِهِ فَكَانَ يَقُولُ فِي سُجُودِهِ \" سُبْحَانَ رَبِّيَ الأَعْلَى \" . ثُمَّ رَفَعَ رَأْسَهُ مِنَ  …",
+"source": "سنن أبي داود (874)، حكم الألباني: صحيح"
+},
+"t14b": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ عَائِشَةَ، - رضى الله عنها - قَالَتْ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم يَقُولُ فِي سُجُودِ الْقُرْآنِ بِاللَّيْلِ يَقُولُ فِي السَّجْدَةِ مِرَارًا \" سَجَدَ وَجْهِي لِلَّذِي خَلَقَهُ وَشَقَّ سَمْعَهُ وَبَصَرَهُ بِحَوْلِهِ وَقُوَّتِهِ \" .",
+"source": "سنن أبي داود (1414)، حكم الألباني: صحيح"
+},
+"t16": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ شَقِيقِ بْنِ سَلَمَةَ، قَالَ قَالَ عَبْدُ اللَّهِ كُنَّا إِذَا صَلَّيْنَا خَلْفَ النَّبِيِّ صلى الله عليه وسلم قُلْنَا السَّلاَمُ عَلَى جِبْرِيلَ وَمِيكَائِيلَ، السَّلاَمُ عَلَى فُلاَنٍ وَفُلاَنٍ. فَالْتَفَتَ إِلَيْنَا رَسُولُ اللَّهِ صلى الله عليه وسلم فَقَالَ \" إِنَّ اللَّهَ هُوَ السَّلاَمُ، فَإِذَا صَلَّى أَحَدُكُمْ فَلْيَقُلِ التَّحِيَّاتُ لِلَّهِ، وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلاَمُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلاَمُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ. فَإِنَّكُمْ إِذَا قُلْتُمُوهَا أَصَابَتْ كُلَّ عَبْدٍ لِلَّهِ صَالِحٍ فِي السَّمَاءِ وَالأَرْضِ، أَشْهَدُ أَنْ لاَ إِلَهَ إِ …",
+"source": "صحيح البخاري (831)"
+},
+"t17": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "حَدَّثَنَا قَيْسُ بْنُ حَفْصٍ، وَمُوسَى بْنُ إِسْمَاعِيلَ، قَالاَ حَدَّثَنَا عَبْدُ الْوَاحِدِ بْنُ زِيَادٍ، حَدَّثَنَا أَبُو قُرَّةَ، مُسْلِمُ بْنُ سَالِمٍ الْهَمْدَانِيُّ قَالَ حَدَّثَنِي عَبْدُ اللَّهِ بْنُ عِيسَى، سَمِعَ عَبْدَ الرَّحْمَنِ بْنَ أَبِي لَيْلَى، قَالَ لَقِيَنِي كَعْبُ بْنُ عُجْرَةَ فَقَالَ أَلاَ أُهْدِي لَكَ هَدِيَّةً سَمِعْتُهَا مِنَ النَّبِيِّ، صلى الله عليه وسلم فَقُلْتُ بَلَى، فَأَهْدِهَا لِي. فَقَالَ سَأَلْنَا رَسُولَ اللَّهِ صلى الله عليه وسلم فَقُلْنَا يَا رَسُولَ اللَّهِ كَيْفَ الصَّلاَةُ عَلَيْكُمْ أَهْلَ الْبَيْتِ فَإِنَّ اللَّهَ قَدْ عَلَّمَنَا كَيْفَ نُسَلِّمُ. قَالَ \" قُولُوا اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ، وَ …",
+"source": "صحيح البخاري (3370)"
+},
+"t18": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِي هُرَيْرَةَ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم \" إِذَا تَشَهَّدَ أَحَدُكُمْ فَلْيَسْتَعِذْ بِاللَّهِ مِنْ أَرْبَعٍ يَقُولُ اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ جَهَنَّمَ وَمِنْ عَذَابِ الْقَبْرِ وَمِنْ فِتْنَةِ الْمَحْيَا وَالْمَمَاتِ وَمِنْ شَرِّ فِتْنَةِ الْمَسِيحِ الدَّجَّالِ \" .",
+"source": "صحيح مسلم (588)"
+},
+"t19": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ ثَوْبَانَ، قَالَ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم إِذَا انْصَرَفَ مِنْ صَلاَتِهِ اسْتَغْفَرَ ثَلاَثًا وَقَالَ \" اللَّهُمَّ أَنْتَ السَّلاَمُ وَمِنْكَ السَّلاَمُ تَبَارَكْتَ ذَا الْجَلاَلِ وَالإِكْرَامِ \" . قَالَ الْوَلِيدُ فَقُلْتُ لِلأَوْزَاعِيِّ كَيْفَ الاِسْتِغْفَارُ قَالَ تَقُولُ أَسْتَغْفِرُ اللَّهَ أَسْتَغْفِرُ اللَّهَ .",
+"source": "صحيح مسلم (591)"
+},
+"t19b": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ النَّبِيَّ صلى الله عليه وسلم كَانَ يَقُولُ فِي دُبُرِ كُلِّ صَلاَةٍ مَكْتُوبَةٍ \" لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ، وَلَهُ الْحَمْدُ، وَهْوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ، اللَّهُمَّ لاَ مَانِعَ لِمَا أَعْطَيْتَ، وَلاَ مُعْطِيَ لِمَا مَنَعْتَ، وَلاَ يَنْفَعُ ذَا الْجَدِّ مِنْكَ الْجَدُّ \". وَقَالَ شُعْبَةُ عَنْ عَبْدِ الْمَلِكِ بِهَذَا، وَعَنِ الْحَكَمِ عَنِ الْقَاسِمِ بْنِ مُخَيْمِرَةَ عَنْ وَرَّادٍ بِهَذَا. وَقَالَ الْحَسَنُ الْجَدُّ غِنًى.",
+"source": "صحيح البخاري (844)",
+"warning": "النص مختصر؛ تمامه في الحديث: «اللهم لا مانع لما أعطيت ولا معطي لما منعت ولا ينفع ذا الجد منك الجد»."
+},
+"t19c": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ رَسُولِ اللَّهِ صلى الله عليه وسلم \" مَنْ سَبَّحَ اللَّهَ فِي دُبُرِ كُلِّ صَلاَةٍ ثَلاَثًا وَثَلاَثِينَ وَحَمِدَ اللَّهَ ثَلاَثًا وَثَلاَثِينَ وَكَبَّرَ اللَّهَ ثَلاَثًا وَثَلاَثِينَ فَتِلْكَ تِسْعَةٌ وَتِسْعُونَ وَقَالَ تَمَامَ الْمِائَةِ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ غُفِرَتْ خَطَايَاهُ وَإِنْ كَانَتْ مِثْلَ زَبَدِ الْبَحْرِ \" .",
+"source": "صحيح مسلم (597)",
+"warning": "تمام المائة في الحديث: «لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير»."
+},
+"t19d": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم أَخَذَ بِيَدِهِ وَقَالَ \" يَا مُعَاذُ وَاللَّهِ إِنِّي لأُحِبُّكَ وَاللَّهِ إِنِّي لأُحِبُّكَ \" . فَقَالَ \" أُوصِيكَ يَا مُعَاذُ لاَ تَدَعَنَّ فِي دُبُرِ كُلِّ صَلاَةٍ تَقُولُ اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ \" . وَأَوْصَى بِذَلِكَ مُعَاذٌ الصُّنَابِحِيَّ وَأَوْصَى بِهِ الصُّنَابِحِيُّ أَبَا عَبْدِ الرَّحْمَنِ .",
+"source": "سنن أبي داود (1522)، حكم الألباني: صحيح"
+},
+"t20": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ جَابِرِ بْنِ عَبْدِ اللَّهِ ـ رضى الله عنهما ـ قَالَ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم يُعَلِّمُنَا الاِسْتِخَارَةَ فِي الأُمُورِ كَمَا يُعَلِّمُنَا السُّورَةَ مِنَ الْقُرْآنِ يَقُولُ \" إِذَا هَمَّ أَحَدُكُمْ بِالأَمْرِ فَلْيَرْكَعْ رَكْعَتَيْنِ مِنْ غَيْرِ الْفَرِيضَةِ ثُمَّ لِيَقُلِ اللَّهُمَّ إِنِّي أَسْتَخِيرُكَ بِعِلْمِكَ وَأَسْتَقْدِرُكَ بِقُدْرَتِكَ، وَأَسْأَلُكَ مِنْ فَضْلِكَ الْعَظِيمِ، فَإِنَّكَ تَقْدِرُ وَلاَ أَقْدِرُ وَتَعْلَمُ وَلاَ أَعْلَمُ وَأَنْتَ عَلاَّمُ الْغُيُوبِ، اللَّهُمَّ إِنْ كُنْتَ تَعْلَمُ أَنَّ هَذَا الأَمْرَ خَيْرٌ لِي فِي دِينِي وَمَعَاشِي وَعَاقِبَةِ أَمْرِي ـ أَوْ قَالَ عَاجِلِ أَمْرِي وَآجِلِهِ ـ فَ …",
+"source": "صحيح البخاري (1166)"
+},
+"t22": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ \" إِذَا فَزِعَ أَحَدُكُمْ فِي النَّوْمِ فَلْيَقُلْ أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّةِ مِنْ غَضَبِهِ وَعِقَابِهِ وَشَرِّ عِبَادِهِ وَمِنْ هَمَزَاتِ الشَّيَاطِينِ وَأَنْ يَحْضُرُونِ . فَإِنَّهَا لَنْ تَضُرَّهُ \" . قَالَ وَكَانَ عَبْدُ اللَّهِ بْنُ عَمْرٍو يُلَقِّنُهَا مَنْ بَلَغَ مِنْ وَلَدِهِ وَمَنْ لَمْ يَبْلُغْ مِنْهُمْ كَتَبَهَا فِي صَكٍّ ثُمَّ عَلَّقَهَا فِي عُنُقِهِ . قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ حَسَنٌ غَرِيبٌ .",
+"source": "جامع الترمذي (3528)، حكم الألباني: حسن"
+},
+"t23": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ رَسُولِ اللَّهِ صلى الله عليه وسلم أَنَّهُ قَالَ \" إِذَا رَأَى أَحَدُكُمُ الرُّؤْيَا يَكْرَهُهَا فَلْيَبْصُقْ عَنْ يَسَارِهِ ثَلاَثًا وَلْيَسْتَعِذْ بِاللَّهِ مِنَ الشَّيْطَانِ ثَلاَثًا وَلْيَتَحَوَّلْ عَنْ جَنْبِهِ الَّذِي كَانَ عَلَيْهِ \" .",
+"source": "صحيح مسلم (2262)"
+},
+"t24": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِي الْحَوْرَاءِ، قَالَ قَالَ الْحَسَنُ بْنُ عَلِيٍّ رضى الله عنهما عَلَّمَنِي رَسُولُ اللَّهِ صلى الله عليه وسلم كَلِمَاتٍ أَقُولُهُنَّ فِي الْوِتْرِ قَالَ ابْنُ جَوَّاسٍ فِي قُنُوتِ الْوِتْرِ \" اللَّهُمَّ اهْدِنِي فِيمَنْ هَدَيْتَ وَعَافِنِي فِيمَنْ عَافَيْتَ وَتَوَلَّنِي فِيمَنْ تَوَلَّيْتَ وَبَارِكْ لِي فِيمَا أَعْطَيْتَ وَقِنِي شَرَّ مَا قَضَيْتَ إِنَّكَ تَقْضِي وَلاَ يُقْضَى عَلَيْكَ وَإِنَّهُ لاَ يَذِلُّ مَنْ وَالَيْتَ وَلاَ يَعِزُّ مَنْ عَادَيْتَ تَبَارَكْتَ رَبَّنَا وَتَعَالَيْتَ \" .",
+"source": "سنن أبي داود (1425)، حكم الألباني: صحيح"
+},
+"t25": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أُبَىِّ بْنِ كَعْبٍ، قَالَ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم إِذَا سَلَّمَ فِي الْوِتْرِ قَالَ \" سُبْحَانَ الْمَلِكِ الْقُدُّوسِ \" .",
+"source": "سنن أبي داود (1430)، حكم الألباني: صحيح"
+},
+"t27": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم كَانَ يَقُولُ عِنْدَ الْكَرْبِ \" لاَ إِلَهَ إِلاَّ اللَّهُ الْعَظِيمُ الْحَلِيمُ، لاَ إِلَهَ إِلاَّ اللَّهُ رَبُّ الْعَرْشِ الْعَظِيمِ، لاَ إِلَهَ إِلاَّ اللَّهُ رَبُّ السَّمَوَاتِ، وَرَبُّ الأَرْضِ، وَرَبُّ الْعَرْشِ الْكَرِيمِ \". وَقَالَ وَهْبٌ حَدَّثَنَا شُعْبَةُ عَنْ قَتَادَةَ مِثْلَهُ.",
+"source": "صحيح البخاري (6346)",
+"warning": "النص المعروض مختصر؛ تمامه: «لا إله إلا الله رب السماوات ورب الأرض ورب العرش الكريم»."
+},
+"t28": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ النَّبِيَّ صلى الله عليه وسلم كَانَ إِذَا خَافَ قَوْمًا قَالَ \" اللَّهُمَّ إِنَّا نَجْعَلُكَ فِي نُحُورِهِمْ وَنَعُوذُ بِكَ مِنْ شُرُورِهِمْ \" .",
+"source": "سنن أبي داود (1537)، حكم الألباني: صحيح"
+},
+"t29": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ النَّبِيَّ صلى الله عليه وسلم كَانَ إِذَا خَافَ قَوْمًا قَالَ \" اللَّهُمَّ إِنَّا نَجْعَلُكَ فِي نُحُورِهِمْ وَنَعُوذُ بِكَ مِنْ شُرُورِهِمْ \" .",
+"source": "سنن أبي داود (1537)، حكم الألباني: صحيح",
+"warning": "هذا النص نفسه مكرر في «دعاء لقاء العدو» و«ما يقول من خاف قوما»."
+},
+"t30": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنِ ابْنِ أَبِي خَالِدٍ، قَالَ سَمِعْتُ ابْنَ أَبِي أَوْفَى ـ رضى الله عنهما ـ قَالَ دَعَا رَسُولُ اللَّهِ صلى الله عليه وسلم عَلَى الأَحْزَابِ فَقَالَ \" اللَّهُمَّ مُنْزِلَ الْكِتَابِ، سَرِيعَ الْحِسَابِ، اهْزِمِ الأَحْزَابَ، اهْزِمْهُمْ وَزَلْزِلْهُمْ \".",
+"source": "صحيح البخاري (6392)"
+},
+"t31": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ النَّبِيَّ صلى الله عليه وسلم كَانَ إِذَا خَافَ قَوْمًا قَالَ \" اللَّهُمَّ إِنَّا نَجْعَلُكَ فِي نُحُورِهِمْ وَنَعُوذُ بِكَ مِنْ شُرُورِهِمْ \" .",
+"source": "سنن أبي داود (1537)، حكم الألباني: صحيح",
+"warning": "هذا النص نفسه مكرر في «دعاء لقاء العدو» و«دعاء من خاف ظلم السلطان»."
+},
+"t33": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… عَنْ كِتَابَتِي فَأَعِنِّي . قَالَ أَلاَ أُعَلِّمُكَ كَلِمَاتٍ عَلَّمَنِيهِنَّ رَسُولُ اللَّهِ صلى الله عليه وسلم لَوْ كَانَ عَلَيْكَ مِثْلُ جَبَلِ صِيرٍ دَيْنًا أَدَّاهُ اللَّهُ عَنْكَ قَالَ \" قُلِ اللَّهُمَّ اكْفِنِي بِحَلاَلِكَ عَنْ حَرَامِكَ وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ \" . قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ حَسَنٌ غَرِيبٌ .",
+"source": "جامع الترمذي (3563)، حكم الألباني: حسن"
+},
+"t34": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ عُثْمَانَ بْنَ أَبِي الْعَاصِ، أَتَى النَّبِيَّ صلى الله عليه وسلم فَقَالَ يَا رَسُولَ اللَّهِ إِنَّ الشَّيْطَانَ قَدْ حَالَ بَيْنِي وَبَيْنَ صَلاَتِي وَقِرَاءَتِي يَلْبِسُهَا عَلَىَّ . فَقَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم \" ذَاكَ شَيْطَانٌ يُقَالُ لَهُ خِنْزِبٌ فَإِذَا أَحْسَسْتَهُ فَتَعَوَّذْ بِاللَّهِ مِنْهُ وَاتْفِلْ عَلَى يَسَارِكَ ثَلاَثًا \" . قَالَ فَفَعَلْتُ ذَلِكَ فَأَذْهَبَهُ اللَّهُ عَنِّي .",
+"source": "صحيح مسلم (2203)"
+},
+"t36": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَسْمَاءَ بْنِ الْحَكَمِ الْفَزَارِيِّ، قَالَ سَمِعْتُ عَلِيًّا، - رَضِيَ اللَّهُ عَنْهُ - يَقُولُ كُنْتُ رَجُلاً إِذَا سَمِعْتُ مِنْ رَسُولِ اللَّهِ صلى الله عليه وسلم حَدِيثًا نَفَعَنِي اللَّهُ مِنْهُ بِمَا شَاءَ أَنْ يَنْفَعَنِي وَإِذَا حَدَّثَنِي أَحَدٌ مِنْ أَصْحَابِهِ اسْتَحْلَفْتُهُ فَإِذَا حَلَفَ لِي صَدَّقْتُهُ قَالَ وَحَدَّثَنِي أَبُو بَكْرٍ وَصَدَقَ أَبُو بَكْرٍ - رضى الله عنه - أَنَّهُ قَالَ سَمِعْتُ رَسُولَ اللَّهِ صلى الله عليه وسلم يَقُولُ \" مَا مِنْ عَبْدٍ يُذْنِبُ ذَنْبًا فَيُحْسِنُ الطُّهُورَ ثُمَّ يَقُومُ فَيُصَلِّي رَكْعَتَيْنِ ثُمَّ يَسْتَغْفِرُ اللَّهَ إِلاَّ غَفَرَ اللَّهُ لَهُ \" . ثُمَّ قَرَأَ هَذِهِ الآيَةَ { وَا …",
+"source": "سنن أبي داود (1521)، حكم الألباني: صحيح"
+},
+"t37": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ عَدِيِّ بْنِ ثَابِتٍ، حَدَّثَنَا سُلَيْمَانُ بْنُ صُرَدٍ، قَالَ اسْتَبَّ رَجُلاَنِ عِنْدَ النَّبِيِّ صلى الله عليه وسلم وَنَحْنُ عِنْدَهُ جُلُوسٌ، وَأَحَدُهُمَا يَسُبُّ صَاحِبَهُ مُغْضَبًا قَدِ احْمَرَّ وَجْهُهُ فَقَالَ النَّبِيُّ صلى الله عليه وسلم \" إِنِّي لأَعْلَمُ كَلِمَةً لَوْ قَالَهَا لَذَهَبَ عَنْهُ مَا يَجِدُ لَوْ قَالَ أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ \". فَقَالُوا لِلرَّجُلِ أَلاَ تَسْمَعُ مَا يَقُولُ النَّبِيُّ صلى الله عليه وسلم قَالَ إِنِّي لَسْتُ بِمَجْنُونٍ.",
+"source": "صحيح البخاري (6115)"
+},
+"t38": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِي هُرَيْرَةَ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم \" الْمُؤْمِنُ الْقَوِيُّ خَيْرٌ وَأَحَبُّ إِلَى اللَّهِ مِنَ الْمُؤْمِنِ الضَّعِيفِ وَفِي كُلٍّ خَيْرٌ احْرِصْ عَلَى مَا يَنْفَعُكَ وَاسْتَعِنْ بِاللَّهِ وَلاَ تَعْجِزْ وَإِنْ أَصَابَكَ شَىْءٌ فَلاَ تَقُلْ لَوْ أَنِّي فَعَلْتُ كَانَ كَذَا وَكَذَا . وَلَكِنْ قُلْ قَدَرُ اللَّهِ وَمَا شَاءَ فَعَلَ فَإِنَّ لَوْ تَفْتَحُ عَمَلَ الشَّيْطَانِ \" .",
+"source": "صحيح مسلم (2664)"
+},
+"t40": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنِ ابْنِ عَبَّاسٍ، قَالَ : كَانَ النَّبِيُّ صلى الله عليه وسلم يُعَوِّذُ الْحَسَنَ وَالْحُسَيْنَ : \" أُعِيذُكُمَا بِكَلِمَاتِ اللَّهِ التَّامَّةِ مِنْ كُلِّ شَيْطَانٍ وَهَامَّةٍ وَمِنْ كُلِّ عَيْنٍ لاَمَّةٍ \" . ثُمَّ يَقُولُ : \" كَانَ أَبُوكُمْ يُعَوِّذُ بِهِمَا إِسْمَاعِيلَ وَإِسْحَاقَ \" . قَالَ أَبُو دَاوُدَ : هَذَا دَلِيلٌ عَلَى أَنَّ الْقُرْآنَ لَيْسَ بِمَخْلُوقٍ .",
+"source": "سنن أبي داود (4737)، حكم الألباني: صحيح"
+},
+"t41": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنِ النَّبِيِّ صلى الله عليه وسلم قَالَ \" مَنْ عَادَ مَرِيضًا لَمْ يَحْضُرْ أَجَلُهُ فَقَالَ عِنْدَهُ سَبْعَ مِرَارٍ أَسْأَلُ اللَّهَ الْعَظِيمَ رَبَّ الْعَرْشِ الْعَظِيمِ أَنْ يَشْفِيَكَ إِلاَّ عَافَاهُ اللَّهُ مِنْ ذَلِكَ الْمَرَضِ \" .",
+"source": "سنن أبي داود (3106)، حكم الألباني: صحيح"
+},
+"t42": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ ثَوْبَانَ، مَوْلَى رَسُولِ اللَّهِ صلى الله عليه وسلم قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم \" مَنْ عَادَ مَرِيضًا لَمْ يَزَلْ فِي خُرْفَةِ الْجَنَّةِ حَتَّى يَرْجِعَ \" .",
+"source": "صحيح مسلم (2568)"
+},
+"t43": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ عَبَّادِ بْنِ عَبْدِ اللَّهِ بْنِ الزُّبَيْرِ، قَالَ سَمِعْتُ عَائِشَةَ ـ رضى الله عنها ـ قَالَتْ سَمِعْتُ النَّبِيَّ صلى الله عليه وسلم وَهْوَ مُسْتَنِدٌ إِلَىَّ يَقُولُ \" اللَّهُمَّ اغْفِرْ لِي وَارْحَمْنِي وَأَلْحِقْنِي بِالرَّفِيقِ الأَعْلَى \".",
+"source": "صحيح البخاري (5674)"
+},
+"t44": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ بِشْرٍ، - قَالَ أَبُو كَامِلٍ حَدَّثَنَا بِشْرُ بْنُ الْمُفَضَّلِ، - حَدَّثَنَا عُمَارَةُ بْنُ غَزِيَّةَ، حَدَّثَنَا يَحْيَى، بْنُ عُمَارَةَ قَالَ سَمِعْتُ أَبَا سَعِيدٍ الْخُدْرِيَّ، يَقُولُ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم \" لَقِّنُوا مَوْتَاكُمْ لاَ إِلَهَ إِلاَّ اللَّهُ \" .",
+"source": "صحيح مسلم (916)"
+},
+"t45": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أُمِّ سَلَمَةَ، أَنَّهَا قَالَتْ سَمِعْتُ رَسُولَ اللَّهِ صلى الله عليه وسلم يَقُولُ \" مَا مِنْ مُسْلِمٍ تُصِيبُهُ مُصِيبَةٌ فَيَقُولُ مَا أَمَرَهُ اللَّهُ إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ اللَّهُمَّ أْجُرْنِي فِي مُصِيبَتِي وَأَخْلِفْ لِي خَيْرًا مِنْهَا . إِلاَّ أَخْلَفَ اللَّهُ لَهُ خَيْرًا مِنْهَا \" . قَالَتْ فَلَمَّا مَاتَ أَبُو سَلَمَةَ قُلْتُ أَىُّ الْمُسْلِمِينَ خَيْرٌ مِنْ أَبِي سَلَمَةَ أَوَّلُ بَيْتٍ هَاجَرَ إِلَى رَسُولِ اللَّهِ صلى الله عليه وسلم . ثُمَّ إِنِّي قُلْتُهَا فَأَخْلَفَ اللَّهُ لِي رَسُولَ اللَّهِ صلى الله عليه وسلم . قَالَتْ أَرْسَلَ إِلَىَّ رَسُولُ اللَّهِ صلى الله عليه وسلم حَاطِبَ بْنَ أَبِي بَلْتَ …",
+"source": "صحيح مسلم (918)"
+},
+"t46": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أُمِّ سَلَمَةَ، قَالَتْ دَخَلَ رَسُولُ اللَّهِ صلى الله عليه وسلم عَلَى أَبِي سَلَمَةَ وَقَدْ شَقَّ بَصَرُهُ فَأَغْمَضَهُ ثُمَّ قَالَ \" إِنَّ الرُّوحَ إِذَا قُبِضَ تَبِعَهُ الْبَصَرُ \" . فَضَجَّ نَاسٌ مِنْ أَهْلِهِ فَقَالَ \" لاَ تَدْعُوا عَلَى أَنْفُسِكُمْ إِلاَّ بِخَيْرٍ فَإِنَّ الْمَلاَئِكَةَ يُؤَمِّنُونَ عَلَى مَا تَقُولُونَ \" . ثُمَّ قَالَ \" اللَّهُمَّ اغْفِرْ لأَبِي سَلَمَةَ وَارْفَعْ دَرَجَتَهُ فِي الْمَهْدِيِّينَ وَاخْلُفْهُ فِي عَقِبِهِ فِي الْغَابِرِينَ وَاغْفِرْ لَنَا وَلَهُ يَا رَبَّ الْعَالَمِينَ وَافْسَحْ لَهُ فِي قَبْرِهِ . وَنَوِّرْ لَهُ فِيهِ \" .",
+"source": "صحيح مسلم (920)"
+},
+"t47": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِيهِ، قَالَ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم إِذَا صَلَّى عَلَى الْجَنَازَةِ قَالَ \" اللَّهُمَّ اغْفِرْ لِحَيِّنَا وَمَيِّتِنَا وَشَاهِدِنَا وَغَائِبِنَا وَصَغِيرِنَا وَكَبِيرِنَا وَذَكَرِنَا وَأُنْثَانَا \" . قَالَ يَحْيَى وَحَدَّثَنِي أَبُو سَلَمَةَ بْنُ عَبْدِ الرَّحْمَنِ، عَنْ أَبِي هُرَيْرَةَ، عَنِ النَّبِيِّ صلى الله عليه وسلم مِثْلَ ذَلِكَ وَزَادَ فِيهِ \" اللَّهُمَّ مَنْ أَحْيَيْتَهُ مِنَّا فَأَحْيِهِ عَلَى الإِسْلاَمِ وَمَنْ تَوَفَّيْتَهُ مِنَّا فَتَوَفَّهُ عَلَى الإِيمَانِ \" . قَالَ وَفِي الْبَابِ عَنْ عَبْدِ الرَّحْمَنِ بْنِ عَوْفٍ وَعَائِشَةَ وَأَبِي قَتَادَةَ وَعَوْفِ بْنِ مَالِكٍ وَجَابِرٍ . قَالَ أَبُو عِيسَى حَدِ …",
+"source": "جامع الترمذي (1024)، حكم الألباني: صحيح"
+},
+"t49": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِي عُثْمَانَ، قَالَ حَدَّثَنِي أُسَامَةُ بْنُ زَيْدٍ ـ رضى الله عنهما ـ قَالَ أَرْسَلَتِ ابْنَةُ النَّبِيِّ صلى الله عليه وسلم إِلَيْهِ إِنَّ ابْنًا لِي قُبِضَ فَائْتِنَا. فَأَرْسَلَ يُقْرِئُ السَّلاَمَ وَيَقُولُ \" إِنَّ لِلَّهِ مَا أَخَذَ وَلَهُ مَا أَعْطَى وَكُلٌّ عِنْدَهُ بِأَجَلٍ مُسَمًّى، فَلْتَصْبِرْ وَلْتَحْتَسِبْ \". فَأَرْسَلَتْ إِلَيْهِ تُقْسِمُ عَلَيْهِ لَيَأْتِيَنَّهَا، فَقَامَ وَمَعَهُ سَعْدُ بْنُ عُبَادَةَ وَمُعَاذُ بْنُ جَبَلٍ وَأُبَىُّ بْنُ كَعْبٍ وَزَيْدُ بْنُ ثَابِتٍ وَرِجَالٌ، فَرُفِعَ إِلَى رَسُولِ اللَّهِ صلى الله عليه وسلم الصَّبِيُّ وَنَفْسُهُ تَتَقَعْقَعُ ـ قَالَ حَسِبْتُهُ أَنَّهُ قَالَ ـ كَأَنَّهَا شَنٌّ. فَفَ …",
+"source": "صحيح البخاري (1284)"
+},
+"t50": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ النَّبِيَّ صلى الله عليه وسلم كَانَ إِذَا وَضَعَ الْمَيِّتَ فِي الْقَبْرِ قَالَ \" بِسْمِ اللَّهِ وَعَلَى سُنَّةِ رَسُولِ اللَّهِ صلى الله عليه وسلم \" . هَذَا لَفْظُ مُسْلِمٍ .",
+"source": "سنن أبي داود (3213)، حكم الألباني: صحيح"
+},
+"t51": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ عُثْمَانَ بْنِ عَفَّانَ، قَالَ كَانَ النَّبِيُّ صلى الله عليه وسلم إِذَا فَرَغَ مِنْ دَفْنِ الْمَيِّتِ وَقَفَ عَلَيْهِ فَقَالَ \" اسْتَغْفِرُوا لأَخِيكُمْ وَسَلُوا لَهُ التَّثْبِيتَ فَإِنَّهُ الآنَ يُسْأَلُ \" . قَالَ أَبُو دَاوُدَ بَحِيرُ بْنُ رَيْسَانَ .",
+"source": "سنن أبي داود (3221)، حكم الألباني: صحيح"
+},
+"t52": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِيهِ، قَالَ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم يُعَلِّمُهُمْ إِذَا خَرَجُوا إِلَى الْمَقَابِرِ فَكَانَ قَائِلُهُمْ يَقُولُ - فِي رِوَايَةِ أَبِي بَكْرٍ - السَّلاَمُ عَلَى أَهْلِ الدِّيَارِ - وَفِي رِوَايَةِ زُهَيْرٍ - السَّلاَمُ عَلَيْكُمْ أَهْلَ الدِّيَارِ مِنَ الْمُؤْمِنِينَ وَالْمُسْلِمِينَ وَإِنَّا إِنْ شَاءَ اللَّهُ لَلَاحِقُونَ أَسْأَلُ اللَّهَ لَنَا وَلَكُمْ الْعَافِيَةَ",
+"source": "صحيح مسلم (975)"
+},
+"t53": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ عَائِشَةَ، زَوْجِ النَّبِيِّ صلى الله عليه وسلم أَنَّهَا قَالَتْ كَانَ النَّبِيُّ صلى الله عليه وسلم إِذَا عَصَفَتِ الرِّيحُ قَالَ \" اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَهَا وَخَيْرَ مَا فِيهَا وَخَيْرَ مَا أُرْسِلَتْ بِهِ وَأَعُوذُ بِكَ مِنْ شَرِّهَا وَشَرِّ مَا فِيهَا وَشَرِّ مَا أُرْسِلَتْ بِهِ \" . قَالَتْ وَإِذَا تَخَيَّلَتِ السَّمَاءُ تَغَيَّرَ لَوْنُهُ وَخَرَجَ وَدَخَلَ وَأَقْبَلَ وَأَدْبَرَ فَإِذَا مَطَرَتْ سُرِّيَ عَنْهُ فَعَرَفْتُ ذَلِكَ فِي وَجْهِهِ . قَالَتْ عَائِشَةُ فَسَأَلْتُهُ فَقَالَ \" لَعَلَّهُ يَا عَائِشَةُ كَمَا قَالَ قَوْمُ عَادٍ { فَلَمَّا رَأَوْهُ عَارِضًا مُسْتَقْبِلَ أَوْدِيَتِهِمْ قَالُوا هَذَا عَارِضٌ مُمْطِرُنَا} …",
+"source": "صحيح مسلم (899)"
+},
+"t55": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ رَجُلاً، دَخَلَ الْمَسْجِدَ يَوْمَ جُمُعَةٍ مِنْ بَابٍ كَانَ نَحْوَ دَارِ الْقَضَاءِ، وَرَسُولُ اللَّهِ صلى الله عليه وسلم قَائِمٌ يَخْطُبُ، فَاسْتَقْبَلَ رَسُولَ اللَّهِ صلى الله عليه وسلم قَائِمًا ثُمَّ قَالَ يَا رَسُولَ اللَّهِ هَلَكَتِ الأَمْوَالُ وَانْقَطَعَتِ السُّبُلُ، فَادْعُ اللَّهَ يُغِيثُنَا فَرَفَعَ رَسُولُ اللَّهِ صلى الله عليه وسلم يَدَيْهِ ثُمَّ قَالَ \" اللَّهُمَّ أَغِثْنَا، اللَّهُمَّ أَغِثْنَا، اللَّهُمَّ أَغِثْنَا \". قَالَ أَنَسٌ وَلاَ وَاللَّهِ مَا نَرَى فِي السَّمَاءِ مِنْ سَحَابٍ، وَلاَ قَزَعَةً، وَمَا بَيْنَنَا وَبَيْنَ سَلْعٍ مِنْ بَيْتٍ وَلاَ دَارٍ. قَالَ فَطَلَعَتْ مِنْ وَرَائِهِ سَحَابَةٌ مِثْلُ التُّرْسِ، فَلَ …",
+"source": "صحيح البخاري (1014)"
+},
+"t56": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم كَانَ إِذَا رَأَى الْمَطَرَ قَالَ \" صَيِّبًا نَافِعًا \". تَابَعَهُ الْقَاسِمُ بْنُ يَحْيَى عَنْ عُبَيْدِ اللَّهِ. وَرَوَاهُ الأَوْزَاعِيُّ وَعُقَيْلٌ عَنْ نَافِعٍ.",
+"source": "صحيح البخاري (1032)",
+"warning": "لفظ البخاري: «صيبا نافعا»، ولفظ النسائي: «اللهم اجعله صيبا نافعا»."
+},
+"t57": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ زَيْدِ بْنِ خَالِدٍ الْجُهَنِيِّ، أَنَّهُ قَالَ صَلَّى لَنَا رَسُولُ اللَّهِ صلى الله عليه وسلم صَلاَةَ الصُّبْحِ بِالْحُدَيْبِيَةِ عَلَى إِثْرِ سَمَاءٍ كَانَتْ مِنَ اللَّيْلَةِ، فَلَمَّا انْصَرَفَ أَقْبَلَ عَلَى النَّاسِ فَقَالَ \" هَلْ تَدْرُونَ مَاذَا قَالَ رَبُّكُمْ \". قَالُوا اللَّهُ وَرَسُولُهُ أَعْلَمُ. قَالَ \" أَصْبَحَ مِنْ عِبَادِي مُؤْمِنٌ بِي وَكَافِرٌ، فَأَمَّا مَنْ قَالَ مُطِرْنَا بِفَضْلِ اللَّهِ وَرَحْمَتِهِ فَذَلِكَ مُؤْمِنٌ بِي وَكَافِرٌ بِالْكَوْكَبِ، وَأَمَّا مَنْ قَالَ بِنَوْءِ كَذَا وَكَذَا فَذَلِكَ كَافِرٌ بِي وَمُؤْمِنٌ بِالْكَوْكَبِ \".",
+"source": "صحيح البخاري (846)"
+},
+"t58": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ النَّبِيَّ صلى الله عليه وسلم كَانَ إِذَا رَأَى الْهِلاَلَ قَالَ \" اللَّهُمَّ أَهْلِلْهُ عَلَيْنَا بِالْيُمْنِ وَالإِيمَانِ وَالسَّلاَمَةِ وَالإِسْلاَمِ رَبِّي وَرَبُّكَ اللَّهُ \" . قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ حَسَنٌ غَرِيبٌ .",
+"source": "جامع الترمذي (3451)، حكم الألباني: صحيح",
+"warning": "لفظ الترمذي: «باليُمن والإيمان» وتمامه «ربي وربك الله»."
+},
+"t59": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "حَدَّثَنَا عَبْدُ اللَّهِ بْنُ مُحَمَّدِ بْنِ يَحْيَى أَبُو مُحَمَّدٍ، حَدَّثَنَا عَلِيُّ بْنُ الْحَسَنِ، أَخْبَرَنِي الْحُسَيْنُ بْنُ وَاقِدٍ، حَدَّثَنَا مَرْوَانُ، - يَعْنِي ابْنَ سَالِمٍ - الْمُقَفَّعُ - قَالَ رَأَيْتُ ابْنَ عُمَرَ يَقْبِضُ عَلَى لِحْيَتِهِ فَيَقْطَعُ مَا زَادَ عَلَى الْكَفِّ وَقَالَ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم إِذَا أَفْطَرَ قَالَ \" ذَهَبَ الظَّمَأُ وَابْتَلَّتِ الْعُرُوقُ وَثَبَتَ الأَجْرُ إِنْ شَاءَ اللَّهُ \" .",
+"source": "سنن أبي داود (2357)، حكم الألباني: حسن"
+},
+"t60": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ \" إِذَا أَكَلَ أَحَدُكُمْ فَلْيَذْكُرِ اسْمَ اللَّهِ تَعَالَى فَإِنْ نَسِيَ أَنْ يَذْكُرَ اسْمَ اللَّهِ تَعَالَى فِي أَوَّلِهِ فَلْيَقُلْ بِسْمِ اللَّهِ أَوَّلَهُ وَآخِرَهُ \" .",
+"source": "سنن أبي داود (3767)، حكم الألباني: صحيح"
+},
+"t61": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… عَنْ أَبِيهِ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم \" مَنْ أَكَلَ طَعَامًا فَقَالَ الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي هَذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلاَ قُوَّةٍ . غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ \" . قَالَ هَذَا حَدِيثٌ حَسَنٌ غَرِيبٌ وَأَبُو مَرْحُومٍ اسْمُهُ عَبْدُ الرَّحِيمِ بْنُ مَيْمُونٍ .",
+"source": "جامع الترمذي (3458)، حكم الألباني: حسن"
+},
+"t62": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ عَبْدِ اللَّهِ بْنِ بُسْرٍ، - مِنْ بَنِي سُلَيْمٍ - قَالَ جَاءَ رَسُولُ اللَّهِ صلى الله عليه وسلم إِلَى أَبِي فَنَزَلَ عَلَيْهِ فَقَدَّمَ إِلَيْهِ طَعَامًا فَذَكَرَ حَيْسًا أَتَاهُ بِهِ ثُمَّ أَتَاهُ بِشَرَابٍ فَشَرِبَ فَنَاوَلَ مَنْ عَلَى يَمِينِهِ وَأَكَلَ تَمْرًا فَجَعَلَ يُلْقِي النَّوَى عَلَى ظَهْرِ أُصْبَعَيْهِ السَّبَّابَةِ وَالْوُسْطَى فَلَمَّا قَامَ قَامَ أَبِي فَأَخَذَ بِلِجَامِ دَابَّتِهِ فَقَالَ ادْعُ اللَّهَ لِي . فَقَالَ \" اللَّهُمَّ بَارِكْ لَهُمْ فِيمَا رَزَقْتَهُمْ وَاغْفِرْ لَهُمْ وَارْحَمْهُمْ \" .",
+"source": "سنن أبي داود (3729)، حكم الألباني: صحيح"
+},
+"t63": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنِ النَّبِيِّ صلى الله عليه وسلم قَالَ \" إِذَا عَطَسَ أَحَدُكُمْ فَلْيَقُلِ الْحَمْدُ لِلَّهِ. وَلْيَقُلْ لَهُ أَخُوهُ أَوْ صَاحِبُهُ يَرْحَمُكَ اللَّهُ. فَإِذَا قَالَ لَهُ يَرْحَمُكَ اللَّهُ. فَلْيَقُلْ يَهْدِيكُمُ اللَّهُ وَيُصْلِحُ بَالَكُمْ \".",
+"source": "صحيح البخاري (6224)"
+},
+"t64": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ النَّبِيَّ صلى الله عليه وسلم كَانَ إِذَا رَفَّأَ الإِنْسَانَ إِذَا تَزَوَّجَ قَالَ \" بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ \" .",
+"source": "سنن أبي داود (2130)، حكم الألباني: صحيح"
+},
+"t65": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ عَدِيِّ بْنِ ثَابِتٍ، حَدَّثَنَا سُلَيْمَانُ بْنُ صُرَدٍ، قَالَ اسْتَبَّ رَجُلاَنِ عِنْدَ النَّبِيِّ صلى الله عليه وسلم وَنَحْنُ عِنْدَهُ جُلُوسٌ، وَأَحَدُهُمَا يَسُبُّ صَاحِبَهُ مُغْضَبًا قَدِ احْمَرَّ وَجْهُهُ فَقَالَ النَّبِيُّ صلى الله عليه وسلم \" إِنِّي لأَعْلَمُ كَلِمَةً لَوْ قَالَهَا لَذَهَبَ عَنْهُ مَا يَجِدُ لَوْ قَالَ أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ \". فَقَالُوا لِلرَّجُلِ أَلاَ تَسْمَعُ مَا يَقُولُ النَّبِيُّ صلى الله عليه وسلم قَالَ إِنِّي لَسْتُ بِمَجْنُونٍ.",
+"source": "صحيح البخاري (6115)"
+},
+"t66": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَبِي هُرَيْرَةَ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم \" مَنْ جَلَسَ فِي مَجْلِسٍ فَكَثُرَ فِيهِ لَغَطُهُ فَقَالَ قَبْلَ أَنْ يَقُومَ مِنْ مَجْلِسِهِ ذَلِكَ سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ أَنْتَ أَسْتَغْفِرُكَ وَأَتُوبُ إِلَيْكَ . إِلاَّ غُفِرَ لَهُ مَا كَانَ فِي مَجْلِسِهِ ذَلِكَ \" . وَفِي الْبَابِ عَنْ أَبِي بَرْزَةَ وَعَائِشَةَ . قَالَ هَذَا حَدِيثٌ حَسَنٌ غَرِيبٌ صَحِيحٌ مِنْ هَذَا الْوَجْهِ لاَ نَعْرِفُهُ مِنْ حَدِيثِ سُهَيْلٍ إِلاَّ مِنْ هَذَا الْوَجْهِ .",
+"source": "جامع الترمذي (3433)، حكم الألباني: صحيح"
+},
+"t67": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ النَّبِيَّ صلى الله عليه وسلم قَالَ \" مَنْ حَفِظَ عَشْرَ آيَاتٍ مِنْ أَوَّلِ سُورَةِ الْكَهْفِ عُصِمَ مِنَ الدَّجَّالِ \"",
+"source": "صحيح مسلم (809)"
+},
+"t68": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… أَنَّ رَجُلاً، كَانَ عِنْدَ النَّبِيِّ صلى الله عليه وسلم فَمَرَّ بِهِ رَجُلٌ فَقَالَ يَا رَسُولَ اللَّهِ إِنِّي لأُحِبُّ هَذَا . فَقَالَ لَهُ النَّبِيُّ صلى الله عليه وسلم \" أَعْلَمْتَهُ \" . قَالَ لاَ قَالَ \" أَعْلِمْهُ \" . قَالَ فَلَحِقَهُ فَقَالَ إِنِّي أُحِبُّكَ فِي اللَّهِ . فَقَالَ أَحَبَّكَ الَّذِي أَحْبَبْتَنِي لَهُ .",
+"source": "سنن أبي داود (5125)، حكم الألباني: حسن"
+},
+"t70": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ عَلِيِّ بْنِ رَبِيعَةَ، قَالَ شَهِدْتُ عَلِيًّا - رضى الله عنه - وَأُتِيَ بِدَابَّةٍ لِيَرْكَبَهَا فَلَمَّا وَضَعَ رِجْلَهُ فِي الرِّكَابِ قَالَ بِسْمِ اللَّهِ فَلَمَّا اسْتَوَى عَلَى ظَهْرِهَا قَالَ الْحَمْدُ لِلَّهِ ثُمَّ قَالَ { سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ * وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ } ثُمَّ قَالَ الْحَمْدُ لِلَّهِ . ثَلاَثَ مَرَّاتٍ . ثُمَّ قَالَ اللَّهُ أَكْبَرُ . ثَلاَثَ مَرَّاتٍ ثُمَّ قَالَ سُبْحَانَكَ إِنِّي ظَلَمْتُ نَفْسِي فَاغْفِرْ لِي فَإِنَّهُ لاَ يَغْفِرُ الذُّنُوبَ إِلاَّ أَنْتَ . ثُمَّ ضَحِكَ فَقِيلَ يَا أَمِيرَ الْمُؤْمِنِينَ مِنْ أَىِّ شَىْءٍ ضَحِكْتَ قَالَ رَأَيْتُ  …",
+"source": "سنن أبي داود (2602)، حكم الألباني: صحيح"
+},
+"t71": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم كَانَ إِذَا اسْتَوَى عَلَى بَعِيرِهِ خَارِجًا إِلَى سَفَرٍ كَبَّرَ ثَلاَثًا ثُمَّ قَالَ \" سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ اللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَذَا الْبِرَّ وَالتَّقْوَى وَمِنَ الْعَمَلِ مَا تَرْضَى اللَّهُمَّ هَوِّنْ عَلَيْنَا سَفَرَنَا هَذَا وَاطْوِ عَنَّا بُعْدَهُ اللَّهُمَّ أَنْتَ الصَّاحِبُ فِي السَّفَرِ وَالْخَلِيفَةُ فِي الأَهْلِ اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ وَعْثَاءِ السَّفَرِ وَكَآبَةِ الْمَنْظَرِ وَسُوءِ الْمُنْقَلَبِ فِي الْمَالِ وَالأَهْلِ \" . وَإِذَا رَجَعَ قَالَهُنَّ . وَزَادَ فِيهِنّ …",
+"source": "صحيح مسلم (1342)"
+},
+"t72": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… أَنَّ رَسُولَ اللَّهِ صلى الله عليه وسلم قَالَ \" مَنْ دَخَلَ السُّوقَ فَقَالَ لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكُ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ يُحْيِي وَيُمِيتُ وَهُوَ حَىٌّ لاَ يَمُوتُ بِيَدِهِ الْخَيْرُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ كَتَبَ اللَّهُ لَهُ أَلْفَ أَلْفِ حَسَنَةٍ وَمَحَا عَنْهُ أَلْفَ أَلْفِ سَيِّئَةٍ وَرَفَعَ لَهُ أَلْفَ أَلْفِ دَرَجَةٍ \" . قَالَ أَبُو عِيسَى هَذَا حَدِيثٌ غَرِيبٌ . وَقَدْ رَوَاهُ عَمْرُو بْنُ دِينَارٍ - وَهُوَ قَهْرَمَانُ آلِ الزُّبَيْرِ عَنْ سَالِمِ بْنِ عَبْدِ اللَّهِ، هَذَا الْحَدِيثَ نَحْوَهُ",
+"source": "جامع الترمذي (3428)، حكم الألباني: حسن",
+"warning": "النص المعروض مختصر؛ تمامه: «يحيي ويميت وهو حي لا يموت بيده الخير وهو على كل شيء قدير». وقد حسنه الألباني وضعفه غيره."
+},
+"t73": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ أَنَسِ بْنِ مَالِكٍ ـ رضى الله عنه ـ قَالَ كُنَّا مَعَ النَّبِيِّ صلى الله عليه وسلم مَقْفَلَهُ مِنْ عُسْفَانَ، وَرَسُولُ اللَّهِ صلى الله عليه وسلم عَلَى رَاحِلَتِهِ، وَقَدْ أَرْدَفَ صَفِيَّةَ بِنْتَ حُيَىٍّ، فَعَثَرَتْ نَاقَتُهُ فَصُرِعَا جَمِيعًا، فَاقْتَحَمَ أَبُو طَلْحَةَ فَقَالَ يَا رَسُولَ اللَّهِ، جَعَلَنِي اللَّهُ فِدَاءَكَ. قَالَ \" عَلَيْكَ الْمَرْأَةَ \". فَقَلَبَ ثَوْبًا عَلَى وَجْهِهِ وَأَتَاهَا، فَأَلْقَاهَا عَلَيْهَا وَأَصْلَحَ لَهُمَا مَرْكَبَهُمَا فَرَكِبَا، وَاكْتَنَفْنَا رَسُولَ اللَّهِ صلى الله عليه وسلم، فَلَمَّا أَشْرَفْنَا عَلَى الْمَدِينَةِ قَالَ \" آيِبُونَ تَائِبُونَ عَابِدُونَ لِرَبِّنَا حَامِدُونَ \". فَلَمْ يَزَ …",
+"source": "صحيح البخاري (3085)"
+},
+"t74": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… أَنَّ تَلْبِيَةَ، رَسُولِ اللَّهِ صلى الله عليه وسلم لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لاَ شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لاَ شَرِيكَ لَكَ.",
+"source": "صحيح البخاري (1549)"
+},
+"t75": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… أَنَّ النَّبِيَّ صلى الله عليه وسلم قَالَ \" خَيْرُ الدُّعَاءِ دُعَاءُ يَوْمِ عَرَفَةَ وَخَيْرُ مَا قُلْتُ أَنَا وَالنَّبِيُّونَ مِنْ قَبْلِي لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ \" . قَالَ هَذَا حَدِيثٌ حَسَنٌ غَرِيبٌ مِنْ هَذَا الْوَجْهِ . وَحَمَّادُ بْنُ أَبِي حُمَيْدٍ هُوَ مُحَمَّدُ بْنُ أَبِي حُمَيْدٍ وَهُوَ أَبُو إِبْرَاهِيمَ الأَنْصَارِيُّ الْمَدَنِيُّ وَلَيْسَ هُوَ بِالْقَوِيِّ عِنْدَ أَهْلِ الْحَدِيثِ .",
+"source": "جامع الترمذي (3585)، حكم الألباني: حسن",
+"warning": "تمامه: «وهو على كل شيء قدير»."
+},
+"t76": {
+"status": "hasan",
+"label": "حسن",
+"hadith": "… عَنْ أَبِي هُرَيْرَةَ، قَالَ قَالَ رَسُولُ اللَّهِ ـ صلى الله عليه وسلم ـ \" إِنِّي لأَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ فِي الْيَوْمِ مِائَةَ مَرَّةٍ \" .",
+"source": "سنن ابن ماجه (3815)، حكم الألباني: حسن صحيح"
+},
+"t77": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "… عَنْ سَمُرَةَ بْنِ جُنْدَبٍ، قَالَ قَالَ رَسُولُ اللَّهِ صلى الله عليه وسلم \"أَحَبُّ الْكَلاَمِ إِلَى اللَّهِ أَرْبَعٌ سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلاَ إِلَهَ إِلاَّ اللَّهُ وَاللَّهُ أَكْبَرُ. لاَ يَضُرُّكَ بَأَيِّهِنَّ بَدَأْتَ. وَلاَ تُسَمِّيَنَّ غُلاَمَكَ يَسَارًا وَلاَ رَبَاحًا وَلاَ نَجِيحًا وَلاَ أَفْلَحَ فَإِنَّكَ تَقُولُ أَثَمَّ هُوَ فَلاَ يَكُونُ فَيَقُولُ لاَ.\" إِنَّمَا هُنَّ أَرْبَعٌ فَلاَ تَزِيدُنَّ عَلَىَّ .",
+"source": "صحيح مسلم (2137)"
+},
+"t78": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "حَدَّثَنَا قَيْسُ بْنُ حَفْصٍ، وَمُوسَى بْنُ إِسْمَاعِيلَ، قَالاَ حَدَّثَنَا عَبْدُ الْوَاحِدِ بْنُ زِيَادٍ، حَدَّثَنَا أَبُو قُرَّةَ، مُسْلِمُ بْنُ سَالِمٍ الْهَمْدَانِيُّ قَالَ حَدَّثَنِي عَبْدُ اللَّهِ بْنُ عِيسَى، سَمِعَ عَبْدَ الرَّحْمَنِ بْنَ أَبِي لَيْلَى، قَالَ لَقِيَنِي كَعْبُ بْنُ عُجْرَةَ فَقَالَ أَلاَ أُهْدِي لَكَ هَدِيَّةً سَمِعْتُهَا مِنَ النَّبِيِّ، صلى الله عليه وسلم فَقُلْتُ بَلَى، فَأَهْدِهَا لِي. فَقَالَ سَأَلْنَا رَسُولَ اللَّهِ صلى الله عليه وسلم فَقُلْنَا يَا رَسُولَ اللَّهِ كَيْفَ الصَّلاَةُ عَلَيْكُمْ أَهْلَ الْبَيْتِ فَإِنَّ اللَّهَ قَدْ عَلَّمَنَا كَيْفَ نُسَلِّمُ. قَالَ \" قُولُوا اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ، وَ …",
+"source": "صحيح البخاري (3370)"
+},
+"t4c": {
+"status": "no-hadith",
+"label": "لا يوجد حديث محدد",
+"hadith": "ورد هذا الذكر بعد الوضوء من حديث أبي سعيد الخدري عند النسائي في عمل اليوم والليلة، ولم يُتحقق منه مباشرة هنا.",
+"source": "لم يتم التحقق من مصدر مخرّج محدد"
+},
+"tcl4": {
+"status": "no-hadith",
+"label": "لا يوجد حديث محدد",
+"hadith": "ثبت في جامع الترمذي (606) قول «بسم الله» عند دخول الخلاء سترا من الجن؛ أما عند وضع الثوب فيُعزى إلى الطبراني في الأوسط، ولم يُتحقق منه مباشرة.",
+"source": "لم يتم التحقق من مصدر مخرّج محدد"
+},
+"t21": {
+"status": "no-hadith",
+"label": "لا يوجد حديث محدد",
+"hadith": "يُعزى إلى النسائي في الكبرى والحاكم من حديث عائشة، ولم يُتحقق منه مباشرة هنا.",
+"source": "لم يتم التحقق من مصدر مخرّج محدد"
+},
+"t26": {
+"status": "no-hadith",
+"label": "لا يوجد حديث محدد",
+"hadith": "يُعزى إلى الإمام أحمد (3712) من حديث ابن مسعود، ولم يُتحقق منه مباشرة هنا.",
+"source": "لم يتم التحقق من مصدر مخرّج محدد",
+"warning": "النص المعروض مختصر؛ الدعاء أطول من ذلك."
+},
+"t32": {
+"status": "no-hadith",
+"label": "لا يوجد حديث محدد",
+"hadith": "أصل الأمر بقول «آمنت بالله» عند الوسوسة في صحيح مسلم (134)؛ ولم يُتحقق من لفظ «ورسله» في هذا السياق.",
+"source": "لم يتم التحقق من مصدر مخرّج محدد"
+},
+"t35": {
+"status": "no-hadith",
+"label": "لا يوجد حديث محدد",
+"hadith": "يُعزى إلى ابن حبان من حديث أنس، ولم يُتحقق منه مباشرة هنا.",
+"source": "لم يتم التحقق من مصدر مخرّج محدد"
+},
+"t39": {
+"status": "no-hadith",
+"label": "لا يوجد حديث محدد",
+"hadith": "ليس حديثا مرفوعا، ويُنسب إلى الحسن البصري رحمه الله.",
+"source": "لا يوجد حديث مرفوع بهذا اللفظ",
+"warning": "لا يثبت عن النبي ﷺ."
+},
+"t48": {
+"status": "no-hadith",
+"label": "لا يوجد حديث محدد",
+"hadith": "ليس حديثا مرفوعا، وورد عن الحسن البصري رحمه الله (ذكره البخاري معلقا في كتاب الجنائز).",
+"source": "لا يوجد حديث مرفوع بهذا اللفظ",
+"warning": "لا يثبت عن النبي ﷺ."
+},
+"t54": {
+"status": "no-hadith",
+"label": "لا يوجد حديث محدد",
+"hadith": "ورد موقوفا عن عبد الله بن الزبير رضي الله عنهما (الموطأ)، ولم يُتحقق منه مباشرة هنا.",
+"source": "لم يتم التحقق من مصدر مخرّج محدد",
+"warning": "ليس حديثا مرفوعا."
+},
+"t69": {
+"status": "no-hadith",
+"label": "لا يوجد حديث محدد",
+"hadith": "لم يوجد هذا اللفظ في الكتب الستة. والثابت الأمر بالدعاء بالبركة لمن رأى ما يعجبه.",
+"source": "لا يوجد حديث مرفوع بهذا اللفظ",
+"warning": "لفظ «ولا تضره» لا يثبت بإسناد صحيح."
+}
 };
+const EV_SYMBOL={sahih:"✓",hasan:"◐",daif:"⚠","no-hadith":"ℹ"};
 
 /* ============================================================
    MORNING AZKAR (31)
    ============================================================ */
 const MORNING = [
-  {id:'m0',arabic:'الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ، الرَّحْمَنِ الرَّحِيمِ، مَالِكِ يَوْمِ الدِّينِ، إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ، اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ، صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ.',note:'سورة الفاتحة.',count:1},
-  {id:'m1',arabic:'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255].',note:'من قالها حين يصبح أجير من الجن حتى يمسى.',count:1},
-  {id:'m1b',arabic:'آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِنْ رُسُلِهِ ۚ وَقَالُوا سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ. لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ رَبَّنَا لَا تُؤَاخِذْنَا إِنْ نَّسِينَآ أَوْ أَخْطَأْنَا رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِنْ قَبْلِنَا رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا أَنْتَ مَوْلَانَا فَانْصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ. [البقرة 285 - 286].',note:'من قرأ آيتين من آخر سورة البقرة في حين يصبح كفتاه.',count:1},
-  {id:'m1c',arabic:'اللّهُـمَّ إِنِّـي أَصْبَـحْتُ أُشْـهِدُك ، وَأُشْـهِدُ حَمَلَـةَ عَـرْشِـك ، وَمَلَائِكَتَكَ ، وَجَمـيعَ خَلْـقِك ، أَنَّـكَ أَنْـتَ اللهُ لا إلهَ إلاّ أَنْـتَ وَحْـدَكَ لا شَريكَ لَـك ، وَأَنَّ ُ مُحَمّـداً عَبْـدُكَ وَرَسـولُـك.',note:'من قالها أعتقه الله من النار.',count:4},
-  {id:'m1d',arabic:'اللّهُـمَّ ما أَصْبَـحَ بي مِـنْ نِعْـمَةٍ أَو بِأَحَـدٍ مِـنْ خَلْـقِك ، فَمِـنْكَ وَحْـدَكَ لا شريكَ لَـك ، فَلَـكَ الْحَمْـدُ وَلَـكَ الشُّكْـر.',note:'من قالها حين يصبح أدى شكر يومه.',count:3},
-  {id:'m1e',arabic:'اللّهُـمَّ بِكَ أَصْـبَحْنا وَبِكَ أَمْسَـينا ، وَبِكَ نَحْـيا وَبِكَ نَمُـوتُ وَإِلَـيْكَ النُّـشُور.',note:'',count:3},
-  {id:'m1f',arabic:'وَأَصْبَـحْـنا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ المُشْرِكِينَ.',note:'',count:3},
-  {id:'m2',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ هُوَ ٱللَّهُ أَحَدٌ، ٱللَّهُ ٱلصَّمَدُ، لَمْ يَلِدْ وَلَمْ يُولَدْ، وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ.',note:'من قالها حين يصبح وحين يمسى كفته من كل شىء.',count:3},
-  {id:'m3',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ، مِن شَرِّ مَا خَلَقَ، وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ، وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ، وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ.',note:'',count:3},
-  {id:'m4',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ، مَلِكِ ٱلنَّاسِ، إِلَٰهِ ٱلنَّاسِ، مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ، ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ، مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ.',note:'',count:3},
-  {id:'m5',arabic:'أَصْـبَحْنا وَأَصْـبَحَ المُـلْكُ لله وَالحَمدُ لله ، لا إلهَ إلاّ اللّهُ وَحدَهُ لا شَريكَ لهُ، لهُ المُـلكُ ولهُ الحَمْـد، وهُوَ على كلّ شَيءٍ قدير ، رَبِّ أسْـأَلُـكَ خَـيرَ ما في هـذا اليوم وَخَـيرَ ما بَعْـدَه ، وَأَعـوذُ بِكَ مِنْ شَـرِّ ما في هـذا اليوم وَشَرِّ ما بَعْـدَه، رَبِّ أَعـوذُبِكَ مِنَ الْكَسَـلِ وَسـوءِ الْكِـبَر ، رَبِّ أَعـوذُ بِكَ مِنْ عَـذابٍ في النّـارِ وَعَـذابٍ في القَـبْر.',note:'',count:1},
-  {id:'m6',arabic:'اللّهـمَّ أَنْتَ رَبِّـي لا إلهَ إلاّ أَنْتَ ، خَلَقْتَنـي وَأَنا عَبْـدُك ، وَأَنا عَلـى عَهْـدِكَ وَوَعْـدِكَ ما اسْتَـطَعْـت ، أَعـوذُبِكَ مِنْ شَـرِّ ما صَنَـعْت ، أَبـوءُ لَـكَ بِنِعْـمَتِـكَ عَلَـيَّ وَأَبـوءُ بِذَنْـبي فَاغْفـِرْ لي فَإِنَّـهُ لا يَغْـفِرُ الذُّنـوبَ إِلاّ أَنْتَ .',note:'من قالها موقنا بها حين يمسى ومات من ليلته دخل الجنة.',count:1},
-  {id:'m7',arabic:'رَضيـتُ بِاللهِ رَبَّـاً وَبِالإسْلامِ ديـناً وَبِمُحَـمَّدٍ صلى الله عليه وسلم نَبِيّـاً.',note:'من قالها حين يصبح وحين يمسى كان حقا على الله أن يرضيه يوم القيامة.',count:3},
-  {id:'m8',arabic:'اللّهُـمَّ إِنِّـي أَصْبَـحْتُ أُشْـهِدُك ، وَأُشْـهِدُ حَمَلَـةَ عَـرْشِـك ، وَمَلَائِكَتَكَ ، وَجَمـيعَ خَلْـقِك ، أَنَّـكَ أَنْـتَ اللهُ لا إلهَ إلاّ أَنْـتَ وَحْـدَكَ لا شَريكَ لَـك ، وَأَنَّ ُ مُحَمّـداً عَبْـدُكَ وَرَسـولُـك.',note:'من قالها أعتقه الله من النار.',count:4},
-  {id:'m9',arabic:'اللّهُـمَّ ما أَصْبَـحَ بي مِـنْ نِعْـمَةٍ أَو بِأَحَـدٍ مِـنْ خَلْـقِك ، فَمِـنْكَ وَحْـدَكَ لا شريكَ لَـك ، فَلَـكَ الْحَمْـدُ وَلَـكَ الشُّكْـر.',note:'من قالها حين يصبح أدى شكر يومه.',count:1},
-  {id:'m10',arabic:'حَسْبِـيَ اللّهُ لا إلهَ إلاّ هُوَ عَلَـيهِ تَوَكَّـلتُ وَهُوَ رَبُّ العَرْشِ العَظـيم.',note:'من قالها كفاه الله ما أهمه.',count:7},
-  {id:'m11',arabic:'بِسـمِ اللهِ الذي لا يَضُـرُّ مَعَ اسمِـهِ شَيءٌ في الأرْضِ وَلا في السّمـاءِ وَهـوَ السّمـيعُ العَلـيم.',note:'لم يضره من الله شيء.',count:3},
-  {id:'m12',arabic:'اللّهُـمَّ بِكَ أَصْـبَحْنا وَبِكَ أَمْسَـينا ، وَبِكَ نَحْـيا وَبِكَ نَمُـوتُ وَإِلَـيْكَ النُّـشُور.',note:'',count:1},
-  {id:'m13',arabic:'أَصْبَـحْـنا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ المُشْرِكِينَ.',note:'',count:1},
-  {id:'m14',arabic:'سُبْحـانَ اللهِ وَبِحَمْـدِهِ عَدَدَ خَلْـقِه ، وَرِضـا نَفْسِـه ، وَزِنَـةَ عَـرْشِـه ، وَمِـدادَ كَلِمـاتِـه.',note:'',count:3},
-  {id:'m15',arabic:'اللّهُـمَّ عافِـني في بَدَنـي ، اللّهُـمَّ عافِـني في سَمْـعي ، اللّهُـمَّ عافِـني في بَصَـري ، لا إلهَ إلاّ أَنْـتَ.',note:'',count:3},
-  {id:'m16',arabic:'اللّهُـمَّ إِنّـي أَعـوذُ بِكَ مِنَ الْكُـفر ، وَالفَـقْر ، وَأَعـوذُ بِكَ مِنْ عَذابِ القَـبْر ، لا إلهَ إلاّ أَنْـتَ.',note:'',count:3},
-  {id:'m17',arabic:'اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في الدُّنْـيا وَالآخِـرَة ، اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في ديني وَدُنْـيايَ وَأهْـلي وَمالـي ، اللّهُـمَّ اسْتُـرْ عـوْراتي وَآمِـنْ رَوْعاتـي ، اللّهُـمَّ احْفَظْـني مِن بَـينِ يَدَيَّ وَمِن خَلْفـي وَعَن يَمـيني وَعَن شِمـالي ، وَمِن فَوْقـي ، وَأَعـوذُ بِعَظَمَـتِكَ أَن أُغْـتالَ مِن تَحْتـي.',note:'',count:1},
-  {id:'m18',arabic:'يَا حَيُّ يَا قيُّومُ بِرَحْمَتِكَ أسْتَغِيثُ أصْلِحْ لِي شَأنِي كُلَّهُ وَلاَ تَكِلْنِي إلَى نَفْسِي طَـرْفَةَ عَيْنٍ.',note:'',count:3},
-  {id:'m19',arabic:'أَصْبَـحْـنا وَأَصْبَـحَ المُـلْكُ للهِ رَبِّ العـالَمـين ، اللّهُـمَّ إِنِّـي أسْـأَلُـكَ خَـيْرَ هـذا الـيَوْم ، فَـتْحَهُ ، وَنَصْـرَهُ ، وَنـورَهُ وَبَـرَكَتَـهُ ، وَهُـداهُ ، وَأَعـوذُ بِـكَ مِـنْ شَـرِّ ما فـيهِ وَشَـرِّ ما بَعْـدَه.',note:'',count:1},
-  {id:'m20',arabic:'اللّهُـمَّ عالِـمَ الغَـيْبِ وَالشّـهادَةِ فاطِـرَ السّماواتِ وَالأرْضِ رَبَّ كـلِّ شَـيءٍ وَمَليـكَه ، أَشْهَـدُ أَنْ لا إِلـهَ إِلاّ أَنْت ، أَعـوذُ بِكَ مِن شَـرِّ نَفْسـي وَمِن شَـرِّ الشَّيْـطانِ وَشِرْكِهِ ، وَأَنْ أَقْتَـرِفَ عَلـى نَفْسـي سوءاً أَوْ أَجُـرَّهُ إِلـى مُسْـلِم.',note:'',count:1},
-  {id:'m21',arabic:'أَعـوذُ بِكَلِمـاتِ اللّهِ التّـامّـاتِ مِنْ شَـرِّ ما خَلَـق.',note:'',count:3},
-  {id:'m22',arabic:'اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ على نَبِيِّنَا مُحمَّد.',note:'من صلى على حين يصبح وحين يمسى ادركته شفاعتى.',count:10},
-  {id:'m23',arabic:'اللَّهُمَّ إِنَّا نَعُوذُ بِكَ مِنْ أَنْ نُشْرِكَ بِكَ شَيْئًا نَعْلَمُهُ ، وَنَسْتَغْفِرُكَ لِمَا لَا نَعْلَمُهُ.',note:'',count:3},
-  {id:'m24',arabic:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ الْهَمِّ وَالْحَزَنِ، وَأَعُوذُ بِكَ مِنْ الْعَجْزِ وَالْكَسَلِ، وَأَعُوذُ بِكَ مِنْ الْجُبْنِ وَالْبُخْلِ، وَأَعُوذُ بِكَ مِنْ غَلَبَةِ الدَّيْنِ، وَقَهْرِ الرِّجَالِ.',note:'',count:3},
-  {id:'m25',arabic:'أسْتَغْفِرُ اللهَ العَظِيمَ الَّذِي لاَ إلَهَ إلاَّ هُوَ، الحَيُّ القَيُّومُ، وَأتُوبُ إلَيهِ.',note:'',count:3},
-  {id:'m26',arabic:'يَا رَبِّ , لَكَ الْحَمْدُ كَمَا يَنْبَغِي لِجَلَالِ وَجْهِكَ , وَلِعَظِيمِ سُلْطَانِكَ.',note:'',count:3},
-  {id:'m27',arabic:'اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلًا مُتَقَبَّلًا.',note:'',count:1},
-  {id:'m28',arabic:'اللَّهُمَّ أَنْتَ رَبِّي لا إِلَهَ إِلا أَنْتَ ، عَلَيْكَ تَوَكَّلْتُ ، وَأَنْتَ رَبُّ الْعَرْشِ الْعَظِيمِ , مَا شَاءَ اللَّهُ كَانَ ، وَمَا لَمْ يَشَأْ لَمْ يَكُنْ ، وَلا حَوْلَ وَلا قُوَّةَ إِلا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ , أَعْلَمُ أَنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ ، وَأَنَّ اللَّهَ قَدْ أَحَاطَ بِكُلِّ شَيْءٍ عِلْمًا , اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي ، وَمِنْ شَرِّ كُلِّ دَابَّةٍ أَنْتَ آخِذٌ بِنَاصِيَتِهَا ، إِنَّ رَبِّي عَلَى صِرَاطٍ مُسْتَقِيمٍ.',note:'من أذكار الصباح.',count:1},
-  {id:'m29',arabic:'لَا إلَه إلّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءِ قَدِيرِ.',note:'كانت له عدل عشر رقاب، وكتبت له مئة حسنة، ومحيت عنه مئة سيئة.',count:100},
-  {id:'m30',arabic:'سُبْحـانَ اللهِ وَبِحَمْـدِهِ.',note:'حُطَّتْ خَطَايَاهُ وَإِنْ كَانَتْ مِثْلَ زَبَدِ الْبَحْرِ.',count:100},
-  {id:'m31',arabic:'أسْتَغْفِرُ اللهَ وَأتُوبُ إلَيْهِ.',note:'مائة حسنة، ومُحيت عنه مائة سيئة.',count:100}
+{'id':'m1-fatiha','arabic':'أَعُوذُ بِاللّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ بِسْمِ اللهِ الرَّحْمنِ الرَّحِيمِ ٰالحَمْدُ لِلّهِ رَبِّ الْعَالَمِينَ ‒ الرَّحْمَٰنِ الرَّحِيمُ ‒ مَالِكِ يَوْمِ الدِّينِ ‒ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ‒ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ‒ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَالِّينَ۩',note:'',count:1},
+{id:'m1',arabic:'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255].',note:'من قالها حين يصبح أجير من الجن حتى يمسى.',count:1},
+{'id':'m2-baqarah','arabic':'أَعُوذُ بِاللّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِنْ رُسُلِهِ ۚ وَقَالُوا سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ. لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ رَبَّنَا لَا تُؤَاخِذْنَا إِنْ نَّسِينَآ أَوْ أَخْطَأْنَا رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِنْ قَبْلِنَا رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا أَنْتَ مَوْلَانَا فَانْصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ. [البقرة 285 - 286].',note':'من قرأ آيتين من آخر سورة البقرة في ليلة كفتاه.',count:1},
+{'id':'m3-isti','arabic':'أَعُوذُ بِاللّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ',note:'',count:3},
+{id:'m2',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ هُوَ ٱللَّهُ أَحَدٌ، ٱللَّهُ ٱلصَّمَدُ، لَمْ يَلِدْ وَلَمْ يُولَدْ، وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ.',note:'من قالها حين يصبح وحين يمسى كفته من كل شىء.',count:3},
+{id:'m3',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ، مِن شَرِّ مَا خَلَقَ، وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ، وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ، وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ.',note:'',count:3},
+{id:'m4',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ، مَلِكِ ٱلنَّاسِ، إِلَٰهِ ٱلنَّاسِ، مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ، ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ، مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ.',note:'',count:3},
+{id:'m5',arabic:'أَصْـبَحْنا وَأَصْـبَحَ المُـلْكُ لله وَالحَمدُ لله ، لا إلهَ إلاّ اللّهُ وَحدَهُ لا شَريكَ لهُ، لهُ المُـلكُ ولهُ الحَمْـد، وهُوَ على كلّ شَيءٍ قدير ، رَبِّ أسْـأَلُـكَ خَـيرَ ما في هـذا اليوم وَخَـيرَ ما بَعْـدَه ، وَأَعـوذُ بِكَ مِنْ شَـرِّ ما في هـذا اليوم وَشَرِّ ما بَعْـدَه، رَبِّ أَعـوذُبِكَ مِنَ الْكَسَـلِ وَسـوءِ الْكِـبَر ، رَبِّ أَعـوذُ بِكَ مِنْ عَـذابٍ في النّـارِ وَعَـذابٍ في القَـبْر.',note:'',count:1},
+{id:'m6',arabic:'اللّهـمَّ أَنْتَ رَبِّـي لا إلهَ إلاّ أَنْتَ ، خَلَقْتَنـي وَأَنا عَبْـدُك ، وَأَنا عَلـى عَهْـدِكَ وَوَعْـدِكَ ما اسْتَـطَعْـت ، أَعـوذُبِكَ مِنْ شَـرِّ ما صَنَـعْت ، أَبـوءُ لَـكَ بِنِعْـمَتِـكَ عَلَـيَّ وَأَبـوءُ بِذَنْـبي فَاغْفـِرْ لي فَإِنَّـهُ لا يَغْـفِرُ الذُّنـوبَ إِلاّ أَنْتَ .',note:'من قالها موقنا بها حين يمسى ومات من ليلته دخل الجنة.',count:1},
+{id:'m7',arabic:'رَضيـتُ بِاللهِ رَبَّـاً وَبِالإسْلامِ ديـناً وَبِمُحَـمَّدٍ صلى الله عليه وسلم نَبِيّـاً.',note:'من قالها حين يصبح وحين يمسى كان حقا على الله أن يرضيه يوم القيامة.',count:3},
+{id:'m8',arabic:'اللّهُـمَّ إِنِّـي أَصْبَـحْتُ أُشْـهِدُك ، وَأُشْـهِدُ حَمَلَـةَ عَـرْشِـك ، وَمَلَائِكَتَكَ ، وَجَمـيعَ خَلْـقِك ، أَنَّـكَ أَنْـتَ اللهُ لا إلهَ إلاّ أَنْـتَ وَحْـدَكَ لا شَريكَ لَـك ، وَأَنَّ ُ مُحَمّـداً عَبْـدُكَ وَرَسـولُـك.',note:'من قالها أعتقه الله من النار.',count:4},
+{id:'m9',arabic:'اللّهُـمَّ ما أَصْبَـَحَ بي مِـنْ نِعْـمَةٍ أَو بِأَحَـدٍ مِـنْ خَلْـقِك ، فَمِـنْكَ وَحْـدَكَ لا شريكَ لَـك ، فَلَـكَ الْحَمْـدُ وَلَـكَ الشُّكْـر.',note:'من قالها حين يصبح أدى شكر يومه.',count:3},
+{id:'m10',arabic:'حَسْبِـيَ اللّهُ لا إلهَ إلاّ هُوَ عَلَـيهِ تَوَكَّـلتُ وَهُوَ رَبُّ العَرْشِ العَظـيم.',note:'من قالها كفاه الله ما أهمه.',count:7},
+{id:'m11',arabic:'بِسـمِ اللهِ الذي لا يَضُـرُّ مَعَ اسمِـهِ شَيءٌ في الأرْضِ وَلا في السّمـاءِ وَهـوَ السّمـيعُ العَلـيم.',note:'لم يضره من الله شيء.',count:3},
+{id:'m12',arabic:'اللّهُـمَّ بِكَ أَصْـبَحْنا وَبِكَ أَمْسَـينا ، وَبِكَ نَحْـيا وَبِكَ نَمُـوتُ وَإِلَـيْكَ النُّـشُور.',note:'',count:3},
+{id:'m13',arabic:'أَصْبَـحْـنا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ المُشْرِكِينَ.',note:'',count:3},
+{id:'m14',arabic:'سُبْحـانَ اللهِ وَبِحَمْـدِهِ عَدَدَ خَلْـقِه ، وَرِضـا نَفْسِـه ، وَزِنَـةَ عَـرْشِـه ، وَمِـدادَ كَلِمـاتِـه.',note:'',count:3},
+{id:'m15',arabic:'اللّهُـمَّ عافِـني في بَدَنـي ، اللّهُـمَّ عافِـني في سَمْـعي ، اللّهُـمَّ عافِـني في بَصَـري ، لا إلهَ إلاّ أَنْـتَ.',note:'',count:3},
+{id:'m16',arabic:'اللّهُـمَّ إِنّـي أَعـوذُ بِكَ مِنَ الْكُـفر ، وَالفَـقْر ، وَأَعـوذُ بِكَ مِنْ عَذابِ القَـبْر ، لا إلهَ إلاّ أَنْـتَ.',note:'',count:3},
+{id:'m17',arabic:'اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في الدُّنْـيا وَالآخِـرَة ، اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في ديني وَدُنْـيايَ وَأهْـلي وَمالـي ، اللّهُـمَّ اسْتُـرْ عـوْراتي وَآمِـنْ رَوْعاتـي ، اللّهُـمَّ احْفَظْـني مِن بَـينِ يَدَيَّ وَمِن خَلْفـي وَعَن يَمـيني وَعَن شِمـالي ، وَمِن فَوْقـي ، وَأَعـوذُ بِعَظَمَـتِكَ أَن أُغْـتالَ مِن تَحْتـي.',note:'',count:1},
+{id:'m18',arabic:'يَا حَيُّ يَا قيُّومُ بِرَحْمَتِكَ أسْتَغِيثُ أصْلِحْ لِي شَأنِي كُلَّهُ وَلاَ تَكِلْنِي إلَى نَفْسِي طَـرْفَةَ عَيْنٍ.',note:'',count:3},
+{id:'m19',arabic:'أَصْبَـحْـنا وَأَصْبَـحَ المُـلكُ للهِ رَبِّ العـالَمـين ، اللّهُـمَّ إِنِّـي أسْـأَلُـكَ خَـيْرَ هـذا الـيَوْم ، فَـتْحَهُ ، وَنَصْـرَهُ ، وَنـورَهُ وَبَـرَكَتَـهُ ، وَهُـداهُ ، وَأَعـوذُ بِـكَ مِـنْ شَـرِّ ما فـيهِ وَشَـرِّ ما بَعْـدَه.',note:'',count:1},
+{id:'m20',arabic:'اللّهُـمَّ عالِـمَ الغَـيْبِ وَالشّـهادَةِ فاطِـرَ السّماواتِ وَالأرْضِ رَبَّ كـلِّ شَـيءٍ وَمَليـكَه ، أَشْهَـدُ أَنْ لا إِلـهَ إِلاّ أَنْت ، أَعـوذُ بِكَ مِن شَـرِّ نَفْسـي وَمِن شَـرِّ الشَّيْـطانِ وَشِرْكِهِ ، وَأَنْ أَقْتَـرِفَ عَلـى نَفْسـي سوءاً أَوْ أَجُـرَّهُ إِلـى مُسْـلِم.',note:'',count:1},
+{id:'m21',arabic:'أَعـوذُ بِكَلِمـاتِ اللّهِ التّـامّـاتِ مِنْ شَـرِّ ما خَلَـق.',note:'',count:3},
+{id:'m22',arabic:'اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ على نَبِيِّنَا مُحمَّد.',note:'من صلى على حين يصبح وحين يمسى ادركته شفاعتى.',count:10},
+{id:'m23',arabic:'اللَّهُمَّ إِنَّا نَعُوذُ بِكَ مِنْ أَنْ نُشْرِكَ بِكَ شَيْئًا نَعْلَمُهُ ، وَنَسْتَغْفِرُكَ لِمَا لَا نَعْلَمُهُ.',note:'',count:3},
+{id:'m24',arabic:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ الْهَمِّ وَالْحَزَنِ، وَأَعُوذُ بِكَ مِنْ الْعَجْزِ وَالْكَسَلِ، وَأَعُوذُ بِكَ مِنْ الْجُبْنِ وَالْبُخْلِ، وَأَعُوذُ بِكَ مِنْ غَلَبَةِ الدَّيْنِ، وَقَهْرِ الرِّجَالِ.',note:'',count:3},
+{id:'m25',arabic:'أسْتَغْفِرُ اللهَ العَظِيمَ الَّذِي لاَ إلَهَ إلاَّ هُوَ، الحَيُّ القَيُّومُ، وَأتُوبُ إلَيهِ.',note:'',count:3},
+{id:'m26',arabic:'يَا رَبِّ , لَكَ الْحَمْدُ كَمَا يَنْبَغِي لِجَلَالِ وَجْهِكَ , وَلِعَظِيمِ سُلْطَانِكَ.',note:'',count:3},
+{id:'m27',arabic:'اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلًا مُتَقَبَّلًا.',note:'',count:1},
+{id:'m28',arabic:'اللَّهُمَّ أَنْتَ رَبِّي لا إِلَهَ إِلا أَنْتَ ، عَلَيْكَ تَوَكَّلْتُ ، وَأَنْتَ رَبُّ الْعَرْشِ الْعَظِيمِ , مَا شَاءَ اللَّهُ كَانَ ، وَمَا لَمْ يَشَأْ لَمْ يَكُنْ ، وَلا حَوْلَ وَلا قُوَّةَ إِلا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ , أَعْلَمُ أَنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ ، وَأَنَّ اللَّهَ قَدْ أَحَاطَ بِكُلِّ شَيْءٍ عِلْمًا , اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي ، وَمِنْ شَرِّ كُلِّ دَابَّةٍ أَنْتَ آخِذٌ بِنَاصِيَتِهَا ، إِنَّ رَبِّي عَلَى صِرَاطٍ مُسْتَقِيمٍ.',note:'ذكر طيب.',count:1},
+{id:'m29',arabic:'لَا إلَه إلّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءِ قَدِيرِ.',note:'كانت له عدل عشر رقاب، وكتبت له مئة حسنة، ومحيت عنه مئة سيئة.',count:100},
+{id:'m30',arabic:'سُبْحـانَ اللهِ وَبِحَمْـدِهِ.',note:'حُطَّتْ خَطَايَاهُ وَإِنْ كَانَتْ مِثْلَ زَبَدِ الْبَحْرِ.',count:100},
+{id:'m31',arabic:'أسْتَغْفِرُ اللهَ وَأتُوبُ إلَيْهِ.',note:'مائة حسنة، ومُحيت عنه مائة سيئة.',count:100}
 ];
+
 
 /* ============================================================
    EVENING AZKAR (30)
    ============================================================ */
 const EVENING = [
-  {id:'e0',arabic:'الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ، الرَّحْمَنِ الرَّحِيمِ، مَالِكِ يَوْمِ الدِّينِ، إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ، اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ، صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ.',note:'سورة الفاتحة.',count:1},
-  {id:'e1',arabic:'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255].',note:'من قالها حين يمسى أجير من الجن حتى يصبح.',count:1},
-  {id:'e1b',arabic:'آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِنْ رُسُلِهِ ۚ وَقَالُوا سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ. لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ رَبَّنَا لَا تُؤَاخِذْنَا إِنْ نَّسِينَآ أَوْ أَخْطَأْنَا رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِنْ قَبْلِنَا رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا أَنْتَ مَوْلَانَا فَانْصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ. [البقرة 285 - 286].',note:'من قرأ آيتين من آخر سورة البقرة في حين يمسى كفتاه.',count:1},
-  {id:'e1c',arabic:'اللّهُـمَّ إِنِّـي أَمسيتُ أُشْـهِدُك ، وَأُشْـهِدُ حَمَلَـةَ عَـرْشِـك ، وَمَلَائِكَتَكَ ، وَجَمـيعَ خَلْـقِك ، أَنَّـكَ أَنْـتَ اللهُ لا إلهَ إلاّ أَنْـتَ وَحْـدَكَ لا شَريكَ لَـك ، وَأَنَّ ُ مُحَمّـداً عَبْـدُكَ وَرَسـولُـك.',note:'من قالها أعتقه الله من النار.',count:3},
-  {id:'e1d',arabic:'اللّهُـمَّ ما أَمسى بي مِـنْ نِعْـمَةٍ أَو بِأَحَـدٍ مِـنْ خَلْـقِك ، فَمِـنْكَ وَحْـدَكَ لا شريكَ لَـك ، فَلَـكَ الْحَمْـدُ وَلَـكَ الشُّكْـر.',note:'من قالها حين يمسى أدى شكر يومه.',count:3},
-  {id:'e1e',arabic:'اللّهُـمَّ بِكَ أَمْسَـينا وَبِكَ أَصْـبَحْنا، وَبِكَ نَحْـيا وَبِكَ نَمُـوتُ وَإِلَـيْكَ الْمَصِيرُ.',note:'',count:3},
-  {id:'e1f',arabic:'وَأَمْسَيْنَا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ المُشْرِكِينَ.',note:'',count:3},
-  {id:'e2',arabic:'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِنْ رُسُلِهِ ۚ وَقَالُوا سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ. لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ رَبَّنَا لَا تُؤَاخِذْنَا إِنْ نَّسِينَآ أَوْ أَخْطَأْنَا رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِنْ قَبْلِنَا رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا أَنْتَ مَوْلَانَا فَانْصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ. [البقرة 285 - 286].',note:'من قرأ آيتين من آخر سورة البقرة في ليلة كفتاه.',count:1},
-  {id:'e3',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ هُوَ ٱللَّهُ أَحَدٌ، ٱللَّهُ ٱلصَّمَدُ، لَمْ يَلِدْ وَلَمْ يُولَدْ، وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ.',note:'من قالها حين يصبح وحين يمسى كفته من كل شىء.',count:3},
-  {id:'e4',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ، مِن شَرِّ مَا خَلَقَ، وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ، وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ، وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ.',note:'',count:3},
-  {id:'e5',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ، مَلِكِ ٱلنَّاسِ، إِلَٰهِ ٱلنَّاسِ، مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ، ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ، مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ.',note:'',count:3},
-  {id:'e6',arabic:'أَمْسَيْـنا وَأَمْسـى المـلكُ لله وَالحَمدُ لله ، لا إلهَ إلاّ اللّهُ وَحدَهُ لا شَريكَ لهُ، لهُ المُـلكُ ولهُ الحَمْـد، وهُوَ على كلّ شَيءٍ قدير ، رَبِّ أسْـأَلُـكَ خَـيرَ ما في هـذهِ اللَّـيْلَةِ وَخَـيرَ ما بَعْـدَهـا ، وَأَعـوذُ بِكَ مِنْ شَـرِّ ما في هـذهِ اللَّـيْلةِ وَشَرِّ ما بَعْـدَهـا ، رَبِّ أَعـوذُبِكَ مِنَ الْكَسَـلِ وَسـوءِ الْكِـبَر ، رَبِّ أَعـوذُ بِكَ مِنْ عَـذابٍ في النّـارِ وَعَـذابٍ في القَـبْر.',note:'',count:1},
-  {id:'e7',arabic:'اللّهـمَّ أَنْتَ رَبِّـي لا إلهَ إلاّ أَنْتَ ، خَلَقْتَنـي وَأَنا عَبْـدُك ، وَأَنا عَلـى عَهْـدِكَ وَوَعْـدِكَ ما اسْتَـطَعْـت ، أَعـوذُبِكَ مِنْ شَـرِّ ما صَنَـعْت ، أَبـوءُ لَـكَ بِنِعْـمَتِـكَ عَلَـيَّ وَأَبـوءُ بِذَنْـبي فَاغْفـِرْ لي فَإِنَّـهُ لا يَغْـفِرُ الذُّنـوبَ إِلاّ أَنْتَ .',note:'من قالها موقنا بها حين يمسى ومات من ليلته دخل الجنة.',count:1},
-  {id:'e8',arabic:'رَضيـتُ بِاللهِ رَبَّـاً وَبِالإسْلامِ ديـناً وَبِمُحَـمَّدٍ صلى الله عليه وسلم نَبِيّـاً.',note:'من قالها حين يصبح وحين يمسى كان حقا على الله أن يرضيه يوم القيامة.',count:3},
-  {id:'e9',arabic:'اللّهُـمَّ إِنِّـي أَمسيتُ أُشْـهِدُك ، وَأُشْـهِدُ حَمَلَـةَ عَـرْشِـك ، وَمَلَائِكَتَكَ ، وَجَمـيعَ خَلْـقِك ، أَنَّـكَ أَنْـتَ اللهُ لا إلهَ إلاّ أَنْـتَ وَحْـدَكَ لا شَريكَ لَـك ، وَأَنَّ ُ مُحَمّـداً عَبْـدُكَ وَرَسـولُـك.',note:'من قالها أعتقه الله من النار.',count:4},
-  {id:'e10',arabic:'اللّهُـمَّ ما أَمسى بي مِـنْ نِعْـمَةٍ أَو بِأَحَـدٍ مِـنْ خَلْـقِك ، فَمِـنْكَ وَحْـدَكَ لا شريكَ لَـك ، فَلَـكَ الْحَمْـدُ وَلَـكَ الشُّكْـر.',note:'من قالها حين يمسى أدى شكر يومه.',count:1},
-  {id:'e11',arabic:'حَسْبِـيَ اللّهُ لا إلهَ إلاّ هُوَ عَلَـيهِ تَوَكَّـلتُ وَهُوَ رَبُّ العَرْشِ العَظـيم.',note:'من قالها كفاه الله ما أهمه.',count:7},
-  {id:'e12',arabic:'بِسـمِ اللهِ الذي لا يَضُـرُّ مَعَ اسمِـهِ شَيءٌ في الأرْضِ وَلا في السّمـاءِ وَهـوَ السّمـيعُ العَلـيم.',note:'لم يضره من الله شيء.',count:3},
-  {id:'e13',arabic:'اللّهُـمَّ بِكَ أَمْسَـينا وَبِكَ أَصْـبَحْنا، وَبِكَ نَحْـيا وَبِكَ نَمُـوتُ وَإِلَـيْكَ الْمَصِيرُ.',note:'',count:1},
-  {id:'e14',arabic:'أَمْسَيْنَا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ المُشْرِكِينَ.',note:'',count:1},
-  {id:'e15',arabic:'سُبْحـانَ اللهِ وَبِحَمْـدِهِ عَدَدَ خَلْـقِه ، وَرِضـا نَفْسِـه ، وَزِنَـةَ عَـرْشِـه ، وَمِـدادَ كَلِمـاتِـه.',note:'',count:3},
-  {id:'e16',arabic:'اللّهُـمَّ عافِـني في بَدَنـي ، اللّهُـمَّ عافِـني في سَمْـعي ، اللّهُـمَّ عافِـني في بَصَـري ، لا إلهَ إلاّ أَنْـتَ.',note:'',count:3},
-  {id:'e17',arabic:'اللّهُـمَّ إِنّـي أَعـوذُ بِكَ مِنَ الْكُـفر ، وَالفَـقْر ، وَأَعـوذُ بِكَ مِنْ عَذابِ القَـبْر ، لا إلهَ إلاّ أَنْـتَ.',note:'',count:3},
-  {id:'e18',arabic:'اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في الدُّنْـيا وَالآخِـرَة ، اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في ديني وَدُنْـيايَ وَأهْـلي وَمالـي ، اللّهُـمَّ اسْتُـرْ عـوْراتي وَآمِـنْ رَوْعاتـي ، اللّهُـمَّ احْفَظْـني مِن بَـينِ يَدَيَّ وَمِن خَلْفـي وَعَن يَمـيني وَعَن شِمـالي ، وَمِن فَوْقـي ، وَأَعـوذُ بِعَظَمَـتِكَ أَن أُغْـتالَ مِن تَحْتـي.',note:'',count:1},
-  {id:'e19',arabic:'يَا حَيُّ يَا قيُّومُ بِرَحْمَتِكَ أسْتَغِيثُ أصْلِحْ لِي شَأنِي كُلَّهُ وَلاَ تَكِلْنِي إلَى نَفْسِي طَـرْفَةَ عَيْنٍ.',note:'',count:3},
-  {id:'e20',arabic:'أَمْسَيْنا وَأَمْسَى الْمُلْكُ للهِ رَبِّ الْعَالَمَيْنِ، اللَّهُمَّ إِنَّي أسْأَلُكَ خَيْرَ هَذَه اللَّيْلَةِ فَتْحَهَا ونَصْرَهَا، ونُوْرَهَا وبَرَكَتهَا، وَهُـدَاهَا، وَأَعُوذُ بِكَ مِنْ شَـرِّ مَا فيهِا وَشَرَّ مَا بَعْدَهَا.',note:'',count:1},
-  {id:'e21',arabic:'اللّهُـمَّ عالِـمَ الغَـيْبِ وَالشّـهادَةِ فاطِـرَ السّماواتِ وَالأرْضِ رَبَّ كـلِّ شَـيءٍ وَمَليـكَه ، أَشْهَـدُ أَنْ لا إِلـهَ إِلاّ أَنْت ، أَعـوذُ بِكَ مِن شَـرِّ نَفْسـي وَمِن شَـرِّ الشَّيْـطانِ وَشِرْكِهِ ، وَأَنْ أَقْتَـرِفَ عَلـى نَفْسـي سوءاً أَوْ أَجُـرَّهُ إِلـى مُسْـلِم.',note:'',count:1},
-  {id:'e22',arabic:'أَعـوذُ بِكَلِمـاتِ اللّهِ التّـامّـاتِ مِنْ شَـرِّ ما خَلَـق.',note:'',count:3},
-  {id:'e23',arabic:'اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ على نَبِيِّنَا مُحمَّد.',note:'من صلى على حين يصبح وحين يمسى ادركته شفاعتى.',count:10},
-  {id:'e24',arabic:'اللَّهُمَّ إِنَّا نَعُوذُ بِكَ مِنْ أَنْ نُشْرِكَ بِكَ شَيْئًا نَعْلَمُهُ ، وَنَسْتَغْفِرُكَ لِمَا لَا نَعْلَمُهُ.',note:'',count:3},
-  {id:'e25',arabic:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ الْهَمِّ وَالْحَزَنِ، وَأَعُوذُ بِكَ مِنْ الْعَجْزِ وَالْكَسَلِ، وَأَعُوذُ بِكَ مِنْ الْجُبْنِ وَالْبُخْلِ، وَأَعُوذُ بِكَ مِنْ غَلَبَةِ الدَّيْنِ، وَقَهْرِ الرِّجَالِ.',note:'',count:3},
-  {id:'e26',arabic:'أسْتَغْفِرُ اللهَ العَظِيمَ الَّذِي لاَ إلَهَ إلاَّ هُوَ، الحَيُّ القَيُّومُ، وَأتُوبُ إلَيهِ.',note:'',count:3},
-  {id:'e27',arabic:'يَا رَبِّ , لَكَ الْحَمْدُ كَمَا يَنْبَغِي لِجَلَالِ وَجْهِكَ , وَلِعَظِيمِ سُلْطَانِكَ.',note:'',count:3},
-  {id:'e28',arabic:'لَا إلَه إلّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءِ قَدِيرِ.',note:'كانت له عدل عشر رقاب.',count:100},
-  {id:'e29',arabic:'اللَّهُمَّ أَنْتَ رَبِّي لا إِلَهَ إِلا أَنْتَ ، عَلَيْكَ تَوَكَّلْتُ ، وَأَنْتَ رَبُّ الْعَرْشِ الْعَظِيمِ , مَا شَاءَ اللَّهُ كَانَ ، وَمَا لَمْ يَشَأْ لَمْ يَكُنْ ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ.',note:'من أذكار المساء.',count:1},
-  {id:'e30',arabic:'سُبْحـانَ اللهِ وَبِحَمْـدِهِ.',note:'حُطَّتْ خَطَايَاهُ.',count:100}
+{'id':'e1-fatiha','arabic':'أَعُوذُ بِاللّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ بِسْمِ اللهِ الرَّحْمنِ الرَّحِيمِ ٰالحَمْدُ لِلّهِ رَبِّ الْعَالَمِينَ ‒ الرَّحْمَٰنِ الرَّحِيمُ ‒ مَالِكِ يَوْمِ الدِّينِ ‒ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ‒ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ‒ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَالِّينَ۩',note:'',count:1},
+{id:'e1',arabic:'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255].',note:'من قالها حين يمسى أجير من الجن حتى يصبح.',count:1},
+{'id':'e3-isti','arabic':'أَعُوذُ بِاللّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ',note:'',count:3},
+{id:'e2',arabic:'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِنْ رُسُلِهِ ۚ وَقَالُوا سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ. لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ رَبَّنَا لَا تُؤَاخِذْنَا إِنْ نَّسِينَآ أَوْ أَخْطَأْنَا رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِنْ قَبْلِنَا رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا أَنْتَ مَوْلَانَا فَانْصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ. [البقرة 285 - 286].',note:'من قرأ آيتين من آخر سورة البقرة في ليلة كفتاه.',count:1},
+{id:'e3',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ هُوَ ٱللَّهُ أَحَدٌ، ٱللَّهُ ٱلصَّمَدُ، لَمْ يَلِدْ وَلَمْ يُولَدْ، وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ.',note:'من قالها حين يصبح وحين يمسى كفته من كل شىء.',count:3},
+{id:'e4',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ، مِن شَرِّ مَا خَلَقَ، وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ، وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ، وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ.',note:'',count:3},
+{id:'e5',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ، مَلِكِ ٱلنَّاسِ، إِلَٰهِ ٱلنَّاسِ، مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ، ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ، مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ.',note:'',count:3},
+{id:'e6',arabic:'أَمْسَيْـنا وَأَمْسـى المـلكُ لله وَالحَمدُ لله ، لا إلهَ إلاّ اللّهُ وَحدَهُ لا شَريكَ لهُ، لهُ المُـلكُ ولهُ الحَمْـد، وهُوَ على كلّ شَيءٍ قدير ، رَبِّ أسْـأَلُـكَ خَـيرَ ما في هـذهِ اللَّـيْلَةِ وَخَـيرَ ما بَعْـدَهـا ، وَأَعـوذُ بِكَ مِنْ شَـرِّ ما في هـذهِ اللَّـيْلةِ وَشَرِّ ما بَعْـدَهـا ، رَبِّ أَعـوذُبِكَ مِنَ الْكَسَـلِ وَسـوءِ الْكِـبَر ، رَبِّ أَعـوذُ بِكَ مِنْ عَـذابٍ في النّـارِ وَعَـذابٍ في القَـبْر.',note:'',count:1},
+{id:'e7',arabic:'اللّهـمَّ أَنْتَ رَبِّـي لا إلهَ إلاّ أَنْتَ ، خَلَقْتَنـي وَأَنا عَبْـدُك ، وَأَنا عَلـى عَهْـدِكَ وَوَعْـدِكَ ما اسْتَـطَعْـت ، أَعـوذُبِكَ مِنْ شَـرِّ ما صَنَـعْت ، أَبـوءُ لَـكَ بِنِعْـمَتِـكَ عَلَـيَّ وَأَبـوءُ بِذَنْـبي فَاغْفـِرْ لي فَإِنَّـهُ لا يَغْـفِرُ الذُّنـوبَ إِلاّ أَنْتَ .',note:'من قالها موقنا بها حين يمسى ومات من ليلته دخل الجنة.',count:3},
+{id:'e8',arabic:'رَضيـتُ بِاللهِ رَبَّـاً وَبِالإسْلامِ ديـناً وَبِمُحَـمَّدٍ صلى الله عليه وسلم نَبِيّـاً.',note:'من قالها حين يصبح وحين يمسى كان حقا على الله أن يرضيه يوم القيامة.',count:3},
+{id:'e9',arabic:'اللّهُـمَّ إِنِّـي أَمسيتُ أُشْـهِدُك ، وَأُشْـهِدُ حَمَلَـةَ عَـرْشِـك ، وَمَلَائِكَتَكَ ، وَجَمـيعَ خَلْـقِك ، أَنَّـكَ أَنْـتَ اللهُ لا إلهَ إلاّ أَنْـتَ وَحْـدَكَ لا شَريكَ لَـك ، وَأَنَّ ُ مُحَمّـداً عَبْـدُكَ وَرَسـولُـك.',note:'من قالها أعتقه الله من النار.',count:4},
+{id:'e10',arabic:'اللّهُـمَّ ما أَمسى بي مِـنْ نِعْـمَةٍ أَو بِأَحَـدٍ مِـنْ خَلْـقِك ، فَمِـنْكَ وَحْـدَكَ لا شريكَ لَـك ، فَلَـكَ الْحَمْـدُ وَلَـكَ الشُّكْـر.',note:'من قالها حين يمسى أدى شكر يومه.',count:3},
+{id:'e11',arabic:'حَسْبِـيَ اللّهُ لا إلهَ إلاّ هُوَ عَلَـيهِ تَوَكَّـلتُ وَهُوَ رَبُّ العَرْشِ العَظـيم.',note:'من قالها كفاه الله ما أهمه.',count:7},
+{id:'e12',arabic:'بِسـمِ اللهِ الذي لا يَضُـرُّ مَعَ اسمِـهِ شَيءٌ في الأرْضِ وَلا في السّمـاءِ وَهـوَ السّمـيعُ العَلـيم.',note:'لم يضره من الله شيء.',count:3},
+{id:'e13',arabic:'اللّهُـمَّ بِكَ أَمْسَـينا وَبِكَ أَصْـبَحْنا، وَبِكَ نَحْـيا وَبِكَ نَمُـوتُ وَإِلَـيْكَ الْمَصِيرُ.',note:'',count:3},
+{id:'e14',arabic:'أَمْسَيْنَا عَلَى فِطْرَةِ الإسْلاَمِ، وَعَلَى كَلِمَةِ الإِخْلاَصِ، وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ، وَعَلَى مِلَّةِ أَبِينَا إبْرَاهِيمَ حَنِيفاً مُسْلِماً وَمَا كَانَ مِنَ المُشْرِكِينَ.',note:'',count:3},
+{id:'e15',arabic:'سُبْحـانَ اللهِ وَبِحَمْـدِهِ عَدَدَ خَلْـقِه ، وَرِضـا نَفْسِـه ، وَزِنَـةَ عَـرْشِـه ، وَمِـدادَ كَلِمـاتِـه.',note:'',count:3},
+{id:'e16',arabic:'اللّهُـمَّ عافِـني في بَدَنـي ، اللّهُـمَّ عافِـني في سَمْـعي ، اللّهُـمَّ عافِـني في بَصَـري ، لا إلهَ إلاّ أَنْـتَ.',note:'',count:3},
+{id:'e17',arabic:'اللّهُـمَّ إِنّـي أَعـوذُ بِكَ مِنَ الْكُـفر ، وَالفَـقْر ، وَأَعـوذُ بِكَ مِنْ عَذابِ القَـبْر ، لا إلهَ إلاّ أَنْـتَ.',note:'',count:3},
+{id:'e18',arabic:'اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في الدُّنْـيا وَالآخِـرَة ، اللّهُـمَّ إِنِّـي أسْـأَلُـكَ العَـفْوَ وَالعـافِـيةَ في ديني وَدُنْـيايَ وَأهْـلي وَمالـي ، اللّهُـمَّ اسْتُـرْ عـوْراتي وَآمِـنْ رَوْعاتـي ، اللّهُـمَّ احْفَظْـني مِن بَـينِ يَدَيَّ وَمِن خَلْفـي وَعَن يَمـيني وَعَن شِمـالي ، وَمِن فَوْقـي ، وَأَعـوذُ بِعَظَمَـتِكَ أَن أُغْـتالَ مِن تَحْتـي.',note:'',count:1},
+{id:'e19',arabic:'يَا حَيُّ يَا قيُّومُ بِرَحْمَتِكَ أسْتَغِيثُ أصْلِحْ لِي شَأنِي كُلَّهُ وَلاَ تَكِلْنِي إلَى نَفْسِي طَـرْفَةَ عَيْنٍ.',note:'',count:3},
+{id:'e20',arabic:'أَمْسَيْنا وَأَمْسَى الْمُلْكُ للهِ رَبِّ الْعَالَمَيْنِ، اللَّهُمَّ إِنَّي أسْأَلُكَ خَيْرَ هَذَه اللَّيْلَةِ فَتْحَهَا ونَصْرَهَا، ونُوْرَهَا وبَرَكَتهَا، وَهُدَاهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فيهِا وَشَرَّ مَا بَعْدَهَا.',note:'',count:1},
+{id:'e21',arabic:'اللّهُـمَّ عالِـمَ الغَـيْبِ وَالشّـهادَةِ فاطِـرَ السّماواتِ وَالأرْضِ رَبَّ كـلِّ شَـيءٍ وَمَليـكَه ، أَشْهَـدُ أَنْ لا إِلـهَ إِلاّ أَنْت ، أَعـوذُ بِكَ مِن شَـرِّ نَفْسـي وَمِن شَـرِّ الشَّيْـطانِ وَشِرْكِهِ ، وَأَنْ أَقْتَـرِفَ عَلـى نَفْسـي سوءاً أَوْ أَجُـرَّهُ إِلـى مُسْـلِم.',note:'',count:1},
+{id:'e22',arabic:'أَعـوذُ بِكَلِمـاتِ اللّهِ التّـامّـاتِ مِنْ شَـرِّ ما خَلَـق.',note:'',count:3},
+{id:'e23',arabic:'اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ على نَبِيِّنَا مُحمَّد.',note:'من صلى على حين يصبح وحين يمسى ادركته شفاعتى.',count:10},
+{id:'e24',arabic:'اللَّهُمَّ إِنَّا نَعُوذُ بِكَ مِنْ أَنْ نُشْرِكَ بِكَ شَيْئًا نَعْلَمُهُ ، وَنَسْتَغْفِرُكَ لِمَا لَا نَعْلَمُهُ.',note:'',count:3},
+{id:'e25',arabic:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ الْهَمِّ وَالْحَزَنِ، وَأَعُوذُ بِكَ مِنْ الْعَجْزِ وَالْكَسَلِ، وَأَعُوذُ بِكَ مِنْ الْجُبْنِ وَالْبُخْلِ، وَأَعُوذُ بِكَ مِنْ غَلَبَةِ الدَّيْنِ، وَقَهْرِ الرِّجَالِ.',note:'',count:3},
+{id:'e26',arabic:'أسْتَغْفِرُ اللهَ العَظِيمَ الَّذِي لاَ إلَهَ إلاَّ هُوَ، الحَيُّ القَيُّومُ، وَأتُوبُ إلَيهِ.',note:'',count:3},
+{id:'e27',arabic:'يَا رَبِّ , لَكَ الْحَمْدُ كَمَا يَنْبَغِي لِجَلَالِ وَجْهِكَ , وَلِعَظِيمِ سُلْطَانِكَ.',note:'',count:3},
+{id:'e28',arabic:'لَا إلَه إلّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءِ قَدِيرِ.',note:'كانت له عدل عشر رقاب.',count:100},
+{id:'e29',arabic:'اللَّهُمَّ أَنْتَ رَبِّي لا إِلَهَ إِلا أَنْتَ ، عَلَيْكَ تَوَكَّلْتُ ، وَأَنْتَ رَبُّ الْعَرْشِ الْعَظِيمِ , مَا شَاءَ اللَّهُ كَانَ ، وَمَا لَمْ يَشَأْ لَمْ يَكُنْ.',note:'ذكر طيب.',count:1},
+{id:'e30',arabic:'سُبْحـانَ اللهِ وَبِحَمْـدِهِ.',note:'حُطَّتْ خَطَايَاهُ.',count:100}
 ];
+
 
 /* ============================================================
    REMAINING 67 CATEGORIES
    ============================================================ */
 const OTHER_CATS = [
-      {id:'sleep',name:'أذكار النوم',nameEn:'Sleeping',azkar:[
+  {id:'sleep',name:'أذكار النوم',nameEn:'Sleeping',azkar:[
     {id:'sl1',arabic:'بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبِي، وَبِكَ أَرْفَعُهُ، فَإِنْ أَمْسَكْتَ نَفْسِي فَارْحَمْهَا، وَإِنْ أَرْسَلْتَهَا فَاحْفَظْهَا.',note:'',count:1},
     {id:'sl2',arabic:'اللَّهُمَّ قِنِي عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ.',note:'',count:3},
     {id:'sl3',arabic:'بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا.',note:'',count:1},
     {id:'sl4',arabic:'سُبْحَانَ اللَّهِ (33) الْحَمْدُ لِلَّهِ (33) اللَّهُ أَكْبَرُ (34)',note:'',count:33},
-    {id:'sl5',arabic:'اللَّهُمَّ أَسْلَمْتُ نَفْسِي إِلَيْكَ، وَوَجَّهْتُ وَجْهِي إِلَيْكَ، وَفَوَّضْتُ أَمْرِي إِلَيْكَ، وَأَلْجَأْتُ ظَهْرِي إِلَيْكَ.',note:'',count:1},
-    {id:'sl6',arabic:'أَعُوذُ بِاللهِ مِنْ الشَّيْطَانِ الرَّجِيمِ اللّهُ لاَ إِلَـهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ. [آية الكرسى - البقرة 255].',note:'',count:1},
-    {id:'sl7',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ هُوَ ٱللَّهُ أَحَدٌ، ٱللَّهُ ٱلصَّمَدُ، لَمْ يَلِدْ وَلَمْ يُولَدْ، وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ.',note:'سورة الإخلاص.',count:1},
-    {id:'sl8',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ، مِن شَرِّ مَا خَلَقَ، وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ، وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ، وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ.',note:'سورة الفلق.',count:1},
-    {id:'sl9',arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيم قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ، مَلِكِ ٱلنَّاسِ، إِلَٰهِ ٱلنَّاسِ، مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ، ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ، مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ.',note:'سورة الناس.',count:1},
-    {id:'sl10',arabic:'اجْمَع كَفَّيْكَ ثُمَّ اقْرَأْ: قُلْ هُوَ اللَّهُ أَحَدٌ، قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ، قُلْ أَعُوذُ بِرَبِّ النَّاسِ، ثُمَّ افْضُ بِهِمَا عَلَى جَسَدِكَ امْسَحْ بِهِمَا مَا اسْتَطَعْتَ مِنْ جَسَدِكَ.',note:'تُجْمَعُ الْكَفَّانِ، يُنْفَثُ فِيهِمَا، تُقْرَأُ السُّورَاتُ، تُمْسَحُ الْجِسْمُ بِالْكَفَّيْنِ.',count:1},
-    {id:'sl11',arabic:'(تُكَرَّرُ الْأَعْمَالُ السَّابِقَةُ 3 مَرَّات)',note:'تُكَرَّرُ 3 مَرَّات.',count:3}
+    {id:'sl5',arabic:'اللَّهُمَّ أَسْلَمْتُ نَفْسِي إِلَيْكَ، وَوَجَّهْتُ وَجْهِي إِلَيْكَ، وَفَوَّضْتُ أَمْرِي إِلَيْكَ، وَأَلْجَأْتُ ظَهْرِي إِلَيْكَ.',note:'',count:1}
   ]},
-    {id:'waking',name:'أذكار الاستيقاظ من النوم',nameEn:'Waking Up',azkar:[
-    {id:'wk1',arabic:'الْحَمْدُ لِلَّهِ الَّذِي عَافَانِي فِي جَسَدِي، وَرَدَّ عَلَيَّ رُوحِي، وَأَذِنَ لِي بِذِكْرِهِ.',note:'',count:1},
-    {id:'wk2',arabic:'سُبْحَانَ اللهِ، وَالْحَمْدُ لِلَّهِ، وَلَا إِلَهَ إِلَّا اللهُ، وَاللهُ أَكْبَرُ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللهِ الْعَلِيِّ الْعَظِيمِ، رَبِّ اغْفِرْ لِي.',note:'',count:1},
-    {id:'wk3',arabic:'الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ.',note:'',count:1},
-    {id:'wk4',arabic:'لَاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.',note:'',count:1}
+  {id:'waking',name:'أذكار الاستيقاظ',nameEn:'Waking Up',azkar:[
+    {id:'wk1',arabic:'الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ.',note:'',count:1},
+    {id:'wk2',arabic:'لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.',note:'',count:1}
   ]},
   {id:'toilet_enter',name:'دعاء دخول الخلاء',nameEn:'Entering Toilet',azkar:[
     {id:'t1',arabic:'[بِسْمِ اللهِ] اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ.',note:'',count:1}
@@ -678,7 +1529,7 @@ const OTHER_CATS = [
     {id:'t41',arabic:'أَسْأَلُ اللهَ الْعَظِيمَ رَبَّ الْعَرْشِ الْعَظِيمِ أَنْ يَشْفِيَكَ.',note:'سبع مرات',count:7}
   ]},
   {id:'sick_reward',name:'فضل عيادة المريض',nameEn:'Reward of Visiting Sick',azkar:[
-    {id:'t42',arabic:'اللَّهُمَّ رَبَّ النَّاسِ أَذْهِبِ الْبَأْسَ، وَاشْفِهِ وَأَنْتَ شَافِيٌ، لَا شِفَاءَ إِلَّا شِفَاؤُكَ، شِفَاءً لَا يُغَادِرُ سَقَمًا.',note:'رواه البخاري (5742).',count:1}
+    {id:'t42',arabic:'مَنْ عَادَ مَرِيضًا لَمْ يَزَلْ فِي خُرْفَةِ الْجَنَّةِ حَتَّى يَرْجِعَ.',note:'قيل: يا رسول الله، وما خرفة الجنة؟ قال: جناها.',count:1}
   ]},
   {id:'dying',name:'دعاء المريض الذي يئس من حياته',nameEn:'The Dying Patient',azkar:[
     {id:'t43',arabic:'اللَّهُمَّ اغْفِرْ لِي وَارْحَمْنِي وَأَلْحِقْنِي بِالرَّفِيقِ الْأَعْلَى.',note:'',count:1}
@@ -806,28 +1657,12 @@ const state={
   theme:'dark'
 };
 
-function saveState(){
-  try{
-    localStorage.setItem('hisn_completed_v10',JSON.stringify(state.completed));
-    localStorage.setItem('hisn_tapCounts_v10',JSON.stringify(state.tapCounts));
-  }catch(e){}
-}
-function loadState(){
-  try{
-    const savedCompleted=localStorage.getItem('hisn_completed_v10');
-    const savedTapCounts=localStorage.getItem('hisn_tapCounts_v10');
-    if(savedCompleted) state.completed=JSON.parse(savedCompleted);
-    if(savedTapCounts) state.tapCounts=JSON.parse(savedTapCounts);
-  }catch(e){}
-}
-
 const $=s=>document.querySelector(s);
 const $$=s=>document.querySelectorAll(s);
 
 function init(){
   loadTheme();
   loadVisitorCount();
-  loadState();
   renderCategories();
   renderIndex();
   loadCategory('morning');
@@ -856,10 +1691,17 @@ function toggleTheme(){
 async function loadVisitorCount(){
   const el=$('#visitorCount');
   try{
-    let c=parseInt(localStorage.getItem('hisn_v_c_v10')||'0',10)+1;
-    localStorage.setItem('hisn_v_c_v10',c.toString());
-    el.textContent=formatNum(c);
-  }catch(err){el.textContent='—';}
+    const res=await fetch('https://api.countapi.xyz/hit/hisn-muslim-gh/visits');
+    if(!res.ok) throw new Error('fail');
+    const data=await res.json();
+    el.textContent=formatNum(data.value||0);
+  }catch(e){
+    try{
+      let c=parseInt(localStorage.getItem('hisn_v_c_v10')||'0',10)+1;
+      localStorage.setItem('hisn_v_c_v10',c.toString());
+      el.textContent=formatNum(c)+' (local)';
+    }catch(err){el.textContent='—';}
+  }
 }
 function formatNum(n){
   if(n>=1000000) return (n/1000000).toFixed(1)+'M';
@@ -944,21 +1786,27 @@ function renderAzkar(){
   updateProgress();
 }
 
+function escHtml(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function evBadge(id){
+  const e=EVIDENCE[id]; if(!e) return '';
+  return '<span class="ev-badge ev-'+e.status+'" title="اضغط لعرض الدليل">'+EV_SYMBOL[e.status]+' '+e.label+'</span>';
+}
+function openEvidence(id){
+  const e=EVIDENCE[id]||{status:'no-hadith',label:'لا يوجد حديث محدد',hadith:'لم تُضف بيانات الدليل لهذا الذكر بعد.',source:'غير متوفر'};
+  $('#evBody').innerHTML=
+    '<span class="big-badge ev-badge ev-'+e.status+'" id="evTitle">'+EV_SYMBOL[e.status]+' '+e.label+'</span>'+
+    '<div class="ev-hadith">'+escHtml(e.hadith)+'</div>'+
+    '<div class="ev-source"><b>المصدر:</b> '+escHtml(e.source)+'</div>'+
+    (e.warning?'<div class="ev-warning"><b>تنبيه:</b> '+escHtml(e.warning)+'</div>':'');
+  $('#evModal').classList.add('open'); $('#evModal').setAttribute('aria-hidden','false');
+  trackEvent('evidence_viewed',{dhikr_id:id,status:e.status});
+}
+function closeEvidence(){ $('#evModal').classList.remove('open'); $('#evModal').setAttribute('aria-hidden','true'); }
+
 function createCard(dhikr,index){
   const isDone=state.completed[dhikr.id]===true;
   const remaining=isDone?0:(state.tapCounts[dhikr.id]!==undefined?state.tapCounts[dhikr.id]:dhikr.count);
   const pct=((dhikr.count-remaining)/dhikr.count)*100;
-  const ev=EVIDENCE[dhikr.id];
-
-  let evBadgeHTML='';
-  let evBtnClass='icon-btn evidence-btn';
-  if(ev){
-    evBadgeHTML='<span class="evidence-status-badge '+ev.status+'">'+ev.label+'</span>';
-    if(ev.status==='sahih'||ev.status==='hasan') evBtnClass+=' has-evidence';
-    else if(ev.status==='daif') evBtnClass+=' daif-evidence';
-  }else{
-    evBadgeHTML='<span class="evidence-status-badge no-hadith">لا يوجد حديث محدد</span>';
-  }
 
   const card=document.createElement('div');
   card.className='dhikr-card'+(isDone?' completed':'');
@@ -967,9 +1815,7 @@ function createCard(dhikr,index){
     '<div class="check-overlay">✅</div>'+
     '<div class="dhikr-header">'+
       '<div class="dhikr-index"><div class="dhikr-number">'+(index+1)+'</div></div>'+
-      '<div class="badges-group">'+evBadgeHTML+
-        '<span class="dhikr-count-badge" data-role="badge">'+(isDone?'✓ Completed':'Remaining: '+remaining)+'</span>'+
-      '</div>'+
+      '<div class="badges">'+evBadge(dhikr.id)+'<div class="dhikr-count-badge" data-role="badge">'+(isDone?'✓ Completed':'Remaining: '+remaining)+'</div></div>'+
     '</div>'+
     '<div class="arabic">'+dhikr.arabic+'</div>'+
     (dhikr.note?'<div class="note">'+dhikr.note+'</div>':'')+
@@ -979,13 +1825,13 @@ function createCard(dhikr,index){
         '<span class="counter-text" data-role="counter-text">'+(isDone?'Completed':'Tap to count · <span class="remaining">'+remaining+'</span> left')+'</span>'+
         '<div class="mini-bar" data-role="mini-bar" style="width:'+pct+'%"></div>'+
       '</button>'+
-      '<button class="'+evBtnClass+'" data-role="evidence" title="عرض دليل الذكر">📖</button>'+
-      '<button class="icon-btn reset-card-btn" data-role="reset-card" title="Reset">↻</button>'+
+      '<button class="icon-btn ev-btn" data-role="evidence" title="الدليل" aria-label="الدليل">📖</button>'+'<button class="icon-btn reset-card-btn" data-role="reset-card" title="Reset">↻</button>'+
     '</div>';
 
   card.querySelector('[data-role="counter"]').addEventListener('click',()=>handleTap(dhikr.id,card));
   card.querySelector('[data-role="reset-card"]').addEventListener('click',()=>resetCard(dhikr.id,card));
-  card.querySelector('[data-role="evidence"]').addEventListener('click',()=>showEvidence(dhikr.id));
+  card.querySelector('[data-role="evidence"]').addEventListener('click',()=>openEvidence(dhikr.id));
+  const eb=card.querySelector('.ev-badge'); if(eb) eb.addEventListener('click',()=>openEvidence(dhikr.id));
   return card;
 }
 
@@ -1028,7 +1874,6 @@ function handleTap(id,card){
   btn.style.transform='scale(0.95)';
   setTimeout(()=>{btn.style.transform='';},150);
   updateProgress();
-  saveState();
 
   if(isDone&&state.azkarData.every(d=>state.completed[d.id])){
     showToast('🎉 All azkar completed! May Allah accept your remembrance.');
@@ -1048,7 +1893,6 @@ function resetCard(id,card){
   const newCard=createCard(dhikr,idx);
   card.replaceWith(newCard);
   updateProgress();
-  saveState();
 }
 
 function updateProgress(){
@@ -1077,19 +1921,13 @@ function resetAll(){
   $('#resetAllBtn').style.transform='rotate(-180deg)';
   setTimeout(()=>{$('#resetAllBtn').style.transform='';},400);
   trackEvent('reset_all',{category:state.activeCategory});
-  saveState();
 }
 
 function handleSearch(){
-  const q=$('#searchInput').value.trim();
+  const q=$('#searchInput').value.trim().toLowerCase();
   if(!q){renderCategories();renderIndex();return;}
 
-  const qLower=q.toLowerCase();
-  const filtered=state.categories.filter(c=>{
-    if(c.name.includes(q)||c.nameEn.toLowerCase().includes(qLower)) return true;
-    if(c.azkar&&c.azkar.some(a=>a.arabic.includes(q)||a.note.includes(q))) return true;
-    return false;
-  });
+  const filtered=state.categories.filter(c=>c.name.includes(q)||c.nameEn.toLowerCase().includes(q));
 
   const grid=$('#categoriesGrid');
   grid.innerHTML='';
@@ -1117,32 +1955,6 @@ function handleSearch(){
   });
 }
 
-/* EVIDENCE MODAL */
-function showEvidence(id){
-  const ev=EVIDENCE[id];
-  const body=$('#evidenceModalBody');
-  if(!ev){
-    body.innerHTML='<div style="text-align:center;padding:30px;color:var(--text-muted);">'+
-      '<div style="font-size:2rem;margin-bottom:10px;">🔍</div>'+
-      '<p>لا يوجد حديث محدد لهذا الذكر في قاعدة البيانات الحالية.</p>'+
-      '<p style="font-size:.78rem;margin-top:8px;">يرجى الرجوع إلى كتب الأذكار المعتمدة أو سؤال أهل العلم.</p>'+
-      '</div>'+
-      '<div class="evidence-disclaimer"><strong>تنبيه:</strong> هذه المعلومات للاسترشاد فقط، يُرجى التحقق مع أهل العلم المتخصصين.</div>';
-    $('#evidenceModalOverlay').classList.add('show');
-    return;
-  }
-  const sym=ev.status==='sahih'?'✓':(ev.status==='hasan'?'◐':(ev.status==='daif'?'⚠':'ℹ'));
-  body.innerHTML=
-    '<span class="evidence-status-large '+ev.status+'">'+sym+' '+ev.label+'</span>'+
-    '<div class="evidence-hadith">'+ev.hadith+'</div>'+
-    '<div class="evidence-source"><strong>المصدر:</strong> '+ev.source+'</div>'+
-    (ev.warning?'<div class="evidence-warning"><strong>تنبيه:</strong> '+ev.warning+'</div>':'')+
-    '<div class="evidence-disclaimer"><strong>ملاحظة:</strong> هذه المعلومات للاسترشاد العام فقط، وقد تحتوي على أخطاء. يُرجى التحقق من الأحاديث وتصنيفاتها مع أهل العلم المتخصصين قبل الاعتماد عليها.</div>';
-  $('#evidenceModalOverlay').classList.add('show');
-  trackEvent('evidence_viewed',{dhikr_id:id,status:ev.status});
-}
-function closeEvidence(){$('#evidenceModalOverlay').classList.remove('show');}
-
 let toastTimer;
 function showToast(msg){
   const t=$('#toast');
@@ -1168,179 +1980,33 @@ function bindEvents(){
   });
   $('#themeToggle').addEventListener('click',toggleTheme);
   $('#resetAllBtn').addEventListener('click',resetAll);
-
-  $('#evidenceModalClose').addEventListener('click',closeEvidence);
-  $('#evidenceModalOverlay').addEventListener('click',(e)=>{
-    if(e.target===$('#evidenceModalOverlay')) closeEvidence();
-  });
-
+  $('#evClose').addEventListener('click',closeEvidence);
+  $('#evModal').addEventListener('click',(e)=>{ if(e.target.id==='evModal') closeEvidence(); });
   document.addEventListener('keydown',(e)=>{
-    if(e.key==='Escape') closeEvidence();
     const inInput=e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA';
     if(!inInput&&e.key==='r'&&!e.ctrlKey&&!e.metaKey) resetAll();
     if(!inInput&&e.key==='t'&&!e.ctrlKey&&!e.metaKey) toggleTheme();
+    if(e.key==='Escape') closeEvidence();
   });
 }
 
 init();
 })();
+
+const EVIDENCE = {
+"f1": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "عَنْ أَبِي بُرْدَةَ، عَنْ أَبِي بُرْزَةَ الْأَسْلَمِيِّ رَضِيَ اللَّهُ عَنْهُ، أَنَّ النَّبِيَّ ﷺ كَانَ إِذَا أَرَادَ أَنْ يَخْرُجَ مِنْ بَيْتِهِ قَالَ: «بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ»، فَإِذَا جَاءَ مَكَانَهُ قَالَ: «أَعُوذُ بِاللَّهِ الْعَظِيمِ، وَبِوَجْهِهِ الْكَرِيمِ، وَسُلْطَانِهِ الْقَدِيمِ، مِنْ شَرِّ شَيْطَانَ وَشُرَكَائِهِ، وَأَنْ يَطْغَى، غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ»، ثُمَّ يَقْرَأُ: ﴿الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ﴾ إِلَى آخِرِ السُّورَةِ.",
+"source": "رواه الطبراني في الأوسط، والألباني قال: حسن"
+},
+"f2": {
+"status": "sahih",
+"label": "صحيح",
+"hadith": "عَنْ عُبَادَةَ بْنِ الصَّامِتِ رَضِيَ اللَّهُ عَنْهُ، أَنَّ النَّبِيَّ ﷺ قَالَ: «مَنْ قَرَأَ بِالْآيَتَيْنِ مِنْ آخِرِ سُورَةِ الْبَقَرَةِ فِي لَيْلَةٍ كَفَتَاهُ».",
+"source": "متفق عليه: البخاري 4567، مسلم 591"
+}
+};
 </script>
-<!-- ============================================================
-     Sources & References
-     ============================================================ -->
-<div class="sources-section">
-  <h3>المصادر والمراجع</h3>
-  <div class="sources-grid">
-    <a href="https://www.islamweb.net/ar/library" target="_blank" rel="noopener noreferrer">
-      IslamBook — مكتبة الإسلام
-    </a>
-    <a href="https://www.hisn-muslim.com" target="_blank" rel="noopener noreferrer">
-      Hisn al-Muslim — حصن المسلم
-    </a>
-    <a href="http://www.dorar.net" target="_blank" rel="noopener noreferrer">
-      Dorar.net — دائرة المعارف الإسلامية
-    </a>
-    <a href="https://binbaz.org.sa" target="_blank" rel="noopener noreferrer">
-      الشيخ ابن باز — الموقع الرسمي
-    </a>
-    <a href="https://ibnuothaymeen.net" target="_blank" rel="noopener noreferrer">
-      الشيخ ابن عثيمين — الموقع الرسمي
-    </a>
-  </div>
-  <p class="sources-note">هذه مصادر مفيدة للزوار — لا تعني بالضرورة endorsement من هذه المواقع أو العلماء</p>
-</div>
-
-<!-- ============================================================
-     Quran Resource
-     ============================================================ -->
-<div class="quran-section">
-  <a href="https://misrquran.gov.eg/home" target="_blank" rel="noopener noreferrer" class="quran-link">
-    📖 لمحبي القرآن — القرآن الكريم
-  </a>
-  <p class="quran-note">مصدر خارجي للقرآن الكريم من جمهورية مصر العربية</p>
-</div>
-
-<!-- ============================================================
-     Contact Button
-     ============================================================ -->
-<div class="contact-section">
-  <a href="mailto:zizoradwan@gmail.com?subject=Azkar%20Page%20%E2%80%93%20Contact&body=السلام%20عليكم%20%2F%20Hello%2C%0A%0AI%20am%20writing%20regarding%20the%20Azkar%20page.%0A%0A%2D%2D%0Ehis%20message%20was%20sent%20from%20the%20Azkar%20page%20contact%20button."
-     class="contact-btn"
-     target="_blank"
-     rel="noopener noreferrer">
-    تواصل معنا
-  </a>
-  <p class="contact-note">لأي استفسار أو اقتراح</p>
-</div>
-
-<style>
-.contact-section {
-  text-align: center;
-  margin: 2rem 1rem 3rem;
-  padding: 1.5rem;
-  background: linear-gradient(135deg, var(--card-bg, #1a1a2e) 0%, var(--card-bg-alt, #16213e) 100%);
-  border-radius: 12px;
-  border: 1px solid var(--border-color, #2a2a4a);
-}
-.contact-btn {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  background: linear-gradient(135deg, #4a90d9 0%, #357abd 100%);
-  color: #ffffff !important;
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(74, 144, 217, 0.3);
-}
-.contact-btn:hover {
-  background: linear-gradient(135deg, #357abd 0%, #2a6591 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(74, 144, 217, 0.4);
-}
-.contact-btn:active {
-  transform: translateY(0);
-}
-.contact-note {
-  margin: 0.5rem 0 0;
-  color: var(--text-muted, #a0a0b0);
-  font-size: 0.85rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Sources & References */
-.sources-section {
-  text-align: center;
-  margin: 2rem 1rem 1.5rem;
-  padding: 1.5rem;
-  background: linear-gradient(135deg, var(--card-bg, #1a1a2e) 0%, var(--card-bg-alt, #16213e) 100%);
-  border-radius: 12px;
-  border: 1px solid var(--border-color, #2a2a4a);
-}
-.sources-section h3 {
-  margin: 0 0 1rem;
-  color: var(--text-primary, #ffffff);
-  font-size: 1.2rem;
-}
-.sources-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
-}
-.sources-grid a {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background: var(--card-bg-alt, #16213e);
-  color: var(--text-secondary, #a0a0b0);
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  border: 1px solid var(--border-color, #2a2a4a);
-  transition: all 0.2s ease;
-}
-.sources-grid a:hover {
-  background: var(--border-color, #2a2a4a);
-  color: var(--text-primary, #ffffff);
-}
-.sources-note {
-  margin: 1rem 0 0;
-  color: var(--text-muted, #707080);
-  font-size: 0.8rem;
-  font-style: italic;
-}
-
-/* Quran Resource */
-.quran-section {
-  text-align: center;
-  margin: 0 1rem 1.5rem;
-  padding: 1rem;
-  background: linear-gradient(135deg, #2d5016 0%, #1a3a0a 100%);
-  border-radius: 12px;
-  border: 1px solid #3a6b1e;
-}
-.quran-link {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: rgba(255,255,255,0.1);
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-.quran-link:hover {
-  background: rgba(255,255,255,0.2);
-}
-.quran-note {
-  margin: 0.5rem 0 0;
-  color: rgba(255,255,255,0.7);
-  font-size: 0.8rem;
-}
-</style>
-
 </body>
 </html>
